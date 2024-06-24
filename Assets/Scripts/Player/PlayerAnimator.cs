@@ -114,7 +114,6 @@ public class PlayerAnimator : MonoBehaviour
 
     private IEnumerator SquishPlayer(float force)
     {
-        Debug.Log(force);
         force = Mathf.Abs(force);
         if (force < _minSquishForce) yield break;
         _isSquishing = true;
@@ -131,10 +130,7 @@ public class PlayerAnimator : MonoBehaviour
 
             var squishFactorY = Mathf.Lerp(_squishMinMaxY.curveMax.Evaluate(t), _squishMinMaxY.curveMin.Evaluate(t), point);
             var squishFactorX = Mathf.Lerp(_squishMinMaxX.curveMax.Evaluate(t), _squishMinMaxX.curveMin.Evaluate(t), point);
-            Debug.Log($"squishFactorY: {squishFactorY}");
-            Debug.Log($"squishFactorX: {squishFactorX}");
             _sprite.size = new Vector3(_defaultSpriteSize.x * squishFactorX, _defaultSpriteSize.y * squishFactorY);
-            Debug.Log(_sprite.size);
             yield return null;
         }
 
