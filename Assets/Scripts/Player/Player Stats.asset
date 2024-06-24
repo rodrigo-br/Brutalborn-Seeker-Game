@@ -25,14 +25,14 @@ MonoBehaviour:
     CrouchHeight: 0.6
     RayInset: 0.1
   VerticalDeadZoneThreshold: 0.3
-  HorizontalDeadZoneThreshold: 0.10000000149011612
+  HorizontalDeadZoneThreshold: 0.1
   PositionCorrectionMode: 0
-  BaseSpeed: 9
-  Acceleration: 50
-  Friction: 30
+  BaseSpeed: 15
+  Acceleration: 100
+  Friction: 70
   AirFrictionMultiplier: 0.5
   DirectionCorrectionMultiplier: 3
-  MaxWalkableSlope: 50
+  MaxWalkableSlope: 46
   ExtraConstantGravity: 40
   BufferedJumpTime: 0.15
   CoyoteTime: 0.15
@@ -40,38 +40,38 @@ MonoBehaviour:
   EndJumpEarlyExtraForceMultiplier: 3
   MaxAirJumps: 1
   AllowDash: 1
-  DashVelocity: 50
-  DashDuration: 0.2
-  DashCooldown: 1.5
+  DashVelocity: 30
+  DashDuration: 0.1
+  DashCooldown: 0.5
   DashEndHorizontalMultiplier: 0.5
-  AllowCrouching: 0
-  CrouchSlowDownTime: 0.5
-  CrouchSpeedModifier: 0.5
-  AllowWalls: 0
+  AllowCrouching: 1
+  CrouchSlowDownTime: 1
+  CrouchSpeedModifier: 0.3
+  AllowWalls: 1
   ClimbableLayer:
     serializedVersion: 2
     m_Bits: 256
   WallJumpTotalInputLossTime: 0.2
   WallJumpInputLossReturnTime: 0.5
   RequireInputPush: 0
-  WallJumpPower: {x: 25, y: 15}
-  WallPushPower: {x: 15, y: 10}
+  WallJumpPower: {x: 20, y: 18}
+  WallPushPower: {x: 20, y: 18}
   WallClimbSpeed: 5
-  WallFallAcceleration: 20
+  WallFallAcceleration: 5
   WallPopForce: 10
   WallCoyoteTime: 0.3
-  WallDetectorRange: 0.1
-  AllowLadders: 0
-  LadderCooldownTime: 0.15000000596046448
+  WallDetectorRange: 0.15
+  AllowLadders: 1
+  LadderCooldownTime: 0.15
   AutoAttachToLadders: 1
   SnapToLadders: 1
   LadderLayer:
     serializedVersion: 2
     m_Bits: 512
-  LadderSnapTime: 0.02
-  LadderPopForce: 10
+  LadderSnapTime: 0.05
+  LadderPopForce: 5
   LadderClimbSpeed: 8
   LadderSlideSpeed: 12
-  LadderShimmySpeedMultiplier: 0.5
+  LadderShimmySpeedMultiplier: 0.1
   NegativeYVelocityNegation: 0.2
-  ExternalVelocityDecayRate: 0.1
+  ExternalVelocityDecayRate: 0.5
