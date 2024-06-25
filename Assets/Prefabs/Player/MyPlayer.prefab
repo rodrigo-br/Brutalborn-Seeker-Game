@@ -30004,7 +30004,7 @@ Transform:
 --- !u!50 &4059752034881373167
 Rigidbody2D:
   serializedVersion: 4
-  m_ObjectHideFlags: 0
+  m_ObjectHideFlags: 8
   m_CorrespondingSourceObject: {fileID: 0}
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
@@ -30030,7 +30030,7 @@ Rigidbody2D:
   m_Constraints: 4
 --- !u!61 &4333114954756978998
 BoxCollider2D:
-  m_ObjectHideFlags: 0
+  m_ObjectHideFlags: 8
   m_CorrespondingSourceObject: {fileID: 0}
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
@@ -30062,7 +30062,7 @@ BoxCollider2D:
   m_UsedByEffector: 0
   m_CompositeOperation: 0
   m_CompositeOrder: 0
-  m_Offset: {x: 0, y: 0.65000004}
+  m_Offset: {x: 0.00000023841858, y: 1.5013018}
   m_SpriteTilingProperty:
     border: {x: 0, y: 0, z: 0, w: 0}
     pivot: {x: 0, y: 0}
@@ -30072,11 +30072,11 @@ BoxCollider2D:
     drawMode: 0
     adaptiveTiling: 0
   m_AutoTiling: 0
-  m_Size: {x: 0.79999995, y: 0.19999999}
+  m_Size: {x: 1.5583024, y: 0.40030622}
   m_EdgeRadius: 0.05
 --- !u!70 &8140605404700414455
 CapsuleCollider2D:
-  m_ObjectHideFlags: 0
+  m_ObjectHideFlags: 8
   m_CorrespondingSourceObject: {fileID: 0}
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}

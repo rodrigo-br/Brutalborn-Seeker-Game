@@ -132,18 +132,18 @@ public class PlayerController : MonoBehaviour, IPlayerController, IPhysicsObject
             new Vector3(_character.StandingColliderSize.x + CharacterSize.COLLIDER_EDGE_RADIUS * 2 + Stats.WallDetectorRange, _character.Height - 0.1f));
 
         _rb = GetComponent<Rigidbody2D>();
-        //_rb.hideFlags = HideFlags.NotEditable;
+        _rb.hideFlags = HideFlags.NotEditable;
 
         // Primary collider
         _collider = GetComponent<BoxCollider2D>();
         _collider.edgeRadius = CharacterSize.COLLIDER_EDGE_RADIUS;
-        //_collider.hideFlags = HideFlags.NotEditable;
+        _collider.hideFlags = HideFlags.NotEditable;
         _collider.sharedMaterial = _rb.sharedMaterial;
         _collider.enabled = true;
 
         // Airborne collider
         _airborneCollider = GetComponent<CapsuleCollider2D>();
-        //_airborneCollider.hideFlags = HideFlags.NotEditable;
+        _airborneCollider.hideFlags = HideFlags.NotEditable;
         _airborneCollider.size = new Vector2(_character.Width - SKIN_WIDTH * 2, _character.Height - SKIN_WIDTH * 2);
         _airborneCollider.offset = new Vector2(0, _character.Height / 2);
         _airborneCollider.sharedMaterial = _rb.sharedMaterial;
