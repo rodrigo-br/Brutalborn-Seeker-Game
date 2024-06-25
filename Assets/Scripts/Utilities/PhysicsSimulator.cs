@@ -8,13 +8,16 @@ public class PhysicsSimulator : MonoBehaviour
 
     private readonly HashSet<IPhysicsObject> _platforms = new();
     private readonly HashSet<IPhysicsObject> _players = new();
+    private readonly HashSet<IPhysicsObject> _bullets = new();
 
     private void Awake() => Instance = this;
 
     public void AddPlatform(IPhysicsObject platform) => _platforms.Add(platform);
     public void AddPlayer(IPhysicsObject player) => _players.Add(player);
+    public void AddBullet(IPhysicsObject bullet) => _bullets.Add(bullet);
     public void RemovePlatform(IPhysicsObject platform) => _platforms.Remove(platform);
     public void RemovePlayer(IPhysicsObject player) => _players.Remove(player);
+    public void RemoveBullet(IPhysicsObject bullet) => _bullets.Remove(bullet);
 
     private float _time;
 
@@ -27,10 +30,16 @@ public class PhysicsSimulator : MonoBehaviour
             platform.TickUpdate(delta, _time);
         }
 
+        foreach (var bullet in _bullets)
+        {
+            bullet.TickUpdate(delta, _time);
+        }
+
         foreach (var player in _players)
         {
             player.TickUpdate(delta, _time);
         }
+
     }
 
     private void FixedUpdate()
@@ -39,6 +48,11 @@ public class PhysicsSimulator : MonoBehaviour
         foreach (var platform in _platforms)
         {
             platform.TickFixedUpdate(delta);
+        }
+
+        foreach (var bullet in _bullets)
+        {
+            bullet.TickFixedUpdate(delta);
         }
 
         foreach (var player in _players)
