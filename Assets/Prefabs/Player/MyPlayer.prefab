@@ -20175,7 +20175,7 @@ Animator:
   m_GameObject: {fileID: 6167863291925955019}
   m_Enabled: 1
   m_Avatar: {fileID: 0}
-  m_Controller: {fileID: 9100000, guid: 6e5b5f4662f713845b0c28185c4ea62c, type: 2}
+  m_Controller: {fileID: 9100000, guid: 2f62faaa367c7974f9ae2ded4876ba24, type: 2}
   m_CullingMode: 0
   m_UpdateMode: 0
   m_ApplyRootMotion: 0
@@ -29977,6 +29977,7 @@ GameObject:
   - component: {fileID: 4333114954756978998}
   - component: {fileID: 8140605404700414455}
   - component: {fileID: 3841378548707815334}
+  - component: {fileID: 355830339466008756}
   m_Layer: 7
   m_Name: MyPlayer
   m_TagString: Untagged
@@ -30124,6 +30125,19 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   <Stats>k__BackingField: {fileID: 11400000, guid: de211c9a7c5a88349872f54077f96fe2, type: 2}
   _drawGizmos: 1
+--- !u!114 &355830339466008756
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 8507842605207282758}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: ddf7f1516b898e74ba80bc492fa57d10, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  <MaxHealth>k__BackingField: 100
 --- !u!1 &8655307356644997893
 GameObject:
   m_ObjectHideFlags: 0
