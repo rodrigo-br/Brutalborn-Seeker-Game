@@ -9,6 +9,12 @@ public class Health : MonoBehaviour, IDamageable, IHealable
     [field: SerializeField] public int MaxHealth { get; private set; } = 100;
     public int CurrentHealth { get; private set; }
     private readonly int minMaxHealth = 10;
+    private Knockback _knockback;
+
+    private void Awake()
+    {
+        _knockback = GetComponent<Knockback>();
+    }
 
     private void Start()
     {
@@ -59,6 +65,11 @@ public class Health : MonoBehaviour, IDamageable, IHealable
         }
     }
 
+    public void TakeHit(Vector2 damageSourceDirection, float knockBackThrust)
+    {
+        _knockback.GetKnockedBack(damageSourceDirection, knockBackThrust);
+    }
+
     public void Heal(int amount)
     {
         ChangeHealthByAmount(amount);
@@ -95,7 +106,7 @@ public class Health : MonoBehaviour, IDamageable, IHealable
     }
 }
 
-public interface IDamageable
+public interface IDamageable : IHitable
 {
     void TakeDamage(int amount);
 }
@@ -103,4 +114,9 @@ public interface IDamageable
 public interface IHealable
 {
     void Heal(int amount);
+}
+
+public interface IHitable
+{
+    void TakeHit(Vector2 damageSourceDirection, float knockBackThrust);
 }

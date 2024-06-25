@@ -21,9 +21,9 @@ MonoBehaviour:
   CharacterSize:
     Height: 2.7
     Width: 1.6
-    StepHeight: 1
-    CrouchHeight: 1.05
-    RayInset: 0.2
+    StepHeight: 1.35
+    CrouchHeight: 1.51
+    RayInset: 0.07
   VerticalDeadZoneThreshold: 0.3
   HorizontalDeadZoneThreshold: 0.1
   PositionCorrectionMode: 0
