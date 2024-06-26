@@ -24,6 +24,7 @@ public class PlayerController : MonoBehaviour, IPlayerController, IPhysicsObject
     public event Action<bool> WallGrabChanged;
     public event Action<Vector2> Repositioned;
     public event Action<bool> ToggledPlayer;
+    public event Action Attack;
 
     public bool Active { get; private set; } = true;
     public Vector2 Up { get; private set; }
@@ -171,6 +172,11 @@ public class PlayerController : MonoBehaviour, IPlayerController, IPhysicsObject
         if (_frameInput.DashDown)
         {
             _dashToConsume = true;
+        }
+
+        if (_frameInput.AttackDown)
+        {
+            Attack?.Invoke();
         }
     }
 
@@ -932,6 +938,7 @@ public interface IPlayerController
     public event Action<bool> WallGrabChanged;
     public event Action<Vector2> Repositioned;
     public event Action<bool> ToggledPlayer;
+    public event Action Attack;
 
     public bool Active { get; }
     public Vector2 Up { get; }

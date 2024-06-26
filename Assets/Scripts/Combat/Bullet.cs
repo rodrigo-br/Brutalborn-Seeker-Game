@@ -5,7 +5,7 @@ using UnityEngine;
 public class Bullet : MonoBehaviour, IPhysicsObject, IPoolable
 {
     [MinMaxSlider(0.0f, 100.0f)]
-    [SerializeField] private Vector2 _bulletSpeedAcceleration = new Vector2(0.1f, 0.4f);
+    [SerializeField] private Vector2 _bulletSpeedAcceleration = new Vector2(5f, 50f);
     [SerializeField] private bool _hasAcceleration;
     [ShowIf("_hasAcceleration")]
     [SerializeField] private float _maxAccelerationSpeedAt = 3f;
@@ -32,7 +32,7 @@ public class Bullet : MonoBehaviour, IPhysicsObject, IPoolable
         };
     }
 
-    private void Start()
+    private void OnEnable()
     {
         if (_hasAcceleration)
         {
@@ -49,17 +49,8 @@ public class Bullet : MonoBehaviour, IPhysicsObject, IPoolable
         {
             _currentMoveSpeed = _bulletSpeedAcceleration.y;
         }
-    }
-
-    private void OnEnable()
-    {
         _currentBulletLifeTime = 0f;
-        if (_hasAcceleration)
-        {
-            _accelerationStartTime = Time.time;
-        }
-        PhysicsSimulator.Instance.AddBullet(this);
-    }
+        PhysicsSimulator.Instance.AddBullet(this);    }
 
     private void OnDisable()
     {
@@ -72,15 +63,16 @@ public class Bullet : MonoBehaviour, IPhysicsObject, IPoolable
         {
             UpdateAcceleration(delta);
         }
+        Debug.Log(_direction);
         _rigidbody2D.velocity = _currentMoveSpeed * _direction;
     }
 
     public void TickUpdate(float delta, float time)
     {
         _currentBulletLifeTime += delta;
-        
         if (_currentBulletLifeTime >= _maxBulletLifeTime)
         {
+            Debug.Log("SAIU");
             _disableCallback?.Invoke(this);
         }
     }
@@ -97,6 +89,13 @@ public class Bullet : MonoBehaviour, IPhysicsObject, IPoolable
         iDamageable?.TakeDamage(_damageAmount);
 
         _disableCallback?.Invoke(this);
+    }
+
+    public void Init(Vector2 position, Quaternion rotation, Vector2 direction)
+    {
+        transform.SetPositionAndRotation(position, rotation);
+        _direction = direction;
+        gameObject.SetActive(true);
     }
 
     private void UpdateAcceleration(float delta)
