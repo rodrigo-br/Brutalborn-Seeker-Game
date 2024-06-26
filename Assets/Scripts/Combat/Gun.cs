@@ -6,13 +6,15 @@ public class Gun : MonoBehaviour
     private enum PrefabPath
     {
         Bullet,
+        PlayerBullet,
+        EnemyBullet
     }
     [SerializeField] private Transform _bulletSpawnPosition;
     [SerializeField] private PrefabPath _bulletPrefab;
     [SerializeField] private int _initialPoolSize = 10;
     private ObjectPooling<Bullet> _bulletPool;
     private IPlayerController _player;
-    private Vector2 _direction;
+    private Vector2 _direction = Vector2.right;
 
     private void Awake()
     {
@@ -47,7 +49,7 @@ public class Gun : MonoBehaviour
     private void BulletRent()
     {
         Bullet bullet = _bulletPool.Rent();
-        bullet.Init(transform.position, transform.rotation, _direction);
+        bullet.Init(_bulletSpawnPosition.position, _bulletSpawnPosition.rotation, _direction);
     }
 
     public void SetObjectPooling(ObjectPooling<Bullet> objectPooling)

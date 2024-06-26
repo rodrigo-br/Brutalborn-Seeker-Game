@@ -6,13 +6,25 @@ using UnityEngine.UI;
 public class HealthPresenter : MonoBehaviour
 {
     [SerializeField] private Image _healthBar;
+    [SerializeField] private Health _health;
     [SerializeField] private TextMeshProUGUI _healthValuesText;
     [SerializeField] private float _barSpeed = 4f;
     private Coroutine _healthChangeCoroutine;
 
     private void OnEnable()
     {
-        Health.OnHealthChange += UpdateUI;
+        if (_health != null)
+        {
+            _health.OnHealthChange += UpdateUI;
+        }
+    }
+
+    private void OnDisable()
+    {
+        if (_health != null)
+        {
+            _health.OnHealthChange -= UpdateUI;
+        }
     }
 
     private void UpdateUI(Health sender)

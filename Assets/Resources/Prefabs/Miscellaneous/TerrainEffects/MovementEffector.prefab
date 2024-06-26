@@ -12,7 +12,7 @@ GameObject:
   - component: {fileID: 4707716625581389317}
   - component: {fileID: 4665517949724152750}
   - component: {fileID: 6837539151272611558}
-  m_Layer: 0
+  m_Layer: 3
   m_Name: MovementEffector
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -159,7 +159,7 @@ GameObject:
   - component: {fileID: 8409685619068181965}
   - component: {fileID: 619601817071857711}
   - component: {fileID: 4399191757826541697}
-  m_Layer: 0
+  m_Layer: 3
   m_Name: Text
   m_TagString: Untagged
   m_Icon: {fileID: 0}

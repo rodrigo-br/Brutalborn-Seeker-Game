@@ -8,17 +8,17 @@ TagManager:
   - Default
   - TransparentFX
   - Ignore Raycast
-  - 
+  - Buffs
   - Water
   - UI
-  - 
+  - Enemy
   - Player
   - Climbable
   - Ladders
-  - 
-  - 
-  - 
-  - 
+  - PlayerHitableColliders
+  - PlayerDamage
+  - EnemyHitableColliders
+  - EnemyDamage
   - 
   - 
   - 

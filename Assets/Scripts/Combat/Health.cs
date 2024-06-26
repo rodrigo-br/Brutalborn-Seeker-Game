@@ -4,8 +4,8 @@ using UnityEngine;
 
 public class Health : MonoBehaviour, IDamageable, IHealable
 {
-    public static Action<Health> OnHealthChange;
-    public static Action<Health> OnDeath;
+    public Action<Health> OnHealthChange;
+    public Action<Health> OnDeath;
     [field: SerializeField] public int MaxHealth { get; private set; } = 100;
     public int CurrentHealth { get; private set; }
     private readonly int minMaxHealth = 10;
