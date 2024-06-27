@@ -77,7 +77,6 @@ public class Bullet : MonoBehaviour, IPhysicsObject, IPoolable
 
     private void OnTriggerEnter2D(Collider2D other)
     {
-        Debug.Log(other);
         // Instantiate BulletVFX
 
         IHitable iHitable = other.GetComponent<IHitable>();

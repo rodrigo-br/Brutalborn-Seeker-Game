@@ -11,7 +11,7 @@ public class PlayerController : MonoBehaviour, IPlayerController, IPhysicsObject
     private CapsuleCollider2D _airborneCollider;
     private ConstantForce2D _constantForce;
     private Rigidbody2D _rb;
-    private PlayerInput _playerInput;
+    private IInput _playerInput;
 
     #endregion
 

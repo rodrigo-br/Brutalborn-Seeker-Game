@@ -14922,6 +14922,7 @@ GameObject:
   m_Component:
   - component: {fileID: 1839692769191922237}
   - component: {fileID: 336611329891503687}
+  - component: {fileID: 6157325055456789886}
   m_Layer: 7
   m_Name: Gun
   m_TagString: Untagged
@@ -14964,7 +14965,60 @@ MonoBehaviour:
   _sprite: {fileID: 4578957952305470637}
   _shootCooldown: 0.3
   _animator: {fileID: 6703444541255035459}
-  _impulseVelocity: {x: 0, y: 0}
+  _impulseVelocity: {x: 0.1, y: 0.05}
+--- !u!114 &6157325055456789886
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 3159147837659129022}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 180ecf9b41d478f468eb3e9083753217, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  m_ImpulseDefinition:
+    m_ImpulseChannel: 1
+    m_ImpulseShape: 1
+    m_CustomImpulseShape:
+      serializedVersion: 2
+      m_Curve: []
+      m_PreInfinity: 2
+      m_PostInfinity: 2
+      m_RotationOrder: 4
+    m_ImpulseDuration: 0.15
+    m_ImpulseType: 0
+    m_DissipationRate: 0.25
+    m_RawSignal: {fileID: 0}
+    m_AmplitudeGain: 1
+    m_FrequencyGain: 1
+    m_RepeatMode: 0
+    m_Randomize: 1
+    m_TimeEnvelope:
+      m_AttackShape:
+        serializedVersion: 2
+        m_Curve: []
+        m_PreInfinity: 2
+        m_PostInfinity: 2
+        m_RotationOrder: 4
+      m_DecayShape:
+        serializedVersion: 2
+        m_Curve: []
+        m_PreInfinity: 2
+        m_PostInfinity: 2
+        m_RotationOrder: 4
+      m_AttackTime: 0
+      m_SustainTime: 0.2
+      m_DecayTime: 0.7
+      m_ScaleWithImpact: 1
+      m_HoldForever: 0
+    m_ImpactRadius: 100
+    m_DirectionMode: 0
+    m_DissipationMode: 2
+    m_DissipationDistance: 100
+    m_PropagationSpeed: 343
+  m_DefaultVelocity: {x: 0.1, y: 0.05, z: 0}
 --- !u!1 &3518157247846458520
 GameObject:
   m_ObjectHideFlags: 0
@@ -14977,6 +15031,7 @@ GameObject:
   - component: {fileID: 5908286872754910040}
   - component: {fileID: 1290051828671307975}
   - component: {fileID: 4578817555007220948}
+  - component: {fileID: 2987007583158491643}
   m_Layer: 10
   m_Name: Combat
   m_TagString: Untagged
@@ -15012,6 +15067,8 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   <MaxHealth>k__BackingField: 100
+  _splatterPrefab: {fileID: 463569841650181863, guid: 059c26bda041f9b41a3c9f8962561c6b, type: 3}
+  _deathVFX: {fileID: 8306299748837728306, guid: f9c1536e946e9ff429cc8222f5176799, type: 3}
 --- !u!114 &1290051828671307975
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -15062,6 +15119,22 @@ CapsuleCollider2D:
   m_Offset: {x: 0, y: 1.35}
   m_Size: {x: 1.5600001, y: 2.66}
   m_Direction: 0
+--- !u!114 &2987007583158491643
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 3518157247846458520}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 9e2312929fe5bc545b54935cdb6a6166, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  _defaultMaterial: {fileID: 2100000, guid: c9cf2e4229ec06b449ac1ac95aefbe53, type: 2}
+  _flashMaterial: {fileID: 2100000, guid: 23d616c3a7186f843af8990170906f53, type: 2}
+  _flashTime: 0.1
+  _spriteRenderer: {fileID: 1556245096354011786}
 --- !u!1 &3999621853242800389
 GameObject:
   m_ObjectHideFlags: 0
