@@ -14961,6 +14961,7 @@ MonoBehaviour:
   _bulletSpawnPosition: {fileID: 7610761541198662054}
   _bulletPrefab: 1
   _initialPoolSize: 10
+  _sprite: {fileID: 0}
 --- !u!1 &3518157247846458520
 GameObject:
   m_ObjectHideFlags: 0

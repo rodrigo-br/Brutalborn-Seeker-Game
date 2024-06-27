@@ -12,14 +12,15 @@ public class Gun : MonoBehaviour
     [SerializeField] private Transform _bulletSpawnPosition;
     [SerializeField] private PrefabPath _bulletPrefab;
     [SerializeField] private int _initialPoolSize = 10;
+    [SerializeField] private SpriteRenderer _sprite;
     private ObjectPooling<Bullet> _bulletPool;
-    private IPlayerController _player;
+    private PlayerController _player;
     private Vector2 _direction = Vector2.right;
 
     private void Awake()
     {
         _bulletPool = new("Prefabs/Combat/" + _bulletPrefab.ToString(), _initialPoolSize);
-        _player = GetComponentInParent<IPlayerController>();
+        _player = GetComponentInParent<PlayerController>();
     }
 
     private void Update()
@@ -27,6 +28,7 @@ public class Gun : MonoBehaviour
         if (_player.Input != Vector2.zero)
         {
             _direction = _player.Input;
+            HandleSpriteFlip();
         }
     }
 
@@ -40,7 +42,6 @@ public class Gun : MonoBehaviour
         _player.Attack -= Shoot;
     }
 
-    [Button]
     public void Shoot()
     {
         BulletRent();
@@ -55,5 +56,23 @@ public class Gun : MonoBehaviour
     public void SetObjectPooling(ObjectPooling<Bullet> objectPooling)
     {
         _bulletPool = objectPooling;
+    }
+
+    private void HandleSpriteFlip()
+    {
+        Debug.Log(_direction);
+        float y = 0;
+        float z = 0;
+        if (_direction.y > 0) z = 45;
+        else if (_direction.y < 0) z = -45;
+        if (_direction.x != 0)
+        {
+            y = _direction.x > 0 ? 0: 180;
+        }
+        else
+        {
+            z *= 2;
+        }
+        transform.localRotation = Quaternion.Euler(0, y, z);
     }
 }

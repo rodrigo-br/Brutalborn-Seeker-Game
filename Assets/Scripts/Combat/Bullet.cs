@@ -72,7 +72,6 @@ public class Bullet : MonoBehaviour, IPhysicsObject, IPoolable
         _currentBulletLifeTime += delta;
         if (_currentBulletLifeTime >= _maxBulletLifeTime)
         {
-            Debug.Log("SAIU");
             _disableCallback?.Invoke(this);
         }
     }
