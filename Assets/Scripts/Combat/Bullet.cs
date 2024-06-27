@@ -63,7 +63,6 @@ public class Bullet : MonoBehaviour, IPhysicsObject, IPoolable
         {
             UpdateAcceleration(delta);
         }
-        Debug.Log(_direction);
         _rigidbody2D.velocity = _currentMoveSpeed * _direction;
     }
 

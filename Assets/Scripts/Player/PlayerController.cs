@@ -25,6 +25,7 @@ public class PlayerController : MonoBehaviour, IPlayerController, IPhysicsObject
     public event Action<Vector2> Repositioned;
     public event Action<bool> ToggledPlayer;
     public event Action Attack;
+    public event Action AttackHeld;
 
     public bool Active { get; private set; } = true;
     public Vector2 Up { get; private set; }
@@ -177,6 +178,11 @@ public class PlayerController : MonoBehaviour, IPlayerController, IPhysicsObject
         if (_frameInput.AttackDown)
         {
             Attack?.Invoke();
+        }
+
+        if (_frameInput.AttackHeld)
+        {
+            AttackHeld?.Invoke();
         }
     }
 

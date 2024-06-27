@@ -14961,7 +14961,10 @@ MonoBehaviour:
   _bulletSpawnPosition: {fileID: 7610761541198662054}
   _bulletPrefab: 1
   _initialPoolSize: 10
-  _sprite: {fileID: 0}
+  _sprite: {fileID: 4578957952305470637}
+  _shootCooldown: 0.3
+  _animator: {fileID: 6703444541255035459}
+  _impulseVelocity: {x: 0, y: 0}
 --- !u!1 &3518157247846458520
 GameObject:
   m_ObjectHideFlags: 0
@@ -15440,6 +15443,7 @@ GameObject:
   m_Component:
   - component: {fileID: 2837385951174833632}
   - component: {fileID: 4578957952305470637}
+  - component: {fileID: 6703444541255035459}
   m_Layer: 7
   m_Name: Visual
   m_TagString: Untagged
@@ -15514,6 +15518,28 @@ SpriteRenderer:
   m_WasSpriteAssigned: 1
   m_MaskInteraction: 0
   m_SpriteSortPoint: 0
+--- !u!95 &6703444541255035459
+Animator:
+  serializedVersion: 7
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 4582925938102234359}
+  m_Enabled: 1
+  m_Avatar: {fileID: 0}
+  m_Controller: {fileID: 9100000, guid: 82391b084cf188a4e8fff5db789de11e, type: 2}
+  m_CullingMode: 0
+  m_UpdateMode: 0
+  m_ApplyRootMotion: 0
+  m_LinearVelocityBlending: 0
+  m_StabilizeFeet: 0
+  m_AnimatePhysics: 0
+  m_WarningMessage: 
+  m_HasTransformHierarchy: 1
+  m_AllowConstantClipSamplingOptimization: 1
+  m_KeepAnimatorStateOnDisable: 0
+  m_WriteDefaultValuesOnDisable: 0
 --- !u!1 &4959273607948313980
 GameObject:
   m_ObjectHideFlags: 0
