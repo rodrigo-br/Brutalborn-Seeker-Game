@@ -12,23 +12,18 @@ public class HealthPresenter : MonoBehaviour
     private Coroutine _healthChangeCoroutine;
 
     private void OnEnable()
-    {
-        if (_health != null)
-        {
-            _health.OnHealthChange += UpdateUI;
-        }
+    {    
+        Health.OnHealthChange += UpdateUI;
     }
 
     private void OnDisable()
-    {
-        if (_health != null)
-        {
-            _health.OnHealthChange -= UpdateUI;
-        }
+    {    
+        Health.OnHealthChange -= UpdateUI;
     }
 
     private void UpdateUI(Health sender)
     {
+        if (sender != _health) { return; }
         if (_healthChangeCoroutine != null)
         {
             StopCoroutine(_healthChangeCoroutine);

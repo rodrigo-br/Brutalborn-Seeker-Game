@@ -4,16 +4,20 @@ using UnityEngine;
 
 public class Health : MonoBehaviour, IDamageable, IHealable
 {
-    public Action<Health> OnHealthChange;
-    public Action<Health> OnDeath;
+    public static Action<Health> OnHealthChange;
+    public static Action<Health> OnDeath;
     [field: SerializeField] public int MaxHealth { get; private set; } = 100;
+    [field: SerializeField] public GameObject SplatterPrefab { get; private set; }
+    [field: SerializeField] public GameObject DeathVFX { get; private set; }
     public int CurrentHealth { get; private set; }
     private readonly int minMaxHealth = 10;
     private Knockback _knockback;
+    private Flash _flash;
 
     private void Awake()
     {
         _knockback = GetComponent<Knockback>();
+        _flash = GetComponent<Flash>();
     }
 
     private void Start()
@@ -59,9 +63,11 @@ public class Health : MonoBehaviour, IDamageable, IHealable
     public void TakeDamage(int amount)
     {
         ChangeHealthByAmount(-amount);
+        _flash.StartFlash();
         if (CurrentHealth <= 0)
         {
             OnDeath?.Invoke(this);
+            Destroy(gameObject.transform.parent.parent.gameObject);
         }
     }
 

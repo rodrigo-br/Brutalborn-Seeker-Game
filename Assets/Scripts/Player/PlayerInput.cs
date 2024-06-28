@@ -1,7 +1,7 @@
 using UnityEngine;
 using UnityEngine.InputSystem;
 
-public class PlayerInput : MonoBehaviour
+public class PlayerInput : MonoBehaviour, IInput
 {
     private PlayerInputActions _inputActions;
     private InputAction _move, _jump, _dash, _attack, _interact;
@@ -52,4 +52,9 @@ public struct FrameInput
     public bool DashDown;
     public bool InteractDown;
     public bool InteractHeld;
+}
+
+public interface IInput
+{
+    FrameInput GatherInput();
 }

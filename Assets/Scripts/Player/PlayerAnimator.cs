@@ -1,3 +1,4 @@
+using Cinemachine;
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
@@ -41,11 +42,13 @@ public class PlayerAnimator : MonoBehaviour
     private GeneratedCharacterSize _character;
     private Vector3 _trailOffset;
     private Vector2 _trailVel;
+    private CinemachineImpulseSource _impulseSource;
 
     private void Awake()
     {
         _source = GetComponent<AudioSource>();
         _player = GetComponentInParent<IPlayerController>();
+        _impulseSource = GetComponent<CinemachineImpulseSource>();
         _character = _player.Stats.CharacterSize.GenerateCharacterSize();
         _defaultSpriteSize = new Vector2(1, _character.Height);
 
@@ -351,9 +354,13 @@ public class PlayerAnimator : MonoBehaviour
             _source.PlayOneShot(_splats[Random.Range(0, _splats.Length)], 0.5f);
             _moveParticles.Play();
 
-            _landParticles.transform.localScale = Vector3.one * Mathf.InverseLerp(0, 40, impact);
-            SetColor(_landParticles);
-            _landParticles.Play();
+            //_landParticles.transform.localScale = Vector3.one * Mathf.InverseLerp(0, 40, impact);
+            if (impact < -25)
+            {
+                SetColor(_landParticles);
+                _impulseSource.GenerateImpulse();
+                _landParticles.Play();
+            }
         }
         else
         {
