@@ -4,6 +4,7 @@ using UnityEngine;
 
 public class Bullet : MonoBehaviour, IPhysicsObject, IPoolable
 {
+    public static event Action<SoundSO> OnShoot;
     [MinMaxSlider(0.0f, 100.0f)]
     [SerializeField] private Vector2 _bulletSpeedAcceleration = new Vector2(5f, 50f);
     [SerializeField] private bool _hasAcceleration;
@@ -15,6 +16,8 @@ public class Bullet : MonoBehaviour, IPhysicsObject, IPoolable
     [SerializeField] private int _damageAmount = 10;
     [SerializeField] private float _knockBackThrust = 10f;
     [SerializeField] private GameObject _bulletVFX;
+    [SerializeField] private SoundSO _soundSO;
+
     private Rigidbody2D _rigidbody2D;
     private float _currentBulletLifeTime;
     private float _currentMoveSpeed;
@@ -25,12 +28,6 @@ public class Bullet : MonoBehaviour, IPhysicsObject, IPoolable
     private void Awake()
     {
         _rigidbody2D = GetComponent<Rigidbody2D>();
-
-        // REMOVER ME
-        _disableCallback = (call) =>
-        {
-            this.gameObject.SetActive(false);
-        };
     }
 
     private void OnEnable()
@@ -94,6 +91,7 @@ public class Bullet : MonoBehaviour, IPhysicsObject, IPoolable
         transform.SetPositionAndRotation(position, rotation);
         _direction = direction;
         gameObject.SetActive(true);
+        OnShoot?.Invoke(_soundSO);
     }
 
     private void UpdateAcceleration(float delta)

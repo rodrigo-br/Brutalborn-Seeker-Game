@@ -55,6 +55,7 @@ MonoBehaviour:
   _damageAmount: 10
   _knockBackThrust: 10
   _bulletVFX: {fileID: 8188598881131300151, guid: 2fbf8e5cca6069d43b0b42a2fc053581, type: 3}
+  _soundSO: {fileID: 11400000, guid: 142873b0ef572bf4ebce483b22ea5cc0, type: 2}
 --- !u!212 &2547779958664089986
 SpriteRenderer:
   m_ObjectHideFlags: 0
