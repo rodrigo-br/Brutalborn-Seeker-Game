@@ -9,8 +9,8 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 8938131625336275342}
-  - component: {fileID: 2547779958664089986}
   - component: {fileID: 166901328355906794}
+  - component: {fileID: 2547779958664089986}
   - component: {fileID: 5356938724044929002}
   - component: {fileID: 2841971998309855481}
   m_Layer: 10
@@ -29,12 +29,32 @@ Transform:
   m_GameObject: {fileID: 8207305568099213089}
   serializedVersion: 2
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: -15.7, y: 18.5, z: 0}
+  m_LocalPosition: {x: 0, y: 0, z: 0}
   m_LocalScale: {x: 0.4, y: 0.4, z: 0.4}
   m_ConstrainProportionsScale: 1
   m_Children: []
   m_Father: {fileID: 0}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!114 &166901328355906794
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 8207305568099213089}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 9e70bc8c643ea7d4cbb36466c17a534a, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  _bulletSpeedAcceleration: {x: 5, y: 50.306255}
+  _hasAcceleration: 0
+  _maxAccelerationSpeedAt: 2
+  _isAccelerationReversed: 0
+  _maxBulletLifeTime: 5
+  _damageAmount: 10
+  _knockBackThrust: 10
+  _bulletVFX: {fileID: 8188598881131300151, guid: 2fbf8e5cca6069d43b0b42a2fc053581, type: 3}
 --- !u!212 &2547779958664089986
 SpriteRenderer:
   m_ObjectHideFlags: 0
@@ -55,7 +75,7 @@ SpriteRenderer:
   m_RenderingLayerMask: 1
   m_RendererPriority: 0
   m_Materials:
-  - {fileID: 2100000, guid: a97c105638bdf8b4a8650670310a4cd3, type: 2}
+  - {fileID: 2100000, guid: b489e5bb0e3385f4699d324fa41c2e70, type: 2}
   m_StaticBatchInfo:
     firstSubMesh: 0
     subMeshCount: 0
@@ -87,25 +107,6 @@ SpriteRenderer:
   m_WasSpriteAssigned: 1
   m_MaskInteraction: 0
   m_SpriteSortPoint: 0
---- !u!114 &166901328355906794
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 8207305568099213089}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 9e70bc8c643ea7d4cbb36466c17a534a, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  _bulletSpeedAcceleration: {x: 5, y: 50.306255}
-  _hasAcceleration: 0
-  _maxAccelerationSpeedAt: 2
-  _isAccelerationReversed: 0
-  _maxBulletLifeTime: 5
-  _damageAmount: 10
-  _knockBackThrust: 10
 --- !u!50 &5356938724044929002
 Rigidbody2D:
   serializedVersion: 4

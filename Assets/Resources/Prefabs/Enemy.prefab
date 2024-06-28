@@ -30,15 +30,15 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 5716487165812248797, guid: 58f257495e687f74b953f687f6cc82b3, type: 3}
       propertyPath: m_LocalPosition.x
-      value: 34.9
+      value: 7.022934
       objectReference: {fileID: 0}
     - target: {fileID: 5716487165812248797, guid: 58f257495e687f74b953f687f6cc82b3, type: 3}
       propertyPath: m_LocalPosition.y
-      value: 42.5
+      value: 14.226671
       objectReference: {fileID: 0}
     - target: {fileID: 5716487165812248797, guid: 58f257495e687f74b953f687f6cc82b3, type: 3}
       propertyPath: m_LocalPosition.z
-      value: 0
+      value: -0.15752007
       objectReference: {fileID: 0}
     - target: {fileID: 5716487165812248797, guid: 58f257495e687f74b953f687f6cc82b3, type: 3}
       propertyPath: m_LocalRotation.w
@@ -46,15 +46,15 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 5716487165812248797, guid: 58f257495e687f74b953f687f6cc82b3, type: 3}
       propertyPath: m_LocalRotation.x
-      value: 0
+      value: -0
       objectReference: {fileID: 0}
     - target: {fileID: 5716487165812248797, guid: 58f257495e687f74b953f687f6cc82b3, type: 3}
       propertyPath: m_LocalRotation.y
-      value: 0
+      value: -0
       objectReference: {fileID: 0}
     - target: {fileID: 5716487165812248797, guid: 58f257495e687f74b953f687f6cc82b3, type: 3}
       propertyPath: m_LocalRotation.z
-      value: 0
+      value: -0
       objectReference: {fileID: 0}
     - target: {fileID: 5716487165812248797, guid: 58f257495e687f74b953f687f6cc82b3, type: 3}
       propertyPath: m_LocalEulerAnglesHint.x
@@ -72,6 +72,14 @@ PrefabInstance:
       propertyPath: _deathVFX
       value: 
       objectReference: {fileID: 8306299748837728306, guid: 54e55c4ebe1ab5a4191dec8201693991, type: 3}
+    - target: {fileID: 5908286872754910040, guid: 58f257495e687f74b953f687f6cc82b3, type: 3}
+      propertyPath: <DeathVFX>k__BackingField
+      value: 
+      objectReference: {fileID: 8306299748837728306, guid: 54e55c4ebe1ab5a4191dec8201693991, type: 3}
+    - target: {fileID: 5908286872754910040, guid: 58f257495e687f74b953f687f6cc82b3, type: 3}
+      propertyPath: <MaxHealth>k__BackingField
+      value: 30
+      objectReference: {fileID: 0}
     - target: {fileID: 7494462295254818709, guid: 58f257495e687f74b953f687f6cc82b3, type: 3}
       propertyPath: m_Layer
       value: 6

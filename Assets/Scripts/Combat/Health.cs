@@ -4,11 +4,11 @@ using UnityEngine;
 
 public class Health : MonoBehaviour, IDamageable, IHealable
 {
-    public Action<Health> OnHealthChange;
-    public Action<Health> OnDeath;
+    public static Action<Health> OnHealthChange;
+    public static Action<Health> OnDeath;
     [field: SerializeField] public int MaxHealth { get; private set; } = 100;
-    [SerializeField] private GameObject _splatterPrefab;
-    [SerializeField] private GameObject _deathVFX;
+    [field: SerializeField] public GameObject SplatterPrefab { get; private set; }
+    [field: SerializeField] public GameObject DeathVFX { get; private set; }
     public int CurrentHealth { get; private set; }
     private readonly int minMaxHealth = 10;
     private Knockback _knockback;
@@ -20,26 +20,9 @@ public class Health : MonoBehaviour, IDamageable, IHealable
         _flash = GetComponent<Flash>();
     }
 
-    private void Update()
-    {
-        Debug.Log(transform.position);
-    }
-
     private void Start()
     {
         ResetHealth();
-    }
-
-    private void OnEnable()
-    {
-        OnDeath += SpawnDeathVFX;
-        OnDeath += SpawnDeathSplatterPrefab;
-    }
-
-    private void OnDisable()
-    {
-        OnDeath -= SpawnDeathVFX;
-        OnDeath -= SpawnDeathSplatterPrefab;
     }
 
     public void ResetHealth()
@@ -96,30 +79,6 @@ public class Health : MonoBehaviour, IDamageable, IHealable
     public void Heal(int amount)
     {
         ChangeHealthByAmount(amount);
-    }
-
-    private void SpawnDeathSplatterPrefab(Health health)
-    {
-        if (health != this) { return; }
-        GameObject newSplatterPrefab = Instantiate(_splatterPrefab, transform.position, transform.rotation);
-        SpriteRenderer spriteRenderer = newSplatterPrefab.GetComponent<SpriteRenderer>();
-        spriteRenderer.color = RandomizeColor(spriteRenderer.color);
-    }
-
-    private Color RandomizeColor(Color color)
-    {
-        float randomR = UnityEngine.Random.Range(color.r / 2, color.r);
-        float randomG = UnityEngine.Random.Range(color.g / 2, color.g);
-        float randomB = UnityEngine.Random.Range(color.b / 2, color.b);
-        return new Color(randomR, randomG, randomB);
-    }
-
-    private void SpawnDeathVFX(Health health)
-    {
-        if (health != this) { return; }
-        GameObject deathVFX = Instantiate(_deathVFX, transform.position, transform.rotation);
-        ParticleSystem.MainModule ps = deathVFX.GetComponent<ParticleSystem>().main;
-        ps.startColor = RandomizeColor(ps.startColor.color);
     }
 
     [Button]

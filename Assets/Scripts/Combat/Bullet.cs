@@ -14,6 +14,7 @@ public class Bullet : MonoBehaviour, IPhysicsObject, IPoolable
     [SerializeField] private float _maxBulletLifeTime = 5f;
     [SerializeField] private int _damageAmount = 10;
     [SerializeField] private float _knockBackThrust = 10f;
+    [SerializeField] private GameObject _bulletVFX;
     private Rigidbody2D _rigidbody2D;
     private float _currentBulletLifeTime;
     private float _currentMoveSpeed;
@@ -77,7 +78,7 @@ public class Bullet : MonoBehaviour, IPhysicsObject, IPoolable
 
     private void OnTriggerEnter2D(Collider2D other)
     {
-        // Instantiate BulletVFX
+        Instantiate(_bulletVFX, transform.position, transform.rotation);
 
         IHitable iHitable = other.GetComponent<IHitable>();
         iHitable?.TakeHit(_direction, _knockBackThrust);

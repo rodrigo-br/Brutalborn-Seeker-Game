@@ -1,6 +1,7 @@
 using Cinemachine;
 using NaughtyAttributes;
 using System;
+using System.Collections;
 using UnityEngine;
 
 public class Gun : MonoBehaviour
@@ -19,9 +20,12 @@ public class Gun : MonoBehaviour
     [SerializeField] private float _shootCooldown = 0.3f;
     [SerializeField] private Animator _animator;
     [SerializeField] private Vector2 _impulseVelocity;
+    [SerializeField] private GameObject _muzzleFlash;
+    [SerializeField] private float _muzzleFlashTime = 0.05f;
     private CinemachineImpulseSource _impulseSource;
     private ObjectPooling<Bullet> _bulletPool;
     private PlayerController _player;
+    private Coroutine _muzzleFlashRoutine;
     private Vector2 _direction = Vector2.right;
     private float _currentShootCooldown;
     private static readonly int FIRE_HASH = Animator.StringToHash("Fire");
@@ -50,15 +54,17 @@ public class Gun : MonoBehaviour
         OnShoot += BulletRent;
         OnShoot += FireAnimation;
         OnShoot += GunScreenShake;
+        OnShoot += MuzzleFlash;
     }
 
     private void OnDisable()
     {
         _player.Attack -= Shoot;
-        _player.AttackHeld += Shoot;
+        _player.AttackHeld -= Shoot;
         OnShoot -= BulletRent;
         OnShoot -= FireAnimation;
-        OnShoot = GunScreenShake;
+        OnShoot -= GunScreenShake;
+        OnShoot -= MuzzleFlash;
     }
 
     public void Shoot()
@@ -119,5 +125,22 @@ public class Gun : MonoBehaviour
             }
         }
         _impulseSource.GenerateImpulse(impulseVelocity);
+    }
+
+    private void MuzzleFlash()
+    {
+        if (_muzzleFlashRoutine != null)
+        {
+            StopCoroutine(_muzzleFlashRoutine);
+        }
+        
+        _muzzleFlashRoutine = StartCoroutine(MuzzleFlashRoutine());
+    }
+
+    private IEnumerator MuzzleFlashRoutine()
+    {
+        _muzzleFlash.SetActive(true);
+        yield return new WaitForSeconds(_muzzleFlashTime);
+        _muzzleFlash.SetActive(false);
     }
 }
