@@ -26,7 +26,7 @@ public class PlayerController : MonoBehaviour, IPlayerController, IPhysicsObject
     public event Action<bool> ToggledPlayer;
     public event Action Attack;
     public event Action AttackHeld;
-    public static event Action<bool> OnJetpack;
+    public event Action<bool> OnJetpack;
 
     public bool Active { get; private set; } = true;
     public Vector2 Up { get; private set; }
@@ -80,16 +80,6 @@ public class PlayerController : MonoBehaviour, IPlayerController, IPhysicsObject
     private void OnDestroy() => PhysicsSimulator.Instance.RemovePlayer(this);
 
     public void OnValidate() => SetupCharacter();
-
-    public void OnEnable()
-    {
-        OnJetpack += StartJetpack;
-    }
-
-    public void OnDisable()
-    {
-        OnJetpack -= StartJetpack;
-    }
 
     public void TickUpdate(float delta, float time)
     {
@@ -198,7 +188,7 @@ public class PlayerController : MonoBehaviour, IPlayerController, IPhysicsObject
 
         if (_frameInput.JetpackDown)
         {
-            StartJetpack(true);
+            SetJetpacking(true);
         }
     }
 
@@ -609,19 +599,15 @@ public class PlayerController : MonoBehaviour, IPlayerController, IPhysicsObject
     #region Jetpack
 
     [SerializeField] private float _jetpackTime = 0.6f;
-    [SerializeField] private TrailRenderer[] _jetpackTrailRendereres;
     [SerializeField] private float _jetpackStrenght = 10f;
     private float _jetTime = 0f;
     private bool _isJetpacking = false;
 
-    private void StartJetpack(bool isJetpacking)
+    private void SetJetpacking(bool isJetpacking)
     {
         _jetTime = 0;
         _isJetpacking = isJetpacking;
-        foreach (TrailRenderer trailRenderer in _jetpackTrailRendereres)
-        {
-            trailRenderer.emitting = isJetpacking;
-        }
+        OnJetpack?.Invoke(isJetpacking);
     }
 
     private void Jetpacking()
@@ -634,11 +620,7 @@ public class PlayerController : MonoBehaviour, IPlayerController, IPhysicsObject
         }
         else
         {
-            _isJetpacking = false;
-            foreach (TrailRenderer trailRenderer in _jetpackTrailRendereres)
-            {
-                trailRenderer.emitting = false;
-            }
+            SetJetpacking(false);
         }
     }
 
@@ -1010,6 +992,7 @@ public interface IPlayerController
     public event Action<bool> WallGrabChanged;
     public event Action<Vector2> Repositioned;
     public event Action<bool> ToggledPlayer;
+    public event Action<bool> OnJetpack;
     public event Action Attack;
 
     public bool Active { get; }

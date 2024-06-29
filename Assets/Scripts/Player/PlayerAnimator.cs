@@ -70,6 +70,7 @@ public class PlayerAnimator : MonoBehaviour
         _player.WallGrabChanged += OnWallGrabChanged;
         _player.Repositioned += PlayerOnRepositioned;
         _player.ToggledPlayer += PlayerOnToggledPlayer;
+        _player.OnJetpack += OnJetpacking;
 
         _moveParticles.Play();
     }
@@ -82,6 +83,7 @@ public class PlayerAnimator : MonoBehaviour
         _player.WallGrabChanged -= OnWallGrabChanged;
         _player.Repositioned -= PlayerOnRepositioned;
         _player.ToggledPlayer -= PlayerOnToggledPlayer;
+        _player.OnJetpack -= OnJetpacking;
 
         _moveParticles.Stop();
     }
@@ -382,6 +384,16 @@ public class PlayerAnimator : MonoBehaviour
         {
             _anim.SetBool(GroundedKey, false);
             _moveParticles.Stop();
+        }
+    }
+
+    [SerializeField] private TrailRenderer[] _jetpackTrailRendereres;
+
+    private void OnJetpacking(bool isJetpacking)
+    {
+        foreach (TrailRenderer trailRenderer in _jetpackTrailRendereres)
+        {
+            trailRenderer.emitting = isJetpacking;
         }
     }
 
