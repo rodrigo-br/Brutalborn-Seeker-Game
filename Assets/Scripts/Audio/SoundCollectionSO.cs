@@ -13,6 +13,7 @@ public class SoundsCollectionSO : ScriptableObject
     public SoundSO[] BodyPop;
     public SoundSO[] Dash;
     public SoundSO[] Jetpack;
+    public SoundSO[] FallingGround;
     public SoundSO[] GrenadeBeep;
     public SoundSO[] GrenadeLaunch;
     public SoundSO[] GrenadeExplosion;

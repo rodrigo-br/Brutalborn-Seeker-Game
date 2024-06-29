@@ -188,6 +188,7 @@ public class PlayerController : MonoBehaviour, IPlayerController, IPhysicsObject
 
         if (_frameInput.JetpackDown)
         {
+            if (_isJetpacking) { return; }
             SetJetpacking(true);
         }
     }

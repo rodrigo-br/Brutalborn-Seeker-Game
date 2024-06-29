@@ -36,7 +36,8 @@ public class AudioManager : MonoBehaviour
         PlayerAnimator.OnJump1 += PlayerAnimator_OnJump1;
         PlayerAnimator.OnJump2 += PlayerAnimator_OnJump2;
         PlayerAnimator.OnDash += PlayerAnimator_OnDash;
-        //PlayerController.OnJetpack += PlayerController_OnJetpack;
+        PlayerAnimator.OnJetpack += PlayerAnimator_OnJetpack;
+        PlayerAnimator.OnFallingGround += PlayerAnimator_OnFallingGround;
         Health.OnDeath += HandleDeath;
         //DiscoBallManager.OnDiscoBallHitEvent += DiscoBallMusic;
         //Grenade.OnGrenadeBeep += Grenade_OnGrenadeBeep;
@@ -51,7 +52,8 @@ public class AudioManager : MonoBehaviour
         PlayerAnimator.OnJump1 -= PlayerAnimator_OnJump1;
         PlayerAnimator.OnJump2 -= PlayerAnimator_OnJump2;
         PlayerAnimator.OnDash -= PlayerAnimator_OnDash;
-        //PlayerController.OnJetpack -= PlayerController_OnJetpack;
+        PlayerAnimator.OnJetpack -= PlayerAnimator_OnJetpack;
+        PlayerAnimator.OnFallingGround -= PlayerAnimator_OnFallingGround;
         Health.OnDeath -= HandleDeath;
         //DiscoBallManager.OnDiscoBallHitEvent -= DiscoBallMusic;
         //Grenade.OnGrenadeBeep -= Grenade_OnGrenadeBeep;
@@ -185,6 +187,19 @@ public class AudioManager : MonoBehaviour
     private void PlayerAnimator_OnDash()
     {
         PlayRandomSound(_soundsCollectionSO.Dash);
+    }
+
+    private void PlayerAnimator_OnJetpack(bool jetpack)
+    {
+        if (jetpack)
+        {
+            PlayRandomSound(_soundsCollectionSO.Jetpack);
+        }
+    }
+
+    private void PlayerAnimator_OnFallingGround()
+    {
+        PlayRandomSound(_soundsCollectionSO.FallingGround);
     }
 
     private void Health_OnDeath(Health health)

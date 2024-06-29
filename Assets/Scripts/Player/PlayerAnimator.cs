@@ -10,6 +10,8 @@ public class PlayerAnimator : MonoBehaviour
     public static event Action OnJump1;
     public static event Action OnJump2;
     public static event Action OnDash;
+    public static event Action<bool> OnJetpack;
+    public static event Action OnFallingGround;
     [Header("References")]
     [SerializeField]
     private Animator _anim;
@@ -377,6 +379,7 @@ public class PlayerAnimator : MonoBehaviour
             {
                 SetColor(_landParticles);
                 _impulseSource.GenerateImpulse();
+                OnFallingGround?.Invoke();
                 _landParticles.Play();
             }
         }
@@ -391,6 +394,7 @@ public class PlayerAnimator : MonoBehaviour
 
     private void OnJetpacking(bool isJetpacking)
     {
+        OnJetpack?.Invoke(isJetpacking);
         foreach (TrailRenderer trailRenderer in _jetpackTrailRendereres)
         {
             trailRenderer.emitting = isJetpacking;
