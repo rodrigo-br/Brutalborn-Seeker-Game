@@ -164,7 +164,6 @@ public class AudioManager : MonoBehaviour
 
     private void Bullet_OnShoot(SoundSO soundSO)
     {
-        Debug.Log(soundSO);
         SoundToPlay(soundSO);
     }
 

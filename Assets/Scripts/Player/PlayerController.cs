@@ -138,8 +138,8 @@ public class PlayerController : MonoBehaviour, IPlayerController, IPhysicsObject
 
         // Primary collider
         _collider = GetComponent<BoxCollider2D>();
-        _collider.edgeRadius = CharacterSize.COLLIDER_EDGE_RADIUS;
         _collider.hideFlags = HideFlags.NotEditable;
+        _collider.edgeRadius = CharacterSize.COLLIDER_EDGE_RADIUS;
         _collider.sharedMaterial = _rb.sharedMaterial;
         _collider.enabled = true;
 
@@ -252,9 +252,17 @@ public class PlayerController : MonoBehaviour, IPlayerController, IPhysicsObject
     private float GrounderLength => _character.StepHeight + SKIN_WIDTH;
 
     private Vector2 RayPoint => _framePosition + Up * (_character.StepHeight + SKIN_WIDTH);
+    private bool _blockGrounded = false;
+
+    public void SetBlockGrounded(bool blockGrounded)
+    {
+        _blockGrounded = blockGrounded;
+        ToggleGrounded(false);
+    }
 
     private void CalculateCollisions()
     {
+        if (_blockGrounded) { return; }
         Physics2D.queriesStartInColliders = false;
 
         // Is the middle ray good?
@@ -660,6 +668,10 @@ public class PlayerController : MonoBehaviour, IPlayerController, IPhysicsObject
     {
         Physics2D.queriesHitTriggers = false;
         var hit = Physics2D.OverlapBox(pos, size, 0, Stats.CollisionLayers);
+        if (hit && hit.gameObject.CompareTag("OneWayPlatform"))
+        {
+            hit = null;
+        }
         //var hit = Physics2D.OverlapCapsule(pos, size - new Vector2(SKIN_WIDTH, 0), _collider.direction, 0, ~Stats.PlayerLayer);
         Physics2D.queriesHitTriggers = _cachedQueryMode;
         return !hit;
