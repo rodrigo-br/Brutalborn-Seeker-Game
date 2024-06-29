@@ -1,4 +1,5 @@
 using Cinemachine;
+using System;
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
@@ -6,6 +7,9 @@ using Random = UnityEngine.Random;
 
 public class PlayerAnimator : MonoBehaviour
 {
+    public static event Action OnJump1;
+    public static event Action OnJump2;
+    public static event Action OnDash;
     [Header("References")]
     [SerializeField]
     private Animator _anim;
@@ -26,11 +30,6 @@ public class PlayerAnimator : MonoBehaviour
     [SerializeField] private Transform _dashRingTransform;
 
     [Header("Audio Clips")]
-    [SerializeField]
-    private AudioClip _doubleJumpClip;
-
-    [SerializeField] private AudioClip _dashClip;
-    [SerializeField] private AudioClip[] _jumpClips;
     [SerializeField] private AudioClip[] _splats;
     [SerializeField] private AudioClip[] _slideClips;
     [SerializeField] private AudioClip _wallGrabClip;
@@ -43,7 +42,8 @@ public class PlayerAnimator : MonoBehaviour
     private Vector3 _trailOffset;
     private Vector2 _trailVel;
     private CinemachineImpulseSource _impulseSource;
-
+    private List<Vector2> _defaultSpriteChildTransforms = new();
+    private List<Vector2> _flipedSpriteChildTransforms = new();
     private void Awake()
     {
         _source = GetComponent<AudioSource>();
@@ -55,6 +55,11 @@ public class PlayerAnimator : MonoBehaviour
         _trailOffset = _trailRenderer.localPosition;
         _trailRenderer.SetParent(null);
         _originalTrailTime = _trail.time;
+        foreach (Transform child in _sprite.transform)
+        {
+            _defaultSpriteChildTransforms.Add(new Vector2(child.transform.localPosition.x, child.transform.localPosition.y));
+            _flipedSpriteChildTransforms.Add(new Vector2(child.transform.localPosition.x * -1, child.transform.localPosition.y));
+        }
     }
 
     private void OnEnable()
@@ -255,7 +260,18 @@ public class PlayerAnimator : MonoBehaviour
 
     private void HandleSpriteFlip(float xInput)
     {
-        if (_player.Input.x != 0) _sprite.flipX = xInput < 0;
+        bool flip = xInput < 0;
+        int index = 0;
+        if (_player.Input.x != 0)
+        {
+            _sprite.flipX = flip;
+            List<Vector2> sprites = flip ? _flipedSpriteChildTransforms : _defaultSpriteChildTransforms;
+            foreach (Transform child in _sprite.transform)
+            {
+                child.transform.localPosition = sprites[index];
+                index++;
+            }
+        }
     }
 
     #endregion
@@ -322,7 +338,7 @@ public class PlayerAnimator : MonoBehaviour
         {
             _anim.SetTrigger(JumpKey);
             _anim.ResetTrigger(GroundedKey);
-            PlayRandomSound(_jumpClips, 0.2f, Random.Range(0.98f, 1.02f));
+            OnJump1?.Invoke();
 
             // Only play particles when grounded (avoid coyote)
             if (type is JumpType.Jump)
@@ -334,7 +350,7 @@ public class PlayerAnimator : MonoBehaviour
         }
         else if (type is JumpType.AirJump)
         {
-            _source.PlayOneShot(_doubleJumpClip);
+            OnJump2?.Invoke();
             _doubleJumpParticles.Play();
         }
     }
@@ -377,7 +393,7 @@ public class PlayerAnimator : MonoBehaviour
             _dashParticles.Play();
             _dashRingTransform.up = dir;
             _dashRingParticles.Play();
-            _source.PlayOneShot(_dashClip, 0.5f);
+            OnDash?.Invoke();
         }
         else
         {

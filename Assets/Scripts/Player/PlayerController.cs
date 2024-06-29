@@ -26,6 +26,7 @@ public class PlayerController : MonoBehaviour, IPlayerController, IPhysicsObject
     public event Action<bool> ToggledPlayer;
     public event Action Attack;
     public event Action AttackHeld;
+    public static event Action<bool> OnJetpack;
 
     public bool Active { get; private set; } = true;
     public Vector2 Up { get; private set; }
@@ -80,6 +81,16 @@ public class PlayerController : MonoBehaviour, IPlayerController, IPhysicsObject
 
     public void OnValidate() => SetupCharacter();
 
+    public void OnEnable()
+    {
+        OnJetpack += StartJetpack;
+    }
+
+    public void OnDisable()
+    {
+        OnJetpack -= StartJetpack;
+    }
+
     public void TickUpdate(float delta, float time)
     {
         _delta = delta;
@@ -112,7 +123,7 @@ public class PlayerController : MonoBehaviour, IPlayerController, IPhysicsObject
         Move();
 
         CalculateCrouch();
-
+        Jetpacking();
         CleanFrameData();
     }
 
@@ -183,6 +194,11 @@ public class PlayerController : MonoBehaviour, IPlayerController, IPhysicsObject
         if (_frameInput.AttackHeld)
         {
             AttackHeld?.Invoke();
+        }
+
+        if (_frameInput.JetpackDown)
+        {
+            StartJetpack(true);
         }
     }
 
@@ -587,6 +603,44 @@ public class PlayerController : MonoBehaviour, IPlayerController, IPhysicsObject
     }
 
     private void ResetAirJumps() => _airJumpsRemaining = Stats.MaxAirJumps;
+
+    #endregion
+
+    #region Jetpack
+
+    [SerializeField] private float _jetpackTime = 0.6f;
+    [SerializeField] private TrailRenderer[] _jetpackTrailRendereres;
+    [SerializeField] private float _jetpackStrenght = 10f;
+    private float _jetTime = 0f;
+    private bool _isJetpacking = false;
+
+    private void StartJetpack(bool isJetpacking)
+    {
+        _jetTime = 0;
+        _isJetpacking = isJetpacking;
+        foreach (TrailRenderer trailRenderer in _jetpackTrailRendereres)
+        {
+            trailRenderer.emitting = isJetpacking;
+        }
+    }
+
+    private void Jetpacking()
+    {
+        if (!_isJetpacking) { return; }
+        if (_jetTime < _jetpackTime)
+        {
+            _jetTime += _delta;
+            _rb.velocity = new Vector2(_frameInput.Move.x, 1) * _jetpackStrenght;
+        }
+        else
+        {
+            _isJetpacking = false;
+            foreach (TrailRenderer trailRenderer in _jetpackTrailRendereres)
+            {
+                trailRenderer.emitting = false;
+            }
+        }
+    }
 
     #endregion
 

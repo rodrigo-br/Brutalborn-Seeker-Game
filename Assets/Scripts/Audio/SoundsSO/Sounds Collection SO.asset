@@ -12,14 +12,23 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 8d2fcc52008393c4784fb75ce56a9da4, type: 3}
   m_Name: Sounds Collection SO
   m_EditorClassIdentifier: 
-  FightMusic: []
-  DiscoBallMusic: []
-  GunShoot: []
-  Jump: []
-  Splat: []
+  GamePlayMusic:
+  - {fileID: 11400000, guid: a1c5d07d51a91b44ab9d5bbd0f801cab, type: 2}
+  UIMusic: []
+  StartScreenMusic: []
+  Jump1:
+  - {fileID: 11400000, guid: a2891c23bc622f64a8f291141df78c49, type: 2}
+  Jump2:
+  - {fileID: 11400000, guid: d3b294517dc4b704aa15ff053d09bd67, type: 2}
+  BodyPop:
+  - {fileID: 11400000, guid: f2c5554309d06dd428d921d925c33d26, type: 2}
+  - {fileID: 11400000, guid: a1dc5b01e93669542be0c991d844925d, type: 2}
+  Dash:
+  - {fileID: 11400000, guid: 02e00e1c6fd4dc94b941f1262defea4c, type: 2}
   Jetpack: []
   GrenadeBeep: []
   GrenadeLaunch: []
   GrenadeExplosion: []
   PlayerHit: []
-  MegaKill: []
+  MegaKill:
+  - {fileID: 11400000, guid: 583708c514bde5d468e27bc584992af1, type: 2}

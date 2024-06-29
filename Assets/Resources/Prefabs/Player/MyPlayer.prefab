@@ -15331,14 +15331,6 @@ MonoBehaviour:
   _dashParticles: {fileID: 3797304280881108363}
   _dashRingParticles: {fileID: 3377454679778889782}
   _dashRingTransform: {fileID: 6399246050390249324}
-  _doubleJumpClip: {fileID: 8300000, guid: 0d11fd7368b306b4c900241e3dadf28f, type: 3}
-  _dashClip: {fileID: 8300000, guid: 6d2d16f85c087ea419d323141cd2145c, type: 3}
-  _jumpClips:
-  - {fileID: 8300000, guid: 3400b2f34e04a3e4d85922008ffe6471, type: 3}
-  - {fileID: 8300000, guid: 4451a35363e4a4442a4bf908b82fbb60, type: 3}
-  - {fileID: 8300000, guid: 6a74753799aba214d82d177b0de5315a, type: 3}
-  - {fileID: 8300000, guid: df5ee7bb125a4ff48a14a4004106b274, type: 3}
-  - {fileID: 8300000, guid: 26177ad1fcf9c2b4ca273f805214b9fe, type: 3}
   _splats:
   - {fileID: 8300000, guid: 5d94063f45167b04ab62585e436da58c, type: 3}
   - {fileID: 8300000, guid: b5803c17557c59c40bf3a6d69cb46cb3, type: 3}
@@ -30660,6 +30652,9 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   <Stats>k__BackingField: {fileID: 11400000, guid: de211c9a7c5a88349872f54077f96fe2, type: 2}
   _drawGizmos: 1
+  _jetpackTime: 0.6
+  _jetpackTrailRendereres: []
+  _jetpackStrenght: 10
 --- !u!1 &8655307356644997893
 GameObject:
   m_ObjectHideFlags: 0

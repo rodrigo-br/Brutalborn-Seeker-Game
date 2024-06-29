@@ -8,8 +8,10 @@ public class SoundsCollectionSO : ScriptableObject
     public SoundSO[] UIMusic;
     public SoundSO[] StartScreenMusic;
     [Header("SFX")]
-    public SoundSO[] Jump;
-    public SoundSO[] Splat;
+    public SoundSO[] Jump1;
+    public SoundSO[] Jump2;
+    public SoundSO[] BodyPop;
+    public SoundSO[] Dash;
     public SoundSO[] Jetpack;
     public SoundSO[] GrenadeBeep;
     public SoundSO[] GrenadeLaunch;

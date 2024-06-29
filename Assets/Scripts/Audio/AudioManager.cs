@@ -26,13 +26,16 @@ public class AudioManager : MonoBehaviour
     private void Start()
     {
         CreateAudioSourcePool();
+        GamePlayMusic();
         ENEMY_HITABLE_COLLIDERS_LAYER = LayerMask.NameToLayer("EnemyHitableColliders");
     }
 
     private void OnEnable()
     {
         Bullet.OnShoot += Bullet_OnShoot;
-        //PlayerController.OnJump += PlayerController_OnJump;
+        PlayerAnimator.OnJump1 += PlayerAnimator_OnJump1;
+        PlayerAnimator.OnJump2 += PlayerAnimator_OnJump2;
+        PlayerAnimator.OnDash += PlayerAnimator_OnDash;
         //PlayerController.OnJetpack += PlayerController_OnJetpack;
         Health.OnDeath += HandleDeath;
         //DiscoBallManager.OnDiscoBallHitEvent += DiscoBallMusic;
@@ -45,7 +48,9 @@ public class AudioManager : MonoBehaviour
     private void OnDisable()
     {
         Bullet.OnShoot -= Bullet_OnShoot;
-        //PlayerController.OnJump -= PlayerController_OnJump;
+        PlayerAnimator.OnJump1 -= PlayerAnimator_OnJump1;
+        PlayerAnimator.OnJump2 -= PlayerAnimator_OnJump2;
+        PlayerAnimator.OnDash -= PlayerAnimator_OnDash;
         //PlayerController.OnJetpack -= PlayerController_OnJetpack;
         Health.OnDeath -= HandleDeath;
         //DiscoBallManager.OnDiscoBallHitEvent -= DiscoBallMusic;
@@ -59,7 +64,7 @@ public class AudioManager : MonoBehaviour
     {
         _audioSourcePool = new ObjectPool<AudioSourceAndObject>(() =>
         {
-            GameObject audioObject = new GameObject("Temp Audio Source");
+            GameObject audioObject = new GameObject("Pooled Audio Source");
             AudioSource audioSource = audioObject.AddComponent<AudioSource>();
             return new AudioSourceAndObject { AudioSource = audioSource, AudioObject = audioObject };
         }, audioSourceAndObject =>
@@ -167,19 +172,29 @@ public class AudioManager : MonoBehaviour
         SoundToPlay(soundSO);
     }
 
-    private void PlayerController_OnJump()
+    private void PlayerAnimator_OnJump1()
     {
-        PlayRandomSound(_soundsCollectionSO.Jump);
+        PlayRandomSound(_soundsCollectionSO.Jump1);
+    }
+
+    private void PlayerAnimator_OnJump2()
+    {
+        PlayRandomSound(_soundsCollectionSO.Jump2);
+    }
+
+    private void PlayerAnimator_OnDash()
+    {
+        PlayRandomSound(_soundsCollectionSO.Dash);
     }
 
     private void Health_OnDeath(Health health)
     {
-        PlayRandomSound(_soundsCollectionSO.Splat);
+        PlayRandomSound(_soundsCollectionSO.BodyPop);
     }
 
     private void Health_OnDeath()
     {
-        PlayRandomSound(_soundsCollectionSO.Splat);
+        PlayRandomSound(_soundsCollectionSO.BodyPop);
     }
 
     private void PlayerController_OnJetpack()
@@ -215,6 +230,11 @@ public class AudioManager : MonoBehaviour
     #endregion
 
     #region Music
+
+    private void GamePlayMusic()
+    {
+        PlayRandomSound(_soundsCollectionSO.GamePlayMusic);
+    }
 
     #endregion
 

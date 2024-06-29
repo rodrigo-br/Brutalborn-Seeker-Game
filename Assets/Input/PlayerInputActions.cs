@@ -71,6 +71,15 @@ public partial class @PlayerInputActions: IInputActionCollection2, IDisposable
                     ""processors"": """",
                     ""interactions"": """",
                     ""initialStateCheck"": false
+                },
+                {
+                    ""name"": ""Jetpack"",
+                    ""type"": ""Button"",
+                    ""id"": ""69feeeef-db1b-4519-8f18-028202eba9c0"",
+                    ""expectedControlType"": ""Button"",
+                    ""processors"": """",
+                    ""interactions"": """",
+                    ""initialStateCheck"": false
                 }
             ],
             ""bindings"": [
@@ -348,6 +357,17 @@ public partial class @PlayerInputActions: IInputActionCollection2, IDisposable
                     ""action"": ""Interact"",
                     ""isComposite"": false,
                     ""isPartOfComposite"": false
+                },
+                {
+                    ""name"": """",
+                    ""id"": ""8af896d9-bdd3-4e16-afb2-a917c58dd8ac"",
+                    ""path"": ""<Keyboard>/v"",
+                    ""interactions"": """",
+                    ""processors"": """",
+                    ""groups"": ""KeyboardMouse"",
+                    ""action"": ""Jetpack"",
+                    ""isComposite"": false,
+                    ""isPartOfComposite"": false
                 }
             ]
         }
@@ -378,6 +398,7 @@ public partial class @PlayerInputActions: IInputActionCollection2, IDisposable
         m_Player_Dash = m_Player.FindAction("Dash", throwIfNotFound: true);
         m_Player_Attack = m_Player.FindAction("Attack", throwIfNotFound: true);
         m_Player_Interact = m_Player.FindAction("Interact", throwIfNotFound: true);
+        m_Player_Jetpack = m_Player.FindAction("Jetpack", throwIfNotFound: true);
     }
 
     public void Dispose()
@@ -444,6 +465,7 @@ public partial class @PlayerInputActions: IInputActionCollection2, IDisposable
     private readonly InputAction m_Player_Dash;
     private readonly InputAction m_Player_Attack;
     private readonly InputAction m_Player_Interact;
+    private readonly InputAction m_Player_Jetpack;
     public struct PlayerActions
     {
         private @PlayerInputActions m_Wrapper;
@@ -453,6 +475,7 @@ public partial class @PlayerInputActions: IInputActionCollection2, IDisposable
         public InputAction @Dash => m_Wrapper.m_Player_Dash;
         public InputAction @Attack => m_Wrapper.m_Player_Attack;
         public InputAction @Interact => m_Wrapper.m_Player_Interact;
+        public InputAction @Jetpack => m_Wrapper.m_Player_Jetpack;
         public InputActionMap Get() { return m_Wrapper.m_Player; }
         public void Enable() { Get().Enable(); }
         public void Disable() { Get().Disable(); }
@@ -477,6 +500,9 @@ public partial class @PlayerInputActions: IInputActionCollection2, IDisposable
             @Interact.started += instance.OnInteract;
             @Interact.performed += instance.OnInteract;
             @Interact.canceled += instance.OnInteract;
+            @Jetpack.started += instance.OnJetpack;
+            @Jetpack.performed += instance.OnJetpack;
+            @Jetpack.canceled += instance.OnJetpack;
         }
 
         private void UnregisterCallbacks(IPlayerActions instance)
@@ -496,6 +522,9 @@ public partial class @PlayerInputActions: IInputActionCollection2, IDisposable
             @Interact.started -= instance.OnInteract;
             @Interact.performed -= instance.OnInteract;
             @Interact.canceled -= instance.OnInteract;
+            @Jetpack.started -= instance.OnJetpack;
+            @Jetpack.performed -= instance.OnJetpack;
+            @Jetpack.canceled -= instance.OnJetpack;
         }
 
         public void RemoveCallbacks(IPlayerActions instance)
@@ -529,5 +558,6 @@ public partial class @PlayerInputActions: IInputActionCollection2, IDisposable
         void OnDash(InputAction.CallbackContext context);
         void OnAttack(InputAction.CallbackContext context);
         void OnInteract(InputAction.CallbackContext context);
+        void OnJetpack(InputAction.CallbackContext context);
     }
 }
