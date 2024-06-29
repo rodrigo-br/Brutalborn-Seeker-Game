@@ -20,7 +20,7 @@ Material:
   m_CorrespondingSourceObject: {fileID: 0}
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
-  m_Name: Teal Glow
+  m_Name: Grenade Explosion Glow
   m_Shader: {fileID: -6465566751694194690, guid: c7925c1d04e690a4e9df36c0b0f9c4b4, type: 3}
   m_Parent: {fileID: 0}
   m_ModifiedSerializedProperties: 0
@@ -55,5 +55,5 @@ Material:
     m_Ints: []
     m_Floats: []
     m_Colors:
-    - _Color: {r: 1.343465, g: 4.3817625, b: 2.7909255, a: 1}
+    - _Color: {r: 1024, g: 100.39216, b: 80.31373, a: 1}
   m_BuildTextureStacks: []

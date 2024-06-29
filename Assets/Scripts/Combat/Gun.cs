@@ -6,6 +6,7 @@ using UnityEngine;
 public class Gun : MonoBehaviour
 {
     public event Action OnShoot;
+    public static Action OnLobGrenade;
     private enum PrefabPath
     {
         Bullet,
@@ -21,11 +22,14 @@ public class Gun : MonoBehaviour
     [SerializeField] private Vector2 _impulseVelocity;
     [SerializeField] private GameObject _muzzleFlash;
     [SerializeField] private float _muzzleFlashTime = 0.05f;
+    [SerializeField] private Grenade _grenadePrefab;
+    [SerializeField] private float _lobGranadeCooldown = 1.5f;
     private CinemachineImpulseSource _impulseSource;
     private ObjectPooling<Bullet> _bulletPool;
     private PlayerController _player;
     private Coroutine _muzzleFlashRoutine;
     private Vector2 _direction = Vector2.right;
+    private float _lastLobGrenadeTime = 0f;
     private float _currentShootCooldown;
     private static readonly int FIRE_HASH = Animator.StringToHash("Fire");
 
@@ -39,10 +43,16 @@ public class Gun : MonoBehaviour
     private void Update()
     {
         _currentShootCooldown -= Time.deltaTime;
+        _lastLobGrenadeTime -= Time.deltaTime;
         if (_player.Input != Vector2.zero)
         {
             _direction = _player.Input;
             HandleSpriteFlip();
+        }
+
+        if (_player.LobGrenade && _lastLobGrenadeTime <= 0)
+        {
+            OnLobGrenade?.Invoke();
         }
     }
 
@@ -54,6 +64,8 @@ public class Gun : MonoBehaviour
         OnShoot += FireAnimation;
         OnShoot += GunScreenShake;
         OnShoot += MuzzleFlash;
+        OnLobGrenade += LobGrenade;
+        OnLobGrenade += FireAnimation;
     }
 
     private void OnDisable()
@@ -64,6 +76,8 @@ public class Gun : MonoBehaviour
         OnShoot -= FireAnimation;
         OnShoot -= GunScreenShake;
         OnShoot -= MuzzleFlash;
+        OnLobGrenade -= LobGrenade;
+        OnLobGrenade -= FireAnimation;
     }
 
     public void Shoot()
@@ -72,6 +86,13 @@ public class Gun : MonoBehaviour
         {
             OnShoot?.Invoke();
         }
+    }
+
+    private void LobGrenade()
+    {
+        _lastLobGrenadeTime = _lobGranadeCooldown;
+        Grenade newGrenade = Instantiate(_grenadePrefab);
+        newGrenade.Init(_bulletSpawnPosition.position, _direction, this);
     }
 
     private void BulletRent()

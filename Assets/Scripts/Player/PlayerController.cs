@@ -37,6 +37,7 @@ public class PlayerController : MonoBehaviour, IPlayerController, IPhysicsObject
     public Vector2 Velocity { get; private set; }
     public int WallDirection { get; private set; }
     public bool ClimbingLadder { get; private set; }
+    public bool LobGrenade => _frameInput.GrenadeDown;
 
     public void AddFrameForce(Vector2 force, bool resetVelocity = false)
     {
