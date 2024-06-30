@@ -30,9 +30,12 @@ MonoBehaviour:
   FallingGround:
   - {fileID: 11400000, guid: 828336b4acb1078428ef1025907585d7, type: 2}
   - {fileID: 11400000, guid: 2a5cd275a1e77a441bc58ab8aee5ce26, type: 2}
-  GrenadeBeep: []
-  GrenadeLaunch: []
-  GrenadeExplosion: []
+  GrenadeBeep:
+  - {fileID: 11400000, guid: 1c200da95e743124a8a052a366385ae7, type: 2}
+  GrenadeLaunch:
+  - {fileID: 11400000, guid: 6d296e97fa960ef498c698870fb8d97e, type: 2}
+  GrenadeExplosion:
+  - {fileID: 11400000, guid: 7b1aa14c1274c9f45a742c0d60b98bf4, type: 2}
   PlayerHit: []
   MegaKill:
   - {fileID: 11400000, guid: 583708c514bde5d468e27bc584992af1, type: 2}

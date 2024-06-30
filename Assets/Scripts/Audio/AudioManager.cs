@@ -39,10 +39,9 @@ public class AudioManager : MonoBehaviour
         PlayerAnimator.OnJetpack += PlayerAnimator_OnJetpack;
         PlayerAnimator.OnFallingGround += PlayerAnimator_OnFallingGround;
         Health.OnDeath += HandleDeath;
-        //DiscoBallManager.OnDiscoBallHitEvent += DiscoBallMusic;
-        //Grenade.OnGrenadeBeep += Grenade_OnGrenadeBeep;
-        //Grenade.OnGrenadeLaunch += Grenade_OnGrenadeLaunch;
-        //Grenade.OnGrenadeExplode += Grenade_OnGrenadeExplosion;
+        Grenade.OnGrenadeBeep += Grenade_OnGrenadeBeep;
+        Grenade.OnGrenadeLaunch += Grenade_OnGrenadeLaunch;
+        Grenade.OnGrenadeExplode += Grenade_OnGrenadeExplosion;
         //Enemy.OnHitPlayer += Enemy_OnHitPlayer;
     }
 
@@ -55,10 +54,9 @@ public class AudioManager : MonoBehaviour
         PlayerAnimator.OnJetpack -= PlayerAnimator_OnJetpack;
         PlayerAnimator.OnFallingGround -= PlayerAnimator_OnFallingGround;
         Health.OnDeath -= HandleDeath;
-        //DiscoBallManager.OnDiscoBallHitEvent -= DiscoBallMusic;
-        //Grenade.OnGrenadeBeep -= Grenade_OnGrenadeBeep;
-        //Grenade.OnGrenadeLaunch -= Grenade_OnGrenadeLaunch;
-        //Grenade.OnGrenadeExplode -= Grenade_OnGrenadeExplosion;
+        Grenade.OnGrenadeBeep -= Grenade_OnGrenadeBeep;
+        Grenade.OnGrenadeLaunch -= Grenade_OnGrenadeLaunch;
+        Grenade.OnGrenadeExplode -= Grenade_OnGrenadeExplosion;
         //Enemy.OnHitPlayer -= Enemy_OnHitPlayer;
     }
 

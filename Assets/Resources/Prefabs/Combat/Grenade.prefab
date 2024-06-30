@@ -137,14 +137,15 @@ MonoBehaviour:
   _grenadeVFX: {fileID: 8188598881131300151, guid: e73ec0b839a7394449d1d59b1057b29d, type: 3}
   _grenadeLight: {fileID: 3000616598571823778}
   _moveSpeed: 10
-  _damageAmount: 1
+  _damageAmount: 100
   _knockBackThrust: 20
   _toqueAmount: 10
   _explosionRadius: 3.5
   _enemyLayerMask:
     serializedVersion: 2
-    m_Bits: 4096
-  _explosionTime: 4
+    m_Bits: 64
+  _enemyLayerCollider: 12
+  _explosionTime: 2.5
   _beepTimes:
   - 1
   - 0.5

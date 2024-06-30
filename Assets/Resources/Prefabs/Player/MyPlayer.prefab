@@ -14968,7 +14968,7 @@ MonoBehaviour:
   _impulseVelocity: {x: 0.1, y: 0.05}
   _muzzleFlash: {fileID: 5940084938114008478}
   _muzzleFlashTime: 0.035
-  _grenadePrefab: {fileID: 0}
+  _grenadePrefab: {fileID: 5322948240257019203, guid: f4e2993e4c333e0478b35f7d5fc225d5, type: 3}
   _lobGranadeCooldown: 1.5
 --- !u!114 &6157325055456789886
 MonoBehaviour:

@@ -1,4 +1,5 @@
 using Cinemachine;
+using NaughtyAttributes;
 using System;
 using System.Collections;
 using System.Linq;
@@ -18,6 +19,8 @@ public class Grenade : MonoBehaviour
     [SerializeField] private float _toqueAmount = 10f;
     [SerializeField] private float _explosionRadius = 3.5f;
     [SerializeField] private LayerMask _enemyLayerMask;
+    [Layer]
+    [SerializeField] private int _enemyLayerCollider;
     [SerializeField] private float _explosionTime = 4f;
     [Range(0, 3.5f)]
     [SerializeField] private float[] _beepTimes = { 1f, 0.5f, 0.5f };
@@ -33,9 +36,9 @@ public class Grenade : MonoBehaviour
         _impulseSource = GetComponent<CinemachineImpulseSource>();
     }
 
-    private void OnCollisionEnter2D(Collision2D other)
+    private void OnTriggerEnter2D(Collider2D other)
     {
-        if (other.gameObject.layer == _enemyLayerMask)
+        if (_enemyLayerCollider == other.gameObject.layer)
         {
             ExplodeGranade();
         }
@@ -84,16 +87,21 @@ public class Grenade : MonoBehaviour
         _grenadeLight.SetActive(false);
     }
 
+    private void OnDrawGizmos()
+    {
+        Gizmos.DrawWireSphere(transform.position, _explosionRadius);
+    }
+
     private void DamageNearby()
     {
         Collider2D[] hits = Physics2D.OverlapCircleAll(transform.position, _explosionRadius, _enemyLayerMask);
-
+        
         foreach (Collider2D hit in hits)
         {
-            IHitable iHitable = hit.gameObject.GetComponent<IHitable>();
+            IHitable iHitable = hit.gameObject.GetComponentInChildren<IHitable>();
             iHitable?.TakeHit(_fireDirection, _knockBackThrust);
 
-            IDamageable iDamageable = hit.gameObject.GetComponent<IDamageable>();
+            IDamageable iDamageable = hit.gameObject.GetComponentInChildren<IDamageable>();
             iDamageable?.TakeDamage(_damageAmount);
         }
     }

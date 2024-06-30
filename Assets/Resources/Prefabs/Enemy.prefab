@@ -8,6 +8,14 @@ PrefabInstance:
     serializedVersion: 3
     m_TransformParent: {fileID: 0}
     m_Modifications:
+    - target: {fileID: 336611329891503687, guid: 58f257495e687f74b953f687f6cc82b3, type: 3}
+      propertyPath: _bulletPrefab
+      value: 2
+      objectReference: {fileID: 0}
+    - target: {fileID: 336611329891503687, guid: 58f257495e687f74b953f687f6cc82b3, type: 3}
+      propertyPath: _grenadePrefab
+      value: 
+      objectReference: {fileID: 5322948240257019203, guid: 46ca4303a481e3546bd17746721841b8, type: 3}
     - target: {fileID: 1402027599436240666, guid: 58f257495e687f74b953f687f6cc82b3, type: 3}
       propertyPath: m_Layer
       value: 6
