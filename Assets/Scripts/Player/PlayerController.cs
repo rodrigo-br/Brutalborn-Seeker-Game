@@ -396,7 +396,6 @@ public class PlayerController : MonoBehaviour, IPlayerController, IPhysicsObject
     private int _wallDirectionForJump;
     private bool _isOnWall;
     private float _timeLeftWall;
-    private float _currentWallSpeedVel;
     private float _canGrabWallAfter;
     private int _wallDirThisFrame;
 
