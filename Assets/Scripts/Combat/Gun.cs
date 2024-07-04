@@ -13,7 +13,7 @@ public class Gun : MonoBehaviour
         PlayerBullet,
         EnemyBullet
     }
-    [SerializeField] private Transform _bulletSpawnPosition;
+    [field: SerializeField] public Transform BulletSpawnPosition { get; private set; }
     [SerializeField] private PrefabPath _bulletPrefab;
     [SerializeField] private int _initialPoolSize = 10;
     [SerializeField] private SpriteRenderer _sprite;
@@ -91,14 +91,14 @@ public class Gun : MonoBehaviour
     {
         _lastLobGrenadeTime = _lobGranadeCooldown;
         Grenade newGrenade = Instantiate(_grenadePrefab);
-        newGrenade.Init(_bulletSpawnPosition.position, _direction, this);
+        newGrenade.Init(BulletSpawnPosition.position, _direction, this);
     }
 
     private void BulletRent()
     {
         _currentShootCooldown = _shootCooldown;
         Bullet bullet = _bulletPool.Rent();
-        bullet.Init(_bulletSpawnPosition.position, _bulletSpawnPosition.rotation, _direction);
+        bullet.Init(BulletSpawnPosition.position, BulletSpawnPosition.rotation, _direction);
     }
 
     public void SetObjectPooling(ObjectPooling<Bullet> objectPooling)

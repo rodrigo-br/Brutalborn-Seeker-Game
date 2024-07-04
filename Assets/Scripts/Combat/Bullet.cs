@@ -48,7 +48,8 @@ public class Bullet : MonoBehaviour, IPhysicsObject, IPoolable
             _currentMoveSpeed = _bulletSpeedAcceleration.y;
         }
         _currentBulletLifeTime = 0f;
-        PhysicsSimulator.Instance.AddBullet(this);    }
+        PhysicsSimulator.Instance.AddBullet(this);    
+    }
 
     private void OnDisable()
     {

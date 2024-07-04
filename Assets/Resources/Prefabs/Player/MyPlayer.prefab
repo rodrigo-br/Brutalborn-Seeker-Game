@@ -14959,7 +14959,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 54746f83e53f17640908657e5b10b5e6, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  _bulletSpawnPosition: {fileID: 7610761541198662054}
+  <BulletSpawnPosition>k__BackingField: {fileID: 7610761541198662054}
   _bulletPrefab: 1
   _initialPoolSize: 10
   _sprite: {fileID: 4578957952305470637}
@@ -30803,7 +30803,7 @@ GameObject:
   - component: {fileID: 3841378548707815334}
   m_Layer: 7
   m_Name: MyPlayer
-  m_TagString: Untagged
+  m_TagString: Player
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0

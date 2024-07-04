@@ -378,7 +378,6 @@ public class PlayerAnimator : MonoBehaviour
             if (impact < -25)
             {
                 SetColor(_landParticles);
-                Debug.Log("Generating Impulse");
                 _impulseSource.GenerateImpulse();
                 OnFallingGround?.Invoke();
                 _landParticles.Play();

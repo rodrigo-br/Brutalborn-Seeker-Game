@@ -19,7 +19,7 @@ public class EnemyIdleState : EnemyBaseState
 
     public override void Tick(float deltaTime)
     {
-        
+        stateMachine.EnterSeekingState();
     }
 
     public override void Exit()
