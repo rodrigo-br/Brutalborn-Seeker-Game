@@ -46,8 +46,7 @@ public class Gun : MonoBehaviour
         _lastLobGrenadeTime -= Time.deltaTime;
         if (_player.Input != Vector2.zero)
         {
-            _direction = _player.Input;
-            HandleSpriteFlip();
+            SetDirection(_player.Input);
         }
 
         if (_player.LobGrenade && _lastLobGrenadeTime <= 0)
@@ -162,5 +161,11 @@ public class Gun : MonoBehaviour
         _muzzleFlash.SetActive(true);
         yield return new WaitForSeconds(_muzzleFlashTime);
         _muzzleFlash.SetActive(false);
+    }
+
+    public void SetDirection(Vector2 direction)
+    {
+        _direction = direction;
+        HandleSpriteFlip();
     }
 }

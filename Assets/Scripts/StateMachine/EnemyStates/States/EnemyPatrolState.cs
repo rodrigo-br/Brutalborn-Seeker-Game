@@ -5,8 +5,9 @@ public class EnemyPatrolState : EnemyBaseState
     public EnemyPatrolState(
         EnemyStateMachine stateMachine,
         EnemyInput enemyInput,
-        PlayerController playerController)
-        : base(stateMachine, enemyInput, playerController)
+        PlayerController playerController,
+        EnemyAI enemyAI)
+        : base(stateMachine, enemyInput, playerController, enemyAI)
     {
     }
 

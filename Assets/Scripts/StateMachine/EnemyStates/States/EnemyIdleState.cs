@@ -5,8 +5,9 @@ public class EnemyIdleState : EnemyBaseState
     public EnemyIdleState(
         EnemyStateMachine stateMachine,
         EnemyInput enemyInput,
-        PlayerController playerController)
-        : base(stateMachine, enemyInput, playerController)
+        PlayerController playerController,
+        EnemyAI enemyAI)
+        : base(stateMachine, enemyInput, playerController, enemyAI)
     {
     }
 

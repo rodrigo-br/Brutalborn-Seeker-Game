@@ -1,11 +1,10 @@
 using UnityEngine;
 using Pathfinding;
-using System;
 
 public class EnemyAI : MonoBehaviour
 {
     public Transform Target;
-    public float Speed = 200f;
+    public Vector2 Direction { get; private set; }
     public float NextWayPointDistance = 3f;
     private Path _path;
     private int _currentWaypoint = 0;
@@ -19,7 +18,31 @@ public class EnemyAI : MonoBehaviour
 
     private void Start()
     {
-        _seeker.StartPath(transform.position, Target.position, OnPathComplete);
+        InvokeRepeating(nameof(UpdatePath), 0, 1f);
+    }
+
+    private void FixedUpdate()
+    {
+        if (_path == null) { return; }
+
+        if (_currentWaypoint >= _path.vectorPath.Count)
+        {
+            _reachedEndOfPath = true;
+            return;
+        }
+        else
+        {
+            _reachedEndOfPath = false;
+        }
+
+        Direction = (Vector2)(_path.vectorPath[_currentWaypoint] - transform.position).normalized;
+
+        float distance = Vector2.Distance(transform.position, _path.vectorPath[_currentWaypoint]);
+
+        if (distance < NextWayPointDistance)
+        {
+            _currentWaypoint++;
+        }
     }
 
     private void OnPathComplete(Path p)
@@ -30,4 +53,19 @@ public class EnemyAI : MonoBehaviour
             _currentWaypoint = 0;
         }
     }
+
+    private void UpdatePath()
+    {
+        if (!Target)
+        {
+            CancelInvoke(nameof(UpdatePath));
+            return;
+        }
+        if (_seeker.IsDone())
+        {
+            _seeker.StartPath(transform.position, Target.position, OnPathComplete);
+        }
+    }
+
+
 }
