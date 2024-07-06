@@ -51,10 +51,6 @@ public class EnemySeekingState : EnemyBaseState
                 _canDash = false;
             }
         }
-        if (_jump)
-        {
-            _pathDirection.x = 0;
-        }
         enemyInput.SetNewInputFrame(move: _pathDirection, jumpDown: _jump, jumpHeld: _jump, dashDown: _dash);
         _jump = false;
         _dash = false;

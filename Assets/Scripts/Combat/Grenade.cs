@@ -7,9 +7,9 @@ using UnityEngine;
 
 public class Grenade : MonoBehaviour
 {
-    public static Action OnGrenadeBeep;
-    public static Action OnGrenadeExplode;
-    public static Action OnGrenadeLaunch;
+    public static event Action<SoundSO> OnGrenadeBeep;
+    public static event Action<SoundSO> OnGrenadeExplode;
+    public static event Action<SoundSO> OnGrenadeLaunch;
 
     [SerializeField] private GameObject _grenadeVFX;
     [SerializeField] private GameObject _grenadeLight;
@@ -24,6 +24,9 @@ public class Grenade : MonoBehaviour
     [SerializeField] private float _explosionTime = 4f;
     [Range(0, 3.5f)]
     [SerializeField] private float[] _beepTimes = { 1f, 0.5f, 0.5f };
+    [SerializeField] private SoundSO _beepSound;
+    [SerializeField] private SoundSO _explodeSound;
+    [SerializeField] private SoundSO _launchSound;
 
     private Vector2 _fireDirection;
 
@@ -47,7 +50,7 @@ public class Grenade : MonoBehaviour
     public void Init(Vector2 grenadeSpawnPos, Vector2 direction, Gun gun)
     {
         transform.position = grenadeSpawnPos;
-        OnGrenadeLaunch?.Invoke();
+        OnGrenadeLaunch?.Invoke(_launchSound);
         _fireDirection = direction;
         _rigidBody.AddForce(_fireDirection * _moveSpeed, ForceMode2D.Impulse);
         _rigidBody.AddTorque(_toqueAmount);
@@ -57,7 +60,7 @@ public class Grenade : MonoBehaviour
     private void ExplodeGranade()
     {
         Instantiate(_grenadeVFX, transform.position, Quaternion.identity);
-        OnGrenadeExplode?.Invoke();
+        OnGrenadeExplode?.Invoke(_explodeSound);
         _impulseSource.GenerateImpulse();
         DamageNearby();
         Destroy(gameObject);
@@ -68,7 +71,7 @@ public class Grenade : MonoBehaviour
         foreach (float beepTime in _beepTimes)
         {
             yield return new WaitForSeconds(beepTime);
-            OnGrenadeBeep?.Invoke();
+            OnGrenadeBeep?.Invoke(_beepSound);
             FlashGrenadeLight();
         }
         yield return new WaitForSeconds(_explosionTime - _beepTimes.Sum());
@@ -87,11 +90,6 @@ public class Grenade : MonoBehaviour
         _grenadeLight.SetActive(false);
     }
 
-    private void OnDrawGizmos()
-    {
-        Gizmos.DrawWireSphere(transform.position, _explosionRadius);
-    }
-
     private void DamageNearby()
     {
         Collider2D[] hits = Physics2D.OverlapCircleAll(transform.position, _explosionRadius, _enemyLayerMask);
@@ -104,5 +102,11 @@ public class Grenade : MonoBehaviour
             IDamageable iDamageable = hit.gameObject.GetComponentInChildren<IDamageable>();
             iDamageable?.TakeDamage(_damageAmount);
         }
+    }
+
+    private void OnDrawGizmos()
+    {
+        Gizmos.color = Color.red;
+        Gizmos.DrawWireSphere(transform.position, _explosionRadius);
     }
 }

@@ -10,7 +10,7 @@ MonoBehaviour:
   m_Enabled: 1
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: 6aab6d2ebb980fb4e83f0de5367a8a4a, type: 3}
-  m_Name: Player Stats
+  m_Name: Enemy Basic Stats
   m_EditorClassIdentifier: 
   PlayerLayer:
     serializedVersion: 2
@@ -27,8 +27,8 @@ MonoBehaviour:
   VerticalDeadZoneThreshold: 0.3
   HorizontalDeadZoneThreshold: 0.1
   PositionCorrectionMode: 0
-  BaseSpeed: 15
-  Acceleration: 100
+  BaseSpeed: 12
+  Acceleration: 20
   Friction: 70
   AirFrictionMultiplier: 0.5
   DirectionCorrectionMultiplier: 3
@@ -36,14 +36,14 @@ MonoBehaviour:
   ExtraConstantGravity: 40
   BufferedJumpTime: 0.15
   CoyoteTime: 0.15
-  JumpPower: 20
+  JumpPower: 25
   EndJumpEarlyExtraForceMultiplier: 3
   MaxAirJumps: 1
   AllowDash: 1
-  DashVelocity: 35
-  DashDuration: 0.15
+  DashVelocity: 30
+  DashDuration: 0.1
   DashCooldown: 1
-  DashEndHorizontalMultiplier: 3
+  DashEndHorizontalMultiplier: 0.5
   AllowCrouching: 1
   CrouchSlowDownTime: 1
   CrouchSpeedModifier: 0.3

@@ -215,19 +215,19 @@ public class AudioManager : MonoBehaviour
         PlayRandomSound(_soundsCollectionSO.Jetpack);
     }
 
-    private void Grenade_OnGrenadeBeep()
+    private void Grenade_OnGrenadeBeep(SoundSO soundSO)
     {
-        PlayRandomSound(_soundsCollectionSO.GrenadeBeep);
+        SoundToPlay(soundSO);
     }
 
-    private void Grenade_OnGrenadeLaunch()
+    private void Grenade_OnGrenadeLaunch(SoundSO soundSO)
     {
-        PlayRandomSound(_soundsCollectionSO.GrenadeLaunch);
+        SoundToPlay(soundSO);
     }
 
-    private void Grenade_OnGrenadeExplosion()
+    private void Grenade_OnGrenadeExplosion(SoundSO soundSO)
     {
-        PlayRandomSound(_soundsCollectionSO.GrenadeExplosion);
+        SoundToPlay(soundSO);
     }
 
     private void Enemy_OnHitPlayer()

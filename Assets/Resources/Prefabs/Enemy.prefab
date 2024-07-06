@@ -16,6 +16,10 @@ PrefabInstance:
       propertyPath: _grenadePrefab
       value: 
       objectReference: {fileID: 7092865244102816697, guid: 46ca4303a481e3546bd17746721841b8, type: 3}
+    - target: {fileID: 336611329891503687, guid: 58f257495e687f74b953f687f6cc82b3, type: 3}
+      propertyPath: _shootCooldown
+      value: 0.5
+      objectReference: {fileID: 0}
     - target: {fileID: 1402027599436240666, guid: 58f257495e687f74b953f687f6cc82b3, type: 3}
       propertyPath: m_Layer
       value: 6
@@ -28,6 +32,10 @@ PrefabInstance:
       propertyPath: m_Layer
       value: 12
       objectReference: {fileID: 0}
+    - target: {fileID: 3841378548707815334, guid: 58f257495e687f74b953f687f6cc82b3, type: 3}
+      propertyPath: <Stats>k__BackingField
+      value: 
+      objectReference: {fileID: 11400000, guid: cb7b00f5edd87e24087706e7abeb6284, type: 2}
     - target: {fileID: 4189227773742865004, guid: 58f257495e687f74b953f687f6cc82b3, type: 3}
       propertyPath: m_Layer
       value: 6
@@ -108,7 +116,8 @@ PrefabInstance:
       propertyPath: m_Layer
       value: 6
       objectReference: {fileID: 0}
-    m_RemovedComponents: []
+    m_RemovedComponents:
+    - {fileID: 6157325055456789886, guid: 58f257495e687f74b953f687f6cc82b3, type: 3}
     m_RemovedGameObjects: []
     m_AddedGameObjects: []
     m_AddedComponents:

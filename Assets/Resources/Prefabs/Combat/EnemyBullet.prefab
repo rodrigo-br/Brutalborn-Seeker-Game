@@ -8,6 +8,14 @@ PrefabInstance:
     serializedVersion: 3
     m_TransformParent: {fileID: 0}
     m_Modifications:
+    - target: {fileID: 166901328355906794, guid: 501008b9f2b4654438ecc1cfbb01d4ed, type: 3}
+      propertyPath: _knockBackThrust
+      value: 5
+      objectReference: {fileID: 0}
+    - target: {fileID: 166901328355906794, guid: 501008b9f2b4654438ecc1cfbb01d4ed, type: 3}
+      propertyPath: _bulletSpeedAcceleration.y
+      value: 40
+      objectReference: {fileID: 0}
     - target: {fileID: 8207305568099213089, guid: 501008b9f2b4654438ecc1cfbb01d4ed, type: 3}
       propertyPath: m_Name
       value: EnemyBullet

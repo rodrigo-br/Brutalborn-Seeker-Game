@@ -6,7 +6,7 @@ using UnityEngine;
 public class Gun : MonoBehaviour
 {
     public event Action OnShoot;
-    public static Action OnLobGrenade;
+    public event Action OnLobGrenade;
     private enum PrefabPath
     {
         Bullet,
@@ -16,7 +16,6 @@ public class Gun : MonoBehaviour
     [field: SerializeField] public Transform BulletSpawnPosition { get; private set; }
     [SerializeField] private PrefabPath _bulletPrefab;
     [SerializeField] private int _initialPoolSize = 10;
-    [SerializeField] private SpriteRenderer _sprite;
     [SerializeField] private float _shootCooldown = 0.3f;
     [SerializeField] private Animator _animator;
     [SerializeField] private Vector2 _impulseVelocity;
@@ -24,6 +23,7 @@ public class Gun : MonoBehaviour
     [SerializeField] private float _muzzleFlashTime = 0.05f;
     [SerializeField] private Grenade _grenadePrefab;
     [SerializeField] private float _lobGranadeCooldown = 1.5f;
+    [SerializeField] private LaunchArcRenderer _launchArcRenderer;
     private CinemachineImpulseSource _impulseSource;
     private ObjectPooling<Bullet> _bulletPool;
     private PlayerController _player;
@@ -51,6 +51,7 @@ public class Gun : MonoBehaviour
 
         if (_player.LobGrenade && _lastLobGrenadeTime <= 0)
         {
+            _launchArcRenderer.gameObject.SetActive(true);
             OnLobGrenade?.Invoke();
         }
     }
@@ -143,7 +144,7 @@ public class Gun : MonoBehaviour
                 impulseVelocity *= -1;
             }
         }
-        _impulseSource.GenerateImpulse(impulseVelocity);
+        _impulseSource?.GenerateImpulse(impulseVelocity);
     }
 
     private void MuzzleFlash()
