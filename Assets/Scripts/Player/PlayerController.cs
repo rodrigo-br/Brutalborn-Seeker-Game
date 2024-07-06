@@ -11,7 +11,7 @@ public class PlayerController : MonoBehaviour, IPlayerController, IPhysicsObject
     private CapsuleCollider2D _airborneCollider;
     private ConstantForce2D _constantForce;
     private Rigidbody2D _rb;
-    private PlayerInput _playerInput;
+    private IInput _playerInput;
 
     #endregion
 
@@ -25,6 +25,8 @@ public class PlayerController : MonoBehaviour, IPlayerController, IPhysicsObject
     public event Action<Vector2> Repositioned;
     public event Action<bool> ToggledPlayer;
     public event Action Attack;
+    public event Action AttackHeld;
+    public event Action<bool> OnJetpack;
 
     public bool Active { get; private set; } = true;
     public Vector2 Up { get; private set; }
@@ -35,6 +37,7 @@ public class PlayerController : MonoBehaviour, IPlayerController, IPhysicsObject
     public Vector2 Velocity { get; private set; }
     public int WallDirection { get; private set; }
     public bool ClimbingLadder { get; private set; }
+    public bool LobGrenade => _frameInput.GrenadeDown;
 
     public void AddFrameForce(Vector2 force, bool resetVelocity = false)
     {
@@ -111,7 +114,7 @@ public class PlayerController : MonoBehaviour, IPlayerController, IPhysicsObject
         Move();
 
         CalculateCrouch();
-
+        Jetpacking();
         CleanFrameData();
     }
 
@@ -137,8 +140,8 @@ public class PlayerController : MonoBehaviour, IPlayerController, IPhysicsObject
 
         // Primary collider
         _collider = GetComponent<BoxCollider2D>();
-        _collider.edgeRadius = CharacterSize.COLLIDER_EDGE_RADIUS;
         _collider.hideFlags = HideFlags.NotEditable;
+        _collider.edgeRadius = CharacterSize.COLLIDER_EDGE_RADIUS;
         _collider.sharedMaterial = _rb.sharedMaterial;
         _collider.enabled = true;
 
@@ -177,6 +180,17 @@ public class PlayerController : MonoBehaviour, IPlayerController, IPhysicsObject
         if (_frameInput.AttackDown)
         {
             Attack?.Invoke();
+        }
+
+        if (_frameInput.AttackHeld)
+        {
+            AttackHeld?.Invoke();
+        }
+
+        if (_frameInput.JetpackDown)
+        {
+            if (_isJetpacking) { return; }
+            SetJetpacking(true);
         }
     }
 
@@ -246,9 +260,17 @@ public class PlayerController : MonoBehaviour, IPlayerController, IPhysicsObject
     private float GrounderLength => _character.StepHeight + SKIN_WIDTH;
 
     private Vector2 RayPoint => _framePosition + Up * (_character.StepHeight + SKIN_WIDTH);
+    private bool _blockGrounded = false;
+
+    public void SetBlockGrounded(bool blockGrounded)
+    {
+        _blockGrounded = blockGrounded;
+        ToggleGrounded(false);
+    }
 
     private void CalculateCollisions()
     {
+        if (_blockGrounded) { return; }
         Physics2D.queriesStartInColliders = false;
 
         // Is the middle ray good?
@@ -374,7 +396,6 @@ public class PlayerController : MonoBehaviour, IPlayerController, IPhysicsObject
     private int _wallDirectionForJump;
     private bool _isOnWall;
     private float _timeLeftWall;
-    private float _currentWallSpeedVel;
     private float _canGrabWallAfter;
     private int _wallDirThisFrame;
 
@@ -497,6 +518,7 @@ public class PlayerController : MonoBehaviour, IPlayerController, IPhysicsObject
     #region Jump
 
     private const float JUMP_CLEARANCE_TIME = 0.25f;
+    private const float AIR_JUMP_COOLDOWN = 0.3f;
     private bool IsWithinJumpClearance => _lastJumpExecutedTime + JUMP_CLEARANCE_TIME > _time;
     private float _lastJumpExecutedTime;
     private bool _bufferedJumpUsable;
@@ -513,7 +535,7 @@ public class PlayerController : MonoBehaviour, IPlayerController, IPhysicsObject
 
     private bool HasBufferedJump => _bufferedJumpUsable && _time < _timeJumpWasPressed + Stats.BufferedJumpTime && !IsWithinJumpClearance;
     private bool CanUseCoyote => _coyoteUsable && !_grounded && _time < _timeLeftGrounded + Stats.CoyoteTime;
-    private bool CanAirJump => !_grounded && _airJumpsRemaining > 0;
+    private bool CanAirJump => !_grounded && _airJumpsRemaining > 0 && _lastJumpExecutedTime + AIR_JUMP_COOLDOWN <= _time;
     private bool CanWallJump => !_grounded && (_isOnWall || _wallDirThisFrame != 0) || (_wallJumpCoyoteUsable && _time < _timeLeftWall + Stats.WallCoyoteTime);
 
     private void CalculateJump()
@@ -543,11 +565,13 @@ public class PlayerController : MonoBehaviour, IPlayerController, IPhysicsObject
 
         if (jumpType is JumpType.Jump or JumpType.Coyote)
         {
+            Debug.Log("First Jump");
             _coyoteUsable = false;
             AddFrameForce(new Vector2(0, Stats.JumpPower));
         }
         else if (jumpType is JumpType.AirJump)
         {
+            Debug.Log("Second Jump");
             _airJumpsRemaining--;
             AddFrameForce(new Vector2(0, Stats.JumpPower));
         }
@@ -573,6 +597,36 @@ public class PlayerController : MonoBehaviour, IPlayerController, IPhysicsObject
     }
 
     private void ResetAirJumps() => _airJumpsRemaining = Stats.MaxAirJumps;
+
+    #endregion
+
+    #region Jetpack
+
+    [SerializeField] private float _jetpackTime = 0.6f;
+    [SerializeField] private float _jetpackStrenght = 10f;
+    private float _jetTime = 0f;
+    private bool _isJetpacking = false;
+
+    private void SetJetpacking(bool isJetpacking)
+    {
+        _jetTime = 0;
+        _isJetpacking = isJetpacking;
+        OnJetpack?.Invoke(isJetpacking);
+    }
+
+    private void Jetpacking()
+    {
+        if (!_isJetpacking) { return; }
+        if (_jetTime < _jetpackTime)
+        {
+            _jetTime += _delta;
+            _rb.velocity = new Vector2(_frameInput.Move.x, 1) * _jetpackStrenght;
+        }
+        else
+        {
+            SetJetpacking(false);
+        }
+    }
 
     #endregion
 
@@ -654,6 +708,10 @@ public class PlayerController : MonoBehaviour, IPlayerController, IPhysicsObject
     {
         Physics2D.queriesHitTriggers = false;
         var hit = Physics2D.OverlapBox(pos, size, 0, Stats.CollisionLayers);
+        if (hit && hit.gameObject.CompareTag("OneWayPlatform"))
+        {
+            hit = null;
+        }
         //var hit = Physics2D.OverlapCapsule(pos, size - new Vector2(SKIN_WIDTH, 0), _collider.direction, 0, ~Stats.PlayerLayer);
         Physics2D.queriesHitTriggers = _cachedQueryMode;
         return !hit;
@@ -938,6 +996,7 @@ public interface IPlayerController
     public event Action<bool> WallGrabChanged;
     public event Action<Vector2> Repositioned;
     public event Action<bool> ToggledPlayer;
+    public event Action<bool> OnJetpack;
     public event Action Attack;
 
     public bool Active { get; }

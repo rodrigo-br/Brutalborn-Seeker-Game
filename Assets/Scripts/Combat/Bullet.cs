@@ -4,6 +4,7 @@ using UnityEngine;
 
 public class Bullet : MonoBehaviour, IPhysicsObject, IPoolable
 {
+    public static event Action<SoundSO> OnShoot;
     [MinMaxSlider(0.0f, 100.0f)]
     [SerializeField] private Vector2 _bulletSpeedAcceleration = new Vector2(5f, 50f);
     [SerializeField] private bool _hasAcceleration;
@@ -14,6 +15,9 @@ public class Bullet : MonoBehaviour, IPhysicsObject, IPoolable
     [SerializeField] private float _maxBulletLifeTime = 5f;
     [SerializeField] private int _damageAmount = 10;
     [SerializeField] private float _knockBackThrust = 10f;
+    [SerializeField] private GameObject _bulletVFX;
+    [SerializeField] private SoundSO _soundSO;
+
     private Rigidbody2D _rigidbody2D;
     private float _currentBulletLifeTime;
     private float _currentMoveSpeed;
@@ -24,12 +28,6 @@ public class Bullet : MonoBehaviour, IPhysicsObject, IPoolable
     private void Awake()
     {
         _rigidbody2D = GetComponent<Rigidbody2D>();
-
-        // REMOVER ME
-        _disableCallback = (call) =>
-        {
-            this.gameObject.SetActive(false);
-        };
     }
 
     private void OnEnable()
@@ -50,7 +48,8 @@ public class Bullet : MonoBehaviour, IPhysicsObject, IPoolable
             _currentMoveSpeed = _bulletSpeedAcceleration.y;
         }
         _currentBulletLifeTime = 0f;
-        PhysicsSimulator.Instance.AddBullet(this);    }
+        PhysicsSimulator.Instance.AddBullet(this);    
+    }
 
     private void OnDisable()
     {
@@ -63,7 +62,6 @@ public class Bullet : MonoBehaviour, IPhysicsObject, IPoolable
         {
             UpdateAcceleration(delta);
         }
-        Debug.Log(_direction);
         _rigidbody2D.velocity = _currentMoveSpeed * _direction;
     }
 
@@ -72,15 +70,13 @@ public class Bullet : MonoBehaviour, IPhysicsObject, IPoolable
         _currentBulletLifeTime += delta;
         if (_currentBulletLifeTime >= _maxBulletLifeTime)
         {
-            Debug.Log("SAIU");
             _disableCallback?.Invoke(this);
         }
     }
 
     private void OnTriggerEnter2D(Collider2D other)
     {
-        Debug.Log(other);
-        // Instantiate BulletVFX
+        Instantiate(_bulletVFX, transform.position, transform.rotation);
 
         IHitable iHitable = other.GetComponent<IHitable>();
         iHitable?.TakeHit(_direction, _knockBackThrust);
@@ -96,6 +92,7 @@ public class Bullet : MonoBehaviour, IPhysicsObject, IPoolable
         transform.SetPositionAndRotation(position, rotation);
         _direction = direction;
         gameObject.SetActive(true);
+        OnShoot?.Invoke(_soundSO);
     }
 
     private void UpdateAcceleration(float delta)

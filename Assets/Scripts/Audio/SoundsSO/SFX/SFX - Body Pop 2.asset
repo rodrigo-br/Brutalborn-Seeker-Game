@@ -1,0 +1,21 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: ba274cc130e9d8d468e2e068c2985368, type: 3}
+  m_Name: SFX - Body Pop 2
+  m_EditorClassIdentifier: 
+  AudioType: 0
+  Clip: {fileID: 8300000, guid: c3e8ba1b324a7f94085d4b4752790e9a, type: 3}
+  Loop: 0
+  RandomizePitch: 1
+  RandomPitchRangeModifier: 0.1
+  Volume: 1
+  Pitch: 1

@@ -21,8 +21,8 @@ MonoBehaviour:
   CharacterSize:
     Height: 2.7
     Width: 1.6
-    StepHeight: 1.35
-    CrouchHeight: 1.51
+    StepHeight: 0.9
+    CrouchHeight: 1.05
     RayInset: 0.07
   VerticalDeadZoneThreshold: 0.3
   HorizontalDeadZoneThreshold: 0.1
@@ -40,10 +40,10 @@ MonoBehaviour:
   EndJumpEarlyExtraForceMultiplier: 3
   MaxAirJumps: 1
   AllowDash: 1
-  DashVelocity: 30
-  DashDuration: 0.1
-  DashCooldown: 0.5
-  DashEndHorizontalMultiplier: 0.5
+  DashVelocity: 35
+  DashDuration: 0.15
+  DashCooldown: 1
+  DashEndHorizontalMultiplier: 3
   AllowCrouching: 1
   CrouchSlowDownTime: 1
   CrouchSpeedModifier: 0.3

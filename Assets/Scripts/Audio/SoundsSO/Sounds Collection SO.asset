@@ -1,0 +1,41 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 8d2fcc52008393c4784fb75ce56a9da4, type: 3}
+  m_Name: Sounds Collection SO
+  m_EditorClassIdentifier: 
+  GamePlayMusic:
+  - {fileID: 11400000, guid: a1c5d07d51a91b44ab9d5bbd0f801cab, type: 2}
+  UIMusic: []
+  StartScreenMusic: []
+  Jump1:
+  - {fileID: 11400000, guid: a2891c23bc622f64a8f291141df78c49, type: 2}
+  Jump2:
+  - {fileID: 11400000, guid: d3b294517dc4b704aa15ff053d09bd67, type: 2}
+  BodyPop:
+  - {fileID: 11400000, guid: f2c5554309d06dd428d921d925c33d26, type: 2}
+  - {fileID: 11400000, guid: a1dc5b01e93669542be0c991d844925d, type: 2}
+  Dash:
+  - {fileID: 11400000, guid: 02e00e1c6fd4dc94b941f1262defea4c, type: 2}
+  Jetpack:
+  - {fileID: 11400000, guid: f7ffd3f8d9aab1046a945274f1699c5a, type: 2}
+  FallingGround:
+  - {fileID: 11400000, guid: 828336b4acb1078428ef1025907585d7, type: 2}
+  - {fileID: 11400000, guid: 2a5cd275a1e77a441bc58ab8aee5ce26, type: 2}
+  GrenadeBeep:
+  - {fileID: 11400000, guid: 1c200da95e743124a8a052a366385ae7, type: 2}
+  GrenadeLaunch:
+  - {fileID: 11400000, guid: 6d296e97fa960ef498c698870fb8d97e, type: 2}
+  GrenadeExplosion:
+  - {fileID: 11400000, guid: 7b1aa14c1274c9f45a742c0d60b98bf4, type: 2}
+  PlayerHit: []
+  MegaKill:
+  - {fileID: 11400000, guid: 583708c514bde5d468e27bc584992af1, type: 2}

@@ -1,10 +1,10 @@
 using UnityEngine;
 using UnityEngine.InputSystem;
 
-public class PlayerInput : MonoBehaviour
+public class PlayerInput : MonoBehaviour, IInput
 {
     private PlayerInputActions _inputActions;
-    private InputAction _move, _jump, _dash, _attack, _interact;
+    private InputAction _move, _jump, _dash, _attack, _interact, _jetpack, _grenade;
 
     private void Awake()
     {
@@ -14,6 +14,8 @@ public class PlayerInput : MonoBehaviour
         _dash = _inputActions.Player.Dash;
         _attack = _inputActions.Player.Attack;
         _interact = _inputActions.Player.Interact;
+        _jetpack = _inputActions.Player.Jetpack;
+        _grenade = _inputActions.Player.Grenade;
     }
 
     private void OnEnable()
@@ -38,6 +40,9 @@ public class PlayerInput : MonoBehaviour
             DashDown = _dash.WasPerformedThisFrame(),
             InteractDown = _interact.WasPerformedThisFrame(),
             InteractHeld = _interact.IsPressed(),
+            JetpackDown = _jetpack.WasPerformedThisFrame(),
+            GrenadeDown = _grenade.WasPerformedThisFrame(),
+            GrenadeHeld = _grenade.IsPressed(),
         };
     }
 }
@@ -52,4 +57,12 @@ public struct FrameInput
     public bool DashDown;
     public bool InteractDown;
     public bool InteractHeld;
+    public bool JetpackDown;
+    public bool GrenadeDown;
+    public bool GrenadeHeld;
+}
+
+public interface IInput
+{
+    FrameInput GatherInput();
 }
