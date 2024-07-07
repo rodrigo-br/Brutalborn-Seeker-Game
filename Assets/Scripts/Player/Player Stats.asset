@@ -43,7 +43,7 @@ MonoBehaviour:
   DashVelocity: 35
   DashDuration: 0.15
   DashCooldown: 1
-  DashEndHorizontalMultiplier: 3
+  DashEndHorizontalMultiplier: 0.8
   AllowCrouching: 1
   CrouchSlowDownTime: 1
   CrouchSpeedModifier: 0.3

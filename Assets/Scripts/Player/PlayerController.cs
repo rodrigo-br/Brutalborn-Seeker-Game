@@ -37,7 +37,8 @@ public class PlayerController : MonoBehaviour, IPlayerController, IPhysicsObject
     public Vector2 Velocity { get; private set; }
     public int WallDirection { get; private set; }
     public bool ClimbingLadder { get; private set; }
-    public bool LobGrenade => _frameInput.GrenadeDown;
+    public bool LobGrenade => _frameInput.GrenadeRelease;
+    public bool HeldGrenade => _frameInput.GrenadeHeld;
 
     public void AddFrameForce(Vector2 force, bool resetVelocity = false)
     {
@@ -153,6 +154,11 @@ public class PlayerController : MonoBehaviour, IPlayerController, IPhysicsObject
         _airborneCollider.sharedMaterial = _rb.sharedMaterial;
 
         SetColliderMode(ColliderMode.Airborne);
+
+        if (gameObject.CompareTag("Player"))
+        {
+            _airJumpCooldown = 0;
+        }
     }
 
     #endregion
@@ -518,7 +524,7 @@ public class PlayerController : MonoBehaviour, IPlayerController, IPhysicsObject
     #region Jump
 
     private const float JUMP_CLEARANCE_TIME = 0.25f;
-    private const float AIR_JUMP_COOLDOWN = 0.3f;
+    private float _airJumpCooldown = 0.3f;
     private bool IsWithinJumpClearance => _lastJumpExecutedTime + JUMP_CLEARANCE_TIME > _time;
     private float _lastJumpExecutedTime;
     private bool _bufferedJumpUsable;
@@ -535,7 +541,7 @@ public class PlayerController : MonoBehaviour, IPlayerController, IPhysicsObject
 
     private bool HasBufferedJump => _bufferedJumpUsable && _time < _timeJumpWasPressed + Stats.BufferedJumpTime && !IsWithinJumpClearance;
     private bool CanUseCoyote => _coyoteUsable && !_grounded && _time < _timeLeftGrounded + Stats.CoyoteTime;
-    private bool CanAirJump => !_grounded && _airJumpsRemaining > 0 && _lastJumpExecutedTime + AIR_JUMP_COOLDOWN <= _time;
+    private bool CanAirJump => !_grounded && _airJumpsRemaining > 0 && _lastJumpExecutedTime + _airJumpCooldown <= _time;
     private bool CanWallJump => !_grounded && (_isOnWall || _wallDirThisFrame != 0) || (_wallJumpCoyoteUsable && _time < _timeLeftWall + Stats.WallCoyoteTime);
 
     private void CalculateJump()
@@ -565,13 +571,11 @@ public class PlayerController : MonoBehaviour, IPlayerController, IPhysicsObject
 
         if (jumpType is JumpType.Jump or JumpType.Coyote)
         {
-            Debug.Log("First Jump");
             _coyoteUsable = false;
             AddFrameForce(new Vector2(0, Stats.JumpPower));
         }
         else if (jumpType is JumpType.AirJump)
         {
-            Debug.Log("Second Jump");
             _airJumpsRemaining--;
             AddFrameForce(new Vector2(0, Stats.JumpPower));
         }

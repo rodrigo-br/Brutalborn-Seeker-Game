@@ -13,7 +13,7 @@ MonoBehaviour:
   m_Name: SFX - Jump 2
   m_EditorClassIdentifier: 
   AudioType: 0
-  Clip: {fileID: 8300000, guid: eb9dc4b69bc6b55439e1f34be7167b9c, type: 3}
+  Clip: {fileID: 8300000, guid: 0f26cce73080ac74d8129010c20d4de8, type: 3}
   Loop: 0
   RandomizePitch: 1
   RandomPitchRangeModifier: 0.1

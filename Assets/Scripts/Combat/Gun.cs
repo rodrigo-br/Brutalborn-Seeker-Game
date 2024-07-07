@@ -23,12 +23,14 @@ public class Gun : MonoBehaviour
     [SerializeField] private float _muzzleFlashTime = 0.05f;
     [SerializeField] private Grenade _grenadePrefab;
     [SerializeField] private float _lobGranadeCooldown = 1.5f;
+    [SerializeField] private float _grenadeArcVelocity = 0.05f;
     [SerializeField] private LaunchArcRenderer _launchArcRenderer;
     private CinemachineImpulseSource _impulseSource;
     private ObjectPooling<Bullet> _bulletPool;
     private PlayerController _player;
     private Coroutine _muzzleFlashRoutine;
     private Vector2 _direction = Vector2.right;
+    private float _lastXDirection = 0;
     private float _lastLobGrenadeTime = 0f;
     private float _currentShootCooldown;
     private static readonly int FIRE_HASH = Animator.StringToHash("Fire");
@@ -49,10 +51,19 @@ public class Gun : MonoBehaviour
             SetDirection(_player.Input);
         }
 
+        if (_player.HeldGrenade && _lastLobGrenadeTime <= 0)
+        {
+            if (!_launchArcRenderer.gameObject.activeSelf)
+            {
+                _launchArcRenderer.gameObject.SetActive(true);
+            }
+            _launchArcRenderer.IncrementVelocity(_grenadeArcVelocity, _lastXDirection);
+        }
+
         if (_player.LobGrenade && _lastLobGrenadeTime <= 0)
         {
-            _launchArcRenderer.gameObject.SetActive(true);
             OnLobGrenade?.Invoke();
+            _launchArcRenderer.ResetVelocity();
         }
     }
 
@@ -92,7 +103,12 @@ public class Gun : MonoBehaviour
     {
         _lastLobGrenadeTime = _lobGranadeCooldown;
         Grenade newGrenade = Instantiate(_grenadePrefab);
-        newGrenade.Init(BulletSpawnPosition.position, _direction, this);
+        newGrenade.Init(
+            BulletSpawnPosition.position,
+            _lastXDirection,
+            this,
+            _launchArcRenderer.CurrentAngle,
+            _launchArcRenderer.CurrentVelocity);
     }
 
     private void BulletRent()
@@ -115,11 +131,13 @@ public class Gun : MonoBehaviour
         else if (_direction.y < 0) z = -45;
         if (_direction.x != 0)
         {
+            _lastXDirection = _direction.x;
             y = _direction.x > 0 ? 0: 180;
         }
         else
         {
             z *= 2;
+            y = _lastXDirection > 0 ? 0 : 180;
         }
         transform.localRotation = Quaternion.Euler(0, y, z);
     }

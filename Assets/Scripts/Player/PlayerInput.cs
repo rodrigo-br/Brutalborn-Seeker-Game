@@ -41,7 +41,7 @@ public class PlayerInput : MonoBehaviour, IInput
             InteractDown = _interact.WasPerformedThisFrame(),
             InteractHeld = _interact.IsPressed(),
             JetpackDown = _jetpack.WasPerformedThisFrame(),
-            GrenadeDown = _grenade.WasPerformedThisFrame(),
+            GrenadeRelease = _grenade.WasReleasedThisFrame(),
             GrenadeHeld = _grenade.IsPressed(),
         };
     }
@@ -58,7 +58,7 @@ public struct FrameInput
     public bool InteractDown;
     public bool InteractHeld;
     public bool JetpackDown;
-    public bool GrenadeDown;
+    public bool GrenadeRelease;
     public bool GrenadeHeld;
 }
 

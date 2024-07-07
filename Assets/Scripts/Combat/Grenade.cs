@@ -13,7 +13,7 @@ public class Grenade : MonoBehaviour
 
     [SerializeField] private GameObject _grenadeVFX;
     [SerializeField] private GameObject _grenadeLight;
-    [SerializeField] private float _moveSpeed = 10f;
+    [field: SerializeField] public float MaxMoveSpeed { get; private set; } = 10f;
     [SerializeField] private int _damageAmount = 1;
     [SerializeField] private float _knockBackThrust = 20f;
     [SerializeField] private float _toqueAmount = 10f;
@@ -47,12 +47,21 @@ public class Grenade : MonoBehaviour
         }
     }
 
-    public void Init(Vector2 grenadeSpawnPos, Vector2 direction, Gun gun)
+    public void Init(Vector2 grenadeSpawnPos, float direction, Gun gun, float angle, float velocity)
     {
         transform.position = grenadeSpawnPos;
         OnGrenadeLaunch?.Invoke(_launchSound);
-        _fireDirection = direction;
-        _rigidBody.AddForce(_fireDirection * _moveSpeed, ForceMode2D.Impulse);
+        float radianAngle = Mathf.Deg2Rad * angle;
+
+        Vector2 launchDirection = new Vector2(Mathf.Cos(radianAngle), Mathf.Sin(radianAngle));
+
+        Debug.Log(direction);
+        launchDirection = direction < 0
+            ? new Vector2(-launchDirection.x, launchDirection.y)
+            : new Vector2(launchDirection.x, -launchDirection.y);
+        Debug.Log(launchDirection);
+
+        _rigidBody.velocity = launchDirection * velocity;
         _rigidBody.AddTorque(_toqueAmount);
         StartCoroutine(BeepRoutine());
     }
