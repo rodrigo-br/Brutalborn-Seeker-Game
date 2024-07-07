@@ -58,6 +58,11 @@ public class Gun : MonoBehaviour
                 _launchArcRenderer.gameObject.SetActive(true);
             }
             _launchArcRenderer.IncrementVelocity(_grenadeArcVelocity, _lastXDirection);
+            if (_launchArcRenderer.Fire)
+            {
+                OnLobGrenade?.Invoke();
+                _launchArcRenderer.ResetVelocity();
+            }
         }
 
         if (_player.LobGrenade && _lastLobGrenadeTime <= 0)
@@ -99,7 +104,7 @@ public class Gun : MonoBehaviour
         }
     }
 
-    private void LobGrenade()
+    public void LobGrenade()
     {
         _lastLobGrenadeTime = _lobGranadeCooldown;
         Grenade newGrenade = Instantiate(_grenadePrefab);

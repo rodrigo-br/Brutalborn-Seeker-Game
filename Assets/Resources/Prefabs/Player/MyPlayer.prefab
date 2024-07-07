@@ -14970,8 +14970,8 @@ MonoBehaviour:
   _muzzleFlashTime: 0.035
   _grenadePrefab: {fileID: 5322948240257019203, guid: f4e2993e4c333e0478b35f7d5fc225d5, type: 3}
   _lobGranadeCooldown: 1.5
-  _grenadeArcVelocity: 0.05
-  _launchArcRenderer: {fileID: 0}
+  _grenadeArcVelocity: 0.3
+  _launchArcRenderer: {fileID: 5051185718152186170}
 --- !u!114 &6157325055456789886
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -15072,7 +15072,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: ddf7f1516b898e74ba80bc492fa57d10, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  <MaxHealth>k__BackingField: 100
+  <MaxHealth>k__BackingField: 5000
   <SplatterPrefab>k__BackingField: {fileID: 463569841650181863, guid: 059c26bda041f9b41a3c9f8962561c6b, type: 3}
   <DeathVFX>k__BackingField: {fileID: 8306299748837728306, guid: f9c1536e946e9ff429cc8222f5176799, type: 3}
 --- !u!114 &1290051828671307975
@@ -20692,8 +20692,8 @@ MonoBehaviour:
   m_LightType: 3
   m_BlendStyleIndex: 0
   m_FalloffIntensity: 0.705
-  m_Color: {r: 1, g: 1, b: 1, a: 1}
-  m_Intensity: 0.64
+  m_Color: {r: 1, g: 0.8754024, b: 0.19339621, a: 1}
+  m_Intensity: 1.29
   m_LightVolumeIntensity: 1
   m_LightVolumeEnabled: 0
   m_ApplyToSortingLayers: 37e1c05500000000132e839ab1851fac
@@ -30951,8 +30951,8 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   <Stats>k__BackingField: {fileID: 11400000, guid: de211c9a7c5a88349872f54077f96fe2, type: 2}
   _drawGizmos: 1
-  _jetpackTime: 0.6
-  _jetpackStrenght: 10
+  _jetpackTime: 2
+  _jetpackStrenght: 5
 --- !u!1 &8655307356644997893
 GameObject:
   m_ObjectHideFlags: 0
@@ -40823,9 +40823,61 @@ PrefabInstance:
       value: 10
       objectReference: {fileID: 0}
     - target: {fileID: 2687146097634408116, guid: 9e5bdd700a7148842b4ae0f53e17a87a, type: 3}
+      propertyPath: _maxVelocity
+      value: 10
+      objectReference: {fileID: 0}
+    - target: {fileID: 2687146097634408116, guid: 9e5bdd700a7148842b4ae0f53e17a87a, type: 3}
       propertyPath: _parentTransform
       value: 
       objectReference: {fileID: 7610761541198662054}
+    - target: {fileID: 2687146097634408116, guid: 9e5bdd700a7148842b4ae0f53e17a87a, type: 3}
+      propertyPath: _enemyLayerMask.m_Bits
+      value: 4160
+      objectReference: {fileID: 0}
+    - target: {fileID: 2919400098748199792, guid: 9e5bdd700a7148842b4ae0f53e17a87a, type: 3}
+      propertyPath: m_Parameters.colorGradient.ctime1
+      value: 32768
+      objectReference: {fileID: 0}
+    - target: {fileID: 2919400098748199792, guid: 9e5bdd700a7148842b4ae0f53e17a87a, type: 3}
+      propertyPath: m_Parameters.colorGradient.ctime2
+      value: 65535
+      objectReference: {fileID: 0}
+    - target: {fileID: 2919400098748199792, guid: 9e5bdd700a7148842b4ae0f53e17a87a, type: 3}
+      propertyPath: m_Parameters.colorGradient.key0.b
+      value: 0.2062374
+      objectReference: {fileID: 0}
+    - target: {fileID: 2919400098748199792, guid: 9e5bdd700a7148842b4ae0f53e17a87a, type: 3}
+      propertyPath: m_Parameters.colorGradient.key0.r
+      value: 0.2028302
+      objectReference: {fileID: 0}
+    - target: {fileID: 2919400098748199792, guid: 9e5bdd700a7148842b4ae0f53e17a87a, type: 3}
+      propertyPath: m_Parameters.colorGradient.key1.b
+      value: 0.16509432
+      objectReference: {fileID: 0}
+    - target: {fileID: 2919400098748199792, guid: 9e5bdd700a7148842b4ae0f53e17a87a, type: 3}
+      propertyPath: m_Parameters.colorGradient.key1.r
+      value: 0.9777357
+      objectReference: {fileID: 0}
+    - target: {fileID: 2919400098748199792, guid: 9e5bdd700a7148842b4ae0f53e17a87a, type: 3}
+      propertyPath: m_Parameters.colorGradient.key2.b
+      value: 0.042452812
+      objectReference: {fileID: 0}
+    - target: {fileID: 2919400098748199792, guid: 9e5bdd700a7148842b4ae0f53e17a87a, type: 3}
+      propertyPath: m_Parameters.colorGradient.key2.g
+      value: 0.042452812
+      objectReference: {fileID: 0}
+    - target: {fileID: 2919400098748199792, guid: 9e5bdd700a7148842b4ae0f53e17a87a, type: 3}
+      propertyPath: m_Parameters.colorGradient.key2.r
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 2919400098748199792, guid: 9e5bdd700a7148842b4ae0f53e17a87a, type: 3}
+      propertyPath: m_Parameters.colorGradient.m_ColorSpace
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 2919400098748199792, guid: 9e5bdd700a7148842b4ae0f53e17a87a, type: 3}
+      propertyPath: m_Parameters.colorGradient.m_NumColorKeys
+      value: 3
+      objectReference: {fileID: 0}
     - target: {fileID: 3596297242732783128, guid: 9e5bdd700a7148842b4ae0f53e17a87a, type: 3}
       propertyPath: m_Name
       value: Arc Launch Source
@@ -40834,11 +40886,26 @@ PrefabInstance:
       propertyPath: m_IsActive
       value: 0
       objectReference: {fileID: 0}
+    - target: {fileID: 3596297242732783128, guid: 9e5bdd700a7148842b4ae0f53e17a87a, type: 3}
+      propertyPath: m_TagString
+      value: Player
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
     m_RemovedGameObjects: []
     m_AddedGameObjects: []
     m_AddedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 9e5bdd700a7148842b4ae0f53e17a87a, type: 3}
+--- !u!114 &5051185718152186170 stripped
+MonoBehaviour:
+  m_CorrespondingSourceObject: {fileID: 2687146097634408116, guid: 9e5bdd700a7148842b4ae0f53e17a87a, type: 3}
+  m_PrefabInstance: {fileID: 7157279215160639374}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 2de6810bbad5c254b9e7cfd86ed5f002, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
 --- !u!4 &9008657660971768614 stripped
 Transform:
   m_CorrespondingSourceObject: {fileID: 2186196283389994152, guid: 9e5bdd700a7148842b4ae0f53e17a87a, type: 3}
