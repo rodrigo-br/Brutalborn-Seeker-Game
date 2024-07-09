@@ -1,10 +1,14 @@
+using UnityEngine;
+
 public class EnemyGrenadeState : EnemyBaseState
 {
-    private Gun _gun;
-    private LaunchArcRenderer _launcher;
-    private float _giveUpTime = 2f;
+    private readonly Gun _gun;
+    private readonly LaunchArcRenderer _launcher;
+    private readonly float _giveUpTime = 1f;
+    private readonly float _chargeTime = 2f;
     private float _elapsedTime = 0f;
     private bool _launchDecided = false;
+    private bool _changingState = false;
 
     public EnemyGrenadeState(
         EnemyStateMachine stateMachine,
@@ -25,11 +29,21 @@ public class EnemyGrenadeState : EnemyBaseState
 
     public override void Tick(float deltaTime)
     {
+        if (_changingState) { return; }
         _elapsedTime += deltaTime;
         if (_elapsedTime < _giveUpTime) { return; }
         if (_launchDecided)
         {
-            stateMachine.EnterSeekingState();
+            Vector3 targetDirection = enemyAI.Target.position - enemyController.transform.position;
+            if (stateMachine.CanShootTarget(targetDirection))
+            {
+                stateMachine.EnterShootingState();
+            }
+            else
+            {
+                stateMachine.EnterSeekingState();
+            }
+            _changingState = true;
         }
         else if (_launcher.IsColliding())
         {
@@ -41,7 +55,7 @@ public class EnemyGrenadeState : EnemyBaseState
             enemyInput.SetNewInputFrame(grenadeHeld: false, grenadeRelease: true);
         }
         _launchDecided = true;
-        _elapsedTime = _giveUpTime / 2;
+        _elapsedTime = _chargeTime;
     }
 
     public override void Exit()

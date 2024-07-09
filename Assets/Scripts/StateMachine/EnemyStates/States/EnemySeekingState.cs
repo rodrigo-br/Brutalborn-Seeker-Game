@@ -3,15 +3,16 @@ using UnityEngine;
 public class EnemySeekingState : EnemyBaseState
 {
     private Vector2 _pathDirection;
-    private Gun _gun;
+    private readonly Gun _gun;
     private float _lastSearchForAimTime;
-    private float _searchForAimCooldown = 2f;
+    private readonly float _searchForAimCooldown = 2f;
     private Vector2 _targetDirection;
     private bool _jump;
     private bool _dash;
     private bool _canDash = false;
-    private float _dashDelay = 1f;
+    private readonly float _dashDelay = 1f;
     private float _timeSinceAirJump;
+    private bool _changingState;
 
     public EnemySeekingState(
         EnemyStateMachine stateMachine,
@@ -35,6 +36,7 @@ public class EnemySeekingState : EnemyBaseState
 
     public override void Tick(float deltaTime)
     {
+        if (_changingState) { return; }
         _pathDirection = enemyAI.Direction;
         
         if (_pathDirection.y >= 0.9f)
@@ -61,6 +63,17 @@ public class EnemySeekingState : EnemyBaseState
         if (stateMachine.CanShootTarget(_targetDirection))
         {
             stateMachine.EnterShootingState();
+            _changingState = true;
+        }
+        float distanceFromTarget = Vector2.Distance(enemyAI.Target.position, enemyController.transform.position);
+        if (distanceFromTarget <= 12f && _gun.LastLobGrenadeTime <= 0)
+        {
+            stateMachine.EnterGrenadeState();
+            _changingState = true;
+        }
+        else if (distanceFromTarget < 9f)
+        {
+            _lastSearchForAimTime = _searchForAimCooldown;
         }
     }
 

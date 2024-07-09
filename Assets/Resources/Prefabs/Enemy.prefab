@@ -20,6 +20,10 @@ PrefabInstance:
       propertyPath: _shootCooldown
       value: 0.5
       objectReference: {fileID: 0}
+    - target: {fileID: 336611329891503687, guid: 58f257495e687f74b953f687f6cc82b3, type: 3}
+      propertyPath: _lobGranadeCooldown
+      value: 4
+      objectReference: {fileID: 0}
     - target: {fileID: 1402027599436240666, guid: 58f257495e687f74b953f687f6cc82b3, type: 3}
       propertyPath: m_Layer
       value: 6
@@ -48,13 +52,17 @@ PrefabInstance:
       propertyPath: m_Layer
       value: 6
       objectReference: {fileID: 0}
+    - target: {fileID: 5051185718152186170, guid: 58f257495e687f74b953f687f6cc82b3, type: 3}
+      propertyPath: _enemyLayerMask.m_Bits
+      value: 1152
+      objectReference: {fileID: 0}
     - target: {fileID: 5716487165812248797, guid: 58f257495e687f74b953f687f6cc82b3, type: 3}
       propertyPath: m_LocalPosition.x
-      value: 24.41
+      value: -37.6
       objectReference: {fileID: 0}
     - target: {fileID: 5716487165812248797, guid: 58f257495e687f74b953f687f6cc82b3, type: 3}
       propertyPath: m_LocalPosition.y
-      value: -9.8
+      value: -27.3
       objectReference: {fileID: 0}
     - target: {fileID: 5716487165812248797, guid: 58f257495e687f74b953f687f6cc82b3, type: 3}
       propertyPath: m_LocalPosition.z
@@ -169,7 +177,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   _targetLayerMask:
     serializedVersion: 2
-    m_Bits: 1024
+    m_Bits: 1409
   _ignoreLayerMask:
     serializedVersion: 2
     m_Bits: 12352

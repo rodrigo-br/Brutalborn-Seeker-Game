@@ -56,11 +56,9 @@ public class Grenade : MonoBehaviour
 
         Vector2 launchDirection = new Vector2(Mathf.Cos(radianAngle), Mathf.Sin(radianAngle));
 
-        Debug.Log(direction);
         launchDirection = direction < 0
             ? new Vector2(-launchDirection.x, launchDirection.y)
             : new Vector2(launchDirection.x, -launchDirection.y);
-        Debug.Log(launchDirection);
 
         _rigidBody.velocity = launchDirection * velocity;
         _rigidBody.AddTorque(_toqueAmount);
