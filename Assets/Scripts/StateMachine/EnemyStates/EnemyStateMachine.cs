@@ -44,6 +44,12 @@ public class EnemyStateMachine : StateMachine
         SwitchState(new EnemySeekingState(this, _enemyInput, _enemyController, _enemyAI, _gun));
     }
 
+    [Button]
+    public void EnterGrenadeState()
+    {
+        SwitchState(new EnemyGrenadeState(this, _enemyInput, _enemyController, _enemyAI, _gun));
+    }
+
     public bool CanShootTarget(Vector2 targetDirection)
     {
         Vector2 origin = _gun.BulletSpawnPosition.position;

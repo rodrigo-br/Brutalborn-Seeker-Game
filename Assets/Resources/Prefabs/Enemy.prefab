@@ -100,6 +100,10 @@ PrefabInstance:
       propertyPath: <MaxHealth>k__BackingField
       value: 30
       objectReference: {fileID: 0}
+    - target: {fileID: 5961462777894820246, guid: 58f257495e687f74b953f687f6cc82b3, type: 3}
+      propertyPath: m_TagString
+      value: Untagged
+      objectReference: {fileID: 0}
     - target: {fileID: 7494462295254818709, guid: 58f257495e687f74b953f687f6cc82b3, type: 3}
       propertyPath: m_Layer
       value: 6

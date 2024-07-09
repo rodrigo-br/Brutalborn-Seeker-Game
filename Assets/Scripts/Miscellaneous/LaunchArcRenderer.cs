@@ -95,4 +95,12 @@ public class LaunchArcRenderer : MonoBehaviour
 
         return new Vector2(x * -1, y) + (Vector2)_parentTransform.position;
     }
+
+    public bool IsColliding()
+    {
+        Vector3 lastPos = _lineRenderer.GetPosition(_lineRenderer.positionCount - 1);
+        Vector3 beforeLastPos = _lineRenderer.GetPosition(_lineRenderer.positionCount - 2);
+
+        return Vector3.Distance(lastPos, beforeLastPos) < 0.001f;
+    }
 }

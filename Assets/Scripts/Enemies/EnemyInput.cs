@@ -21,7 +21,9 @@ public class EnemyInput : MonoBehaviour, IInput
         bool attackHeld = false,
         bool dashDown = false,
         bool interactDown = false,
-        bool interactHeld = false)
+        bool interactHeld = false,
+        bool grenadeHeld = false,
+        bool grenadeRelease = false)
     {
         _frameInput.Move = move;
         _frameInput.JumpDown = jumpDown;
@@ -31,5 +33,7 @@ public class EnemyInput : MonoBehaviour, IInput
         _frameInput.DashDown = dashDown;
         _frameInput.InteractDown = interactDown;
         _frameInput.InteractHeld = interactHeld;
+        _frameInput.GrenadeHeld = grenadeHeld;
+        _frameInput.GrenadeRelease = grenadeRelease;
     }
 }

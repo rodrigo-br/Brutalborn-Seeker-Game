@@ -31,7 +31,7 @@ public class Gun : MonoBehaviour
     private Coroutine _muzzleFlashRoutine;
     private Vector2 _direction = Vector2.right;
     private float _lastXDirection = 0;
-    private float _lastLobGrenadeTime = 0f;
+    public float LastLobGrenadeTime { get; private set; } = 0f;
     private float _currentShootCooldown;
     private static readonly int FIRE_HASH = Animator.StringToHash("Fire");
 
@@ -45,13 +45,13 @@ public class Gun : MonoBehaviour
     private void Update()
     {
         _currentShootCooldown -= Time.deltaTime;
-        _lastLobGrenadeTime -= Time.deltaTime;
+        LastLobGrenadeTime -= Time.deltaTime;
         if (_player.Input != Vector2.zero)
         {
             SetDirection(_player.Input);
         }
 
-        if (_player.HeldGrenade && _lastLobGrenadeTime <= 0)
+        if (_player.HeldGrenade && LastLobGrenadeTime <= 0)
         {
             if (!_launchArcRenderer.gameObject.activeSelf)
             {
@@ -65,7 +65,7 @@ public class Gun : MonoBehaviour
             }
         }
 
-        if (_player.LobGrenade && _lastLobGrenadeTime <= 0)
+        if (_player.LobGrenade && LastLobGrenadeTime <= 0)
         {
             OnLobGrenade?.Invoke();
             _launchArcRenderer.ResetVelocity();
@@ -106,7 +106,7 @@ public class Gun : MonoBehaviour
 
     public void LobGrenade()
     {
-        _lastLobGrenadeTime = _lobGranadeCooldown;
+        LastLobGrenadeTime = _lobGranadeCooldown;
         Grenade newGrenade = Instantiate(_grenadePrefab);
         newGrenade.Init(
             BulletSpawnPosition.position,
@@ -114,6 +114,12 @@ public class Gun : MonoBehaviour
             this,
             _launchArcRenderer.CurrentAngle,
             _launchArcRenderer.CurrentVelocity);
+    }
+
+    public void GiveUpGrenade()
+    {
+        LastLobGrenadeTime = _lobGranadeCooldown;
+        _launchArcRenderer.ResetVelocity();
     }
 
     private void BulletRent()
