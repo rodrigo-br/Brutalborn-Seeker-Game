@@ -102,11 +102,26 @@ public class PlayerAnimator : MonoBehaviour
 
         HandleIdleSpeed(xInput);
 
+        HandleFreeLookSpeed(xInput);
+
         HandleCharacterTilt(xInput);
 
         HandleCrouching();
 
         HandleWallSlideEffects();
+    }
+
+    private void HandleFreeLookSpeed(float xInput)
+    {
+        float target = 0;
+        if (_grounded)
+        {
+            if (xInput != 0)
+            {
+                target = 1;
+            }
+        }
+        _anim.SetFloat(FreeLookSpeedKey, target, 0.1f, Time.deltaTime);
     }
 
     private void LateUpdate()
@@ -477,6 +492,7 @@ public class PlayerAnimator : MonoBehaviour
     private static readonly int GroundedKey = Animator.StringToHash("Grounded");
     private static readonly int IdleSpeedKey = Animator.StringToHash("IdleSpeed");
     private static readonly int JumpKey = Animator.StringToHash("Jump");
+    private static readonly int FreeLookSpeedKey = Animator.StringToHash("FreeLookSpeed");
 
     #endregion
 }
