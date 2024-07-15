@@ -11,6 +11,7 @@ public class EnemyStateMachine : StateMachine
     private EnemyAI _enemyAI;
     private Gun _gun;
     private RaycastHit2D _lastHit;
+    private Health _health;
 
     private void Awake()
     {
@@ -18,7 +19,8 @@ public class EnemyStateMachine : StateMachine
         _enemyController = GetComponent<PlayerController>();
         _enemyAI = GetComponent<EnemyAI>();
         _gun = GetComponentInChildren<Gun>();
-        SwitchState(new EnemyPatrolState(this, _enemyInput, _enemyController, _enemyAI, _leftRightPatrol));
+        _health = gameObject.GetComponentInChildren<Health>();
+        SwitchState(new EnemyPatrolState(this, _enemyInput, _enemyController, _enemyAI, _leftRightPatrol, _health));
     }
 
     [Button]
@@ -30,7 +32,7 @@ public class EnemyStateMachine : StateMachine
     [Button]
     public void EnterPatrolState()
     {
-        SwitchState(new EnemyPatrolState(this, _enemyInput, _enemyController, _enemyAI, _leftRightPatrol));
+        SwitchState(new EnemyPatrolState(this, _enemyInput, _enemyController, _enemyAI, _leftRightPatrol, _health));
     }
 
     [Button]

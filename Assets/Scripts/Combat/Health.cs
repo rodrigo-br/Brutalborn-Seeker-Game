@@ -16,13 +16,9 @@ public class Health : MonoBehaviour, IDamageable, IHealable
 
     private void Awake()
     {
+        ResetHealth();
         _knockback = GetComponent<Knockback>();
         _flash = GetComponent<Flash>();
-    }
-
-    private void Start()
-    {
-        ResetHealth();
     }
 
     public void ResetHealth()
