@@ -5,6 +5,7 @@ public class EnemyStateMachine : StateMachine
 {
     [SerializeField] private LayerMask _targetLayerMask;
     [SerializeField] private LayerMask _ignoreLayerMask;
+    [SerializeField] private LeftRightPatrol _leftRightPatrol;
     private EnemyInput _enemyInput;
     private PlayerController _enemyController;
     private EnemyAI _enemyAI;
@@ -17,7 +18,7 @@ public class EnemyStateMachine : StateMachine
         _enemyController = GetComponent<PlayerController>();
         _enemyAI = GetComponent<EnemyAI>();
         _gun = GetComponentInChildren<Gun>();
-        SwitchState(new EnemyIdleState(this, _enemyInput, _enemyController, _enemyAI));
+        SwitchState(new EnemyPatrolState(this, _enemyInput, _enemyController, _enemyAI, _leftRightPatrol));
     }
 
     [Button]
@@ -29,7 +30,7 @@ public class EnemyStateMachine : StateMachine
     [Button]
     public void EnterPatrolState()
     {
-        SwitchState(new EnemyPatrolState(this, _enemyInput, _enemyController, _enemyAI));
+        SwitchState(new EnemyPatrolState(this, _enemyInput, _enemyController, _enemyAI, _leftRightPatrol));
     }
 
     [Button]

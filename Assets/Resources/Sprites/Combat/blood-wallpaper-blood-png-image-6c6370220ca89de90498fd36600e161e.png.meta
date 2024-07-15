@@ -1,0 +1,2465 @@
+fileFormatVersion: 2
+guid: 4ff49535e2fbfc24a878900a8b407811
+TextureImporter:
+  internalIDToNameTable:
+  - first:
+      213: -1025361386940364408
+    second: blood-wallpaper-blood-png-image-6c6370220ca89de90498fd36600e161e_0
+  - first:
+      213: -2509551621821472713
+    second: blood-wallpaper-blood-png-image-6c6370220ca89de90498fd36600e161e_1
+  - first:
+      213: -8281531798663775727
+    second: blood-wallpaper-blood-png-image-6c6370220ca89de90498fd36600e161e_2
+  - first:
+      213: 7239484843016126579
+    second: blood-wallpaper-blood-png-image-6c6370220ca89de90498fd36600e161e_3
+  - first:
+      213: -9076557374392309318
+    second: blood-wallpaper-blood-png-image-6c6370220ca89de90498fd36600e161e_4
+  - first:
+      213: 7162384655524223435
+    second: blood-wallpaper-blood-png-image-6c6370220ca89de90498fd36600e161e_5
+  - first:
+      213: -1316264777667519186
+    second: blood-wallpaper-blood-png-image-6c6370220ca89de90498fd36600e161e_6
+  - first:
+      213: -7393014898404093835
+    second: blood-wallpaper-blood-png-image-6c6370220ca89de90498fd36600e161e_7
+  - first:
+      213: -4506475535305084161
+    second: blood-wallpaper-blood-png-image-6c6370220ca89de90498fd36600e161e_8
+  - first:
+      213: 2036750519345148026
+    second: blood-wallpaper-blood-png-image-6c6370220ca89de90498fd36600e161e_9
+  - first:
+      213: -7406259545066953634
+    second: blood-wallpaper-blood-png-image-6c6370220ca89de90498fd36600e161e_10
+  - first:
+      213: -6811458898499040383
+    second: blood-wallpaper-blood-png-image-6c6370220ca89de90498fd36600e161e_11
+  - first:
+      213: 7519160329379530430
+    second: blood-wallpaper-blood-png-image-6c6370220ca89de90498fd36600e161e_12
+  - first:
+      213: -6929057717181465868
+    second: blood-wallpaper-blood-png-image-6c6370220ca89de90498fd36600e161e_13
+  - first:
+      213: 5299307185640818760
+    second: blood-wallpaper-blood-png-image-6c6370220ca89de90498fd36600e161e_14
+  - first:
+      213: -773764611067980622
+    second: blood-wallpaper-blood-png-image-6c6370220ca89de90498fd36600e161e_15
+  - first:
+      213: 7040800368969986
+    second: blood-wallpaper-blood-png-image-6c6370220ca89de90498fd36600e161e_16
+  - first:
+      213: 2951031516448041650
+    second: blood-wallpaper-blood-png-image-6c6370220ca89de90498fd36600e161e_17
+  - first:
+      213: 843743296587556424
+    second: blood-wallpaper-blood-png-image-6c6370220ca89de90498fd36600e161e_18
+  - first:
+      213: -5466654451868229067
+    second: blood-wallpaper-blood-png-image-6c6370220ca89de90498fd36600e161e_19
+  - first:
+      213: -8427014443513298894
+    second: blood-wallpaper-blood-png-image-6c6370220ca89de90498fd36600e161e_20
+  - first:
+      213: -4099952673447810702
+    second: blood-wallpaper-blood-png-image-6c6370220ca89de90498fd36600e161e_21
+  - first:
+      213: 1372434346716934678
+    second: blood-wallpaper-blood-png-image-6c6370220ca89de90498fd36600e161e_22
+  - first:
+      213: 4298534479282720349
+    second: blood-wallpaper-blood-png-image-6c6370220ca89de90498fd36600e161e_23
+  - first:
+      213: -2219971553451031519
+    second: blood-wallpaper-blood-png-image-6c6370220ca89de90498fd36600e161e_24
+  - first:
+      213: -3711873140187218447
+    second: blood-wallpaper-blood-png-image-6c6370220ca89de90498fd36600e161e_25
+  - first:
+      213: -6321561032068628162
+    second: blood-wallpaper-blood-png-image-6c6370220ca89de90498fd36600e161e_26
+  - first:
+      213: 1962252690443946024
+    second: blood-wallpaper-blood-png-image-6c6370220ca89de90498fd36600e161e_27
+  - first:
+      213: -1873866480553606833
+    second: blood-wallpaper-blood-png-image-6c6370220ca89de90498fd36600e161e_28
+  - first:
+      213: -1171150080305175249
+    second: blood-wallpaper-blood-png-image-6c6370220ca89de90498fd36600e161e_29
+  - first:
+      213: -8116205466628016632
+    second: blood-wallpaper-blood-png-image-6c6370220ca89de90498fd36600e161e_30
+  - first:
+      213: -2048203885756225680
+    second: blood-wallpaper-blood-png-image-6c6370220ca89de90498fd36600e161e_31
+  - first:
+      213: -1407515380348052842
+    second: blood-wallpaper-blood-png-image-6c6370220ca89de90498fd36600e161e_32
+  - first:
+      213: -2684935680978895861
+    second: blood-wallpaper-blood-png-image-6c6370220ca89de90498fd36600e161e_33
+  - first:
+      213: 3947955140127228888
+    second: blood-wallpaper-blood-png-image-6c6370220ca89de90498fd36600e161e_34
+  - first:
+      213: 5773037581057158360
+    second: blood-wallpaper-blood-png-image-6c6370220ca89de90498fd36600e161e_35
+  - first:
+      213: 6010077000922764805
+    second: blood-wallpaper-blood-png-image-6c6370220ca89de90498fd36600e161e_36
+  - first:
+      213: -7927650659025701159
+    second: blood-wallpaper-blood-png-image-6c6370220ca89de90498fd36600e161e_37
+  - first:
+      213: 1575807023336865803
+    second: blood-wallpaper-blood-png-image-6c6370220ca89de90498fd36600e161e_38
+  - first:
+      213: 7610476843243923089
+    second: blood-wallpaper-blood-png-image-6c6370220ca89de90498fd36600e161e_39
+  - first:
+      213: -8255433970995245393
+    second: blood-wallpaper-blood-png-image-6c6370220ca89de90498fd36600e161e_40
+  - first:
+      213: -5323181194117087004
+    second: blood-wallpaper-blood-png-image-6c6370220ca89de90498fd36600e161e_41
+  - first:
+      213: 1848333424661182833
+    second: blood-wallpaper-blood-png-image-6c6370220ca89de90498fd36600e161e_42
+  - first:
+      213: -2964455323589031619
+    second: blood-wallpaper-blood-png-image-6c6370220ca89de90498fd36600e161e_43
+  - first:
+      213: -2733359985727813082
+    second: blood-wallpaper-blood-png-image-6c6370220ca89de90498fd36600e161e_44
+  - first:
+      213: 4884356004019911222
+    second: blood-wallpaper-blood-png-image-6c6370220ca89de90498fd36600e161e_45
+  - first:
+      213: 4319569343354619757
+    second: blood-wallpaper-blood-png-image-6c6370220ca89de90498fd36600e161e_46
+  - first:
+      213: 340642810193841930
+    second: blood-wallpaper-blood-png-image-6c6370220ca89de90498fd36600e161e_47
+  - first:
+      213: 6588764283025269169
+    second: blood-wallpaper-blood-png-image-6c6370220ca89de90498fd36600e161e_48
+  - first:
+      213: -8049456384222701631
+    second: blood-wallpaper-blood-png-image-6c6370220ca89de90498fd36600e161e_49
+  - first:
+      213: 5486969948302110792
+    second: blood-wallpaper-blood-png-image-6c6370220ca89de90498fd36600e161e_50
+  - first:
+      213: 1044907741801430700
+    second: blood-wallpaper-blood-png-image-6c6370220ca89de90498fd36600e161e_51
+  - first:
+      213: 9047672174558378076
+    second: blood-wallpaper-blood-png-image-6c6370220ca89de90498fd36600e161e_52
+  - first:
+      213: 4243835624552063474
+    second: blood-wallpaper-blood-png-image-6c6370220ca89de90498fd36600e161e_53
+  - first:
+      213: 5362775617169752089
+    second: blood-wallpaper-blood-png-image-6c6370220ca89de90498fd36600e161e_54
+  - first:
+      213: -4104124993283591680
+    second: blood-wallpaper-blood-png-image-6c6370220ca89de90498fd36600e161e_55
+  - first:
+      213: 2293588289664496980
+    second: blood-wallpaper-blood-png-image-6c6370220ca89de90498fd36600e161e_56
+  - first:
+      213: 1127795790399780990
+    second: blood-wallpaper-blood-png-image-6c6370220ca89de90498fd36600e161e_57
+  - first:
+      213: 2541601926574799082
+    second: blood-wallpaper-blood-png-image-6c6370220ca89de90498fd36600e161e_58
+  - first:
+      213: 2294639409989032039
+    second: blood-wallpaper-blood-png-image-6c6370220ca89de90498fd36600e161e_59
+  - first:
+      213: -3806933731570458527
+    second: blood-wallpaper-blood-png-image-6c6370220ca89de90498fd36600e161e_60
+  - first:
+      213: 7912354503985915075
+    second: blood-wallpaper-blood-png-image-6c6370220ca89de90498fd36600e161e_61
+  - first:
+      213: -7877286778450673891
+    second: blood-wallpaper-blood-png-image-6c6370220ca89de90498fd36600e161e_62
+  - first:
+      213: 7520364495060261019
+    second: blood-wallpaper-blood-png-image-6c6370220ca89de90498fd36600e161e_63
+  - first:
+      213: 8100698250699402073
+    second: blood-wallpaper-blood-png-image-6c6370220ca89de90498fd36600e161e_64
+  - first:
+      213: 4981132835020242769
+    second: blood-wallpaper-blood-png-image-6c6370220ca89de90498fd36600e161e_65
+  - first:
+      213: -4599024267438306269
+    second: blood-wallpaper-blood-png-image-6c6370220ca89de90498fd36600e161e_66
+  - first:
+      213: 7770064233300287247
+    second: blood-wallpaper-blood-png-image-6c6370220ca89de90498fd36600e161e_67
+  - first:
+      213: 8761018547668274415
+    second: blood-wallpaper-blood-png-image-6c6370220ca89de90498fd36600e161e_68
+  - first:
+      213: -4505786281850337542
+    second: blood-wallpaper-blood-png-image-6c6370220ca89de90498fd36600e161e_69
+  - first:
+      213: 8462245002461333398
+    second: blood-wallpaper-blood-png-image-6c6370220ca89de90498fd36600e161e_70
+  - first:
+      213: -4632252072494423397
+    second: blood-wallpaper-blood-png-image-6c6370220ca89de90498fd36600e161e_71
+  - first:
+      213: 7476750729842684964
+    second: blood-wallpaper-blood-png-image-6c6370220ca89de90498fd36600e161e_72
+  - first:
+      213: 679557964766073301
+    second: blood-wallpaper-blood-png-image-6c6370220ca89de90498fd36600e161e_73
+  - first:
+      213: 8668979264150229032
+    second: blood-wallpaper-blood-png-image-6c6370220ca89de90498fd36600e161e_74
+  - first:
+      213: -5762159422612455043
+    second: blood-wallpaper-blood-png-image-6c6370220ca89de90498fd36600e161e_75
+  - first:
+      213: -6269106358034223661
+    second: blood-wallpaper-blood-png-image-6c6370220ca89de90498fd36600e161e_76
+  - first:
+      213: 9007019304360094901
+    second: blood-wallpaper-blood-png-image-6c6370220ca89de90498fd36600e161e_77
+  - first:
+      213: 1727026308178136323
+    second: blood-wallpaper-blood-png-image-6c6370220ca89de90498fd36600e161e_78
+  - first:
+      213: -7117678936887309310
+    second: blood-wallpaper-blood-png-image-6c6370220ca89de90498fd36600e161e_79
+  - first:
+      213: -3450751273078713334
+    second: blood-wallpaper-blood-png-image-6c6370220ca89de90498fd36600e161e_80
+  - first:
+      213: -3652049501842661203
+    second: blood-wallpaper-blood-png-image-6c6370220ca89de90498fd36600e161e_81
+  - first:
+      213: -5803116465786051674
+    second: blood-wallpaper-blood-png-image-6c6370220ca89de90498fd36600e161e_82
+  - first:
+      213: -6944271315271204181
+    second: blood-wallpaper-blood-png-image-6c6370220ca89de90498fd36600e161e_83
+  - first:
+      213: -2788447035421303112
+    second: blood-wallpaper-blood-png-image-6c6370220ca89de90498fd36600e161e_84
+  - first:
+      213: 1778134776707274354
+    second: blood-wallpaper-blood-png-image-6c6370220ca89de90498fd36600e161e_85
+  - first:
+      213: 5073081240134049583
+    second: blood-wallpaper-blood-png-image-6c6370220ca89de90498fd36600e161e_86
+  - first:
+      213: -4801436060315711808
+    second: blood-wallpaper-blood-png-image-6c6370220ca89de90498fd36600e161e_87
+  - first:
+      213: 6058552545842787679
+    second: blood-wallpaper-blood-png-image-6c6370220ca89de90498fd36600e161e_88
+  - first:
+      213: 2841125420747665659
+    second: blood-wallpaper-blood-png-image-6c6370220ca89de90498fd36600e161e_89
+  - first:
+      213: 7026127227567361020
+    second: blood-wallpaper-blood-png-image-6c6370220ca89de90498fd36600e161e_90
+  - first:
+      213: 7190039042228530938
+    second: blood-wallpaper-blood-png-image-6c6370220ca89de90498fd36600e161e_91
+  - first:
+      213: -5062525553707079668
+    second: blood-wallpaper-blood-png-image-6c6370220ca89de90498fd36600e161e_92
+  - first:
+      213: 7842046170495301697
+    second: blood-wallpaper-blood-png-image-6c6370220ca89de90498fd36600e161e_93
+  - first:
+      213: 5985214725588551471
+    second: blood-wallpaper-blood-png-image-6c6370220ca89de90498fd36600e161e_94
+  - first:
+      213: 7736632667034478005
+    second: blood-wallpaper-blood-png-image-6c6370220ca89de90498fd36600e161e_95
+  - first:
+      213: -4379525378368278680
+    second: blood-wallpaper-blood-png-image-6c6370220ca89de90498fd36600e161e_96
+  - first:
+      213: -5718923241076366004
+    second: blood-wallpaper-blood-png-image-6c6370220ca89de90498fd36600e161e_97
+  externalObjects: {}
+  serializedVersion: 12
+  mipmaps:
+    mipMapMode: 0
+    enableMipMap: 0
+    sRGBTexture: 1
+    linearTexture: 0
+    fadeOut: 0
+    borderMipMap: 0
+    mipMapsPreserveCoverage: 0
+    alphaTestReferenceValue: 0.5
+    mipMapFadeDistanceStart: 1
+    mipMapFadeDistanceEnd: 3
+  bumpmap:
+    convertToNormalMap: 0
+    externalNormalMap: 0
+    heightScale: 0.25
+    normalMapFilter: 0
+    flipGreenChannel: 0
+  isReadable: 0
+  streamingMipmaps: 0
+  streamingMipmapsPriority: 0
+  vTOnly: 0
+  ignoreMipmapLimit: 0
+  grayScaleToAlpha: 0
+  generateCubemap: 6
+  cubemapConvolution: 0
+  seamlessCubemap: 0
+  textureFormat: 1
+  maxTextureSize: 2048
+  textureSettings:
+    serializedVersion: 2
+    filterMode: 0
+    aniso: 1
+    mipBias: 0
+    wrapU: 1
+    wrapV: 1
+    wrapW: 1
+  nPOTScale: 0
+  lightmap: 0
+  compressionQuality: 50
+  spriteMode: 1
+  spriteExtrude: 1
+  spriteMeshType: 1
+  alignment: 0
+  spritePivot: {x: 0.6, y: -0.2}
+  spritePixelsToUnits: 500
+  spriteBorder: {x: 0, y: 0, z: 0, w: 0}
+  spriteGenerateFallbackPhysicsShape: 1
+  alphaUsage: 1
+  alphaIsTransparency: 1
+  spriteTessellationDetail: -1
+  textureType: 8
+  textureShape: 1
+  singleChannelComponent: 0
+  flipbookRows: 1
+  flipbookColumns: 1
+  maxTextureSizeSet: 0
+  compressionQualitySet: 0
+  textureFormatSet: 0
+  ignorePngGamma: 0
+  applyGammaDecoding: 0
+  swizzle: 50462976
+  cookieLightType: 0
+  platformSettings:
+  - serializedVersion: 3
+    buildTarget: DefaultTexturePlatform
+    maxTextureSize: 2048
+    resizeAlgorithm: 0
+    textureFormat: -1
+    textureCompression: 1
+    compressionQuality: 50
+    crunchedCompression: 0
+    allowsAlphaSplitting: 0
+    overridden: 0
+    androidETC2FallbackOverride: 0
+    forceMaximumCompressionQuality_BC6H_BC7: 0
+  - serializedVersion: 3
+    buildTarget: Standalone
+    maxTextureSize: 2048
+    resizeAlgorithm: 0
+    textureFormat: -1
+    textureCompression: 1
+    compressionQuality: 50
+    crunchedCompression: 0
+    allowsAlphaSplitting: 0
+    overridden: 0
+    androidETC2FallbackOverride: 0
+    forceMaximumCompressionQuality_BC6H_BC7: 0
+  spriteSheet:
+    serializedVersion: 2
+    sprites:
+    - serializedVersion: 2
+      name: blood-wallpaper-blood-png-image-6c6370220ca89de90498fd36600e161e_0
+      rect:
+        serializedVersion: 2
+        x: 13
+        y: 520
+        width: 52
+        height: 10
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 889840d404f25c1f0800000000000000
+      internalID: -1025361386940364408
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: blood-wallpaper-blood-png-image-6c6370220ca89de90498fd36600e161e_1
+      rect:
+        serializedVersion: 2
+        x: 112
+        y: 0
+        width: 747
+        height: 544
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 73063db98184c2dd0800000000000000
+      internalID: -2509551621821472713
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: blood-wallpaper-blood-png-image-6c6370220ca89de90498fd36600e161e_2
+      rect:
+        serializedVersion: 2
+        x: 11
+        y: 446
+        width: 162
+        height: 52
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 11a3b80e4b6121d80800000000000000
+      internalID: -8281531798663775727
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: blood-wallpaper-blood-png-image-6c6370220ca89de90498fd36600e161e_3
+      rect:
+        serializedVersion: 2
+        x: 756
+        y: 462
+        width: 20
+        height: 15
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 3700dc8bb11d77460800000000000000
+      internalID: 7239484843016126579
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: blood-wallpaper-blood-png-image-6c6370220ca89de90498fd36600e161e_4
+      rect:
+        serializedVersion: 2
+        x: 762
+        y: 440
+        width: 14
+        height: 13
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: ab9e4eb5827990280800000000000000
+      internalID: -9076557374392309318
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: blood-wallpaper-blood-png-image-6c6370220ca89de90498fd36600e161e_5
+      rect:
+        serializedVersion: 2
+        x: 779
+        y: 451
+        width: 58
+        height: 61
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: bc9da3175e6e56360800000000000000
+      internalID: 7162384655524223435
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: blood-wallpaper-blood-png-image-6c6370220ca89de90498fd36600e161e_6
+      rect:
+        serializedVersion: 2
+        x: 783
+        y: 441
+        width: 21
+        height: 18
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: e2dd4c89820bbbde0800000000000000
+      internalID: -1316264777667519186
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: blood-wallpaper-blood-png-image-6c6370220ca89de90498fd36600e161e_7
+      rect:
+        serializedVersion: 2
+        x: 853
+        y: 419
+        width: 98
+        height: 77
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 5701479ae1cb66990800000000000000
+      internalID: -7393014898404093835
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: blood-wallpaper-blood-png-image-6c6370220ca89de90498fd36600e161e_8
+      rect:
+        serializedVersion: 2
+        x: 751
+        y: 425
+        width: 24
+        height: 13
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: ff2f6218068c571c0800000000000000
+      internalID: -4506475535305084161
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: blood-wallpaper-blood-png-image-6c6370220ca89de90498fd36600e161e_9
+      rect:
+        serializedVersion: 2
+        x: 815
+        y: 383
+        width: 33
+        height: 55
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: a70f8a16ecdf34c10800000000000000
+      internalID: 2036750519345148026
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: blood-wallpaper-blood-png-image-6c6370220ca89de90498fd36600e161e_10
+      rect:
+        serializedVersion: 2
+        x: 868
+        y: 437
+        width: 7
+        height: 7
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: e5420fd0f2ea73990800000000000000
+      internalID: -7406259545066953634
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: blood-wallpaper-blood-png-image-6c6370220ca89de90498fd36600e161e_11
+      rect:
+        serializedVersion: 2
+        x: 96
+        y: 373
+        width: 29
+        height: 53
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 18b8ac07836d871a0800000000000000
+      internalID: -6811458898499040383
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: blood-wallpaper-blood-png-image-6c6370220ca89de90498fd36600e161e_12
+      rect:
+        serializedVersion: 2
+        x: 773
+        y: 421
+        width: 6
+        height: 6
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: eb640e93b7c695860800000000000000
+      internalID: 7519160329379530430
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: blood-wallpaper-blood-png-image-6c6370220ca89de90498fd36600e161e_13
+      rect:
+        serializedVersion: 2
+        x: 28
+        y: 325
+        width: 32
+        height: 91
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 4fa383bc7ba07df90800000000000000
+      internalID: -6929057717181465868
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: blood-wallpaper-blood-png-image-6c6370220ca89de90498fd36600e161e_14
+      rect:
+        serializedVersion: 2
+        x: 125
+        y: 394
+        width: 21
+        height: 21
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 848cbc3fecbea8940800000000000000
+      internalID: 5299307185640818760
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: blood-wallpaper-blood-png-image-6c6370220ca89de90498fd36600e161e_15
+      rect:
+        serializedVersion: 2
+        x: 778
+        y: 414
+        width: 9
+        height: 6
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 2b456819f290345f0800000000000000
+      internalID: -773764611067980622
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: blood-wallpaper-blood-png-image-6c6370220ca89de90498fd36600e161e_16
+      rect:
+        serializedVersion: 2
+        x: 767
+        y: 386
+        width: 20
+        height: 11
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 2094de41293091000800000000000000
+      internalID: 7040800368969986
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: blood-wallpaper-blood-png-image-6c6370220ca89de90498fd36600e161e_17
+      rect:
+        serializedVersion: 2
+        x: 800
+        y: 380
+        width: 25
+        height: 16
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 2ba2eda678b24f820800000000000000
+      internalID: 2951031516448041650
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: blood-wallpaper-blood-png-image-6c6370220ca89de90498fd36600e161e_18
+      rect:
+        serializedVersion: 2
+        x: 850
+        y: 369
+        width: 41
+        height: 21
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 846e7b2de0495bb00800000000000000
+      internalID: 843743296587556424
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: blood-wallpaper-blood-png-image-6c6370220ca89de90498fd36600e161e_19
+      rect:
+        serializedVersion: 2
+        x: 771
+        y: 373
+        width: 10
+        height: 8
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 53226965dba8224b0800000000000000
+      internalID: -5466654451868229067
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: blood-wallpaper-blood-png-image-6c6370220ca89de90498fd36600e161e_20
+      rect:
+        serializedVersion: 2
+        x: 820
+        y: 328
+        width: 35
+        height: 48
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 230cd49030b3d0b80800000000000000
+      internalID: -8427014443513298894
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: blood-wallpaper-blood-png-image-6c6370220ca89de90498fd36600e161e_21
+      rect:
+        serializedVersion: 2
+        x: 821
+        y: 376
+        width: 7
+        height: 7
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 279ea3714ca0a17c0800000000000000
+      internalID: -4099952673447810702
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: blood-wallpaper-blood-png-image-6c6370220ca89de90498fd36600e161e_22
+      rect:
+        serializedVersion: 2
+        x: 756
+        y: 353
+        width: 26
+        height: 12
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 612bb9154cddb0310800000000000000
+      internalID: 1372434346716934678
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: blood-wallpaper-blood-png-image-6c6370220ca89de90498fd36600e161e_23
+      rect:
+        serializedVersion: 2
+        x: 774
+        y: 364
+        width: 11
+        height: 7
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: d5e4a64955677ab30800000000000000
+      internalID: 4298534479282720349
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: blood-wallpaper-blood-png-image-6c6370220ca89de90498fd36600e161e_24
+      rect:
+        serializedVersion: 2
+        x: 801
+        y: 365
+        width: 12
+        height: 7
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 124441152a31131e0800000000000000
+      internalID: -2219971553451031519
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: blood-wallpaper-blood-png-image-6c6370220ca89de90498fd36600e161e_25
+      rect:
+        serializedVersion: 2
+        x: 803
+        y: 360
+        width: 7
+        height: 6
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 1fdb3db9b07cc7cc0800000000000000
+      internalID: -3711873140187218447
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: blood-wallpaper-blood-png-image-6c6370220ca89de90498fd36600e161e_26
+      rect:
+        serializedVersion: 2
+        x: 96
+        y: 337
+        width: 36
+        height: 21
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: e3109910cbd4548a0800000000000000
+      internalID: -6321561032068628162
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: blood-wallpaper-blood-png-image-6c6370220ca89de90498fd36600e161e_27
+      rect:
+        serializedVersion: 2
+        x: 766
+        y: 338
+        width: 23
+        height: 14
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 828477dec625b3b10800000000000000
+      internalID: 1962252690443946024
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: blood-wallpaper-blood-png-image-6c6370220ca89de90498fd36600e161e_28
+      rect:
+        serializedVersion: 2
+        x: 788
+        y: 351
+        width: 15
+        height: 9
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: f4147163d50bef5e0800000000000000
+      internalID: -1873866480553606833
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: blood-wallpaper-blood-png-image-6c6370220ca89de90498fd36600e161e_29
+      rect:
+        serializedVersion: 2
+        x: 813
+        y: 348
+        width: 11
+        height: 7
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: f256dbcf43d3fbfe0800000000000000
+      internalID: -1171150080305175249
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: blood-wallpaper-blood-png-image-6c6370220ca89de90498fd36600e161e_30
+      rect:
+        serializedVersion: 2
+        x: 760
+        y: 291
+        width: 37
+        height: 41
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 806bd8d21227d5f80800000000000000
+      internalID: -8116205466628016632
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: blood-wallpaper-blood-png-image-6c6370220ca89de90498fd36600e161e_31
+      rect:
+        serializedVersion: 2
+        x: 768
+        y: 329
+        width: 19
+        height: 10
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 077ece1fa615393e0800000000000000
+      internalID: -2048203885756225680
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: blood-wallpaper-blood-png-image-6c6370220ca89de90498fd36600e161e_32
+      rect:
+        serializedVersion: 2
+        x: 783
+        y: 322
+        width: 12
+        height: 15
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 69a947a0830877ce0800000000000000
+      internalID: -1407515380348052842
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: blood-wallpaper-blood-png-image-6c6370220ca89de90498fd36600e161e_33
+      rect:
+        serializedVersion: 2
+        x: 791
+        y: 328
+        width: 21
+        height: 21
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: b0c3b7a39313dbad0800000000000000
+      internalID: -2684935680978895861
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: blood-wallpaper-blood-png-image-6c6370220ca89de90498fd36600e161e_34
+      rect:
+        serializedVersion: 2
+        x: 38
+        y: 303
+        width: 12
+        height: 9
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 8d306746844f9c630800000000000000
+      internalID: 3947955140127228888
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: blood-wallpaper-blood-png-image-6c6370220ca89de90498fd36600e161e_35
+      rect:
+        serializedVersion: 2
+        x: 99
+        y: 309
+        width: 6
+        height: 6
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 8dc64e5d713fd1050800000000000000
+      internalID: 5773037581057158360
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: blood-wallpaper-blood-png-image-6c6370220ca89de90498fd36600e161e_36
+      rect:
+        serializedVersion: 2
+        x: 794
+        y: 305
+        width: 7
+        height: 6
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 5061fb88035186350800000000000000
+      internalID: 6010077000922764805
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: blood-wallpaper-blood-png-image-6c6370220ca89de90498fd36600e161e_37
+      rect:
+        serializedVersion: 2
+        x: 919
+        y: 303
+        width: 11
+        height: 17
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 9d6b1656ab35bf190800000000000000
+      internalID: -7927650659025701159
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: blood-wallpaper-blood-png-image-6c6370220ca89de90498fd36600e161e_38
+      rect:
+        serializedVersion: 2
+        x: 46
+        y: 277
+        width: 16
+        height: 20
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: b004f8483246ed510800000000000000
+      internalID: 1575807023336865803
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: blood-wallpaper-blood-png-image-6c6370220ca89de90498fd36600e161e_39
+      rect:
+        serializedVersion: 2
+        x: 76
+        y: 244
+        width: 43
+        height: 64
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 196e3eced58dd9960800000000000000
+      internalID: 7610476843243923089
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: blood-wallpaper-blood-png-image-6c6370220ca89de90498fd36600e161e_40
+      rect:
+        serializedVersion: 2
+        x: 805
+        y: 287
+        width: 11
+        height: 7
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: faec224ea8ece6d80800000000000000
+      internalID: -8255433970995245393
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: blood-wallpaper-blood-png-image-6c6370220ca89de90498fd36600e161e_41
+      rect:
+        serializedVersion: 2
+        x: 851
+        y: 291
+        width: 11
+        height: 8
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 4e08c9948e24026b0800000000000000
+      internalID: -5323181194117087004
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: blood-wallpaper-blood-png-image-6c6370220ca89de90498fd36600e161e_42
+      rect:
+        serializedVersion: 2
+        x: 873
+        y: 270
+        width: 24
+        height: 34
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 1793963f47996a910800000000000000
+      internalID: 1848333424661182833
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: blood-wallpaper-blood-png-image-6c6370220ca89de90498fd36600e161e_43
+      rect:
+        serializedVersion: 2
+        x: 899
+        y: 181
+        width: 61
+        height: 114
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: d39c5fce6932cd6d0800000000000000
+      internalID: -2964455323589031619
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: blood-wallpaper-blood-png-image-6c6370220ca89de90498fd36600e161e_44
+      rect:
+        serializedVersion: 2
+        x: 114
+        y: 282
+        width: 8
+        height: 7
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 62a4d6f2397211ad0800000000000000
+      internalID: -2733359985727813082
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: blood-wallpaper-blood-png-image-6c6370220ca89de90498fd36600e161e_45
+      rect:
+        serializedVersion: 2
+        x: 768
+        y: 283
+        width: 10
+        height: 6
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 63a372048e7b8c340800000000000000
+      internalID: 4884356004019911222
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: blood-wallpaper-blood-png-image-6c6370220ca89de90498fd36600e161e_46
+      rect:
+        serializedVersion: 2
+        x: 838
+        y: 280
+        width: 8
+        height: 8
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: d67c1558e6132fb30800000000000000
+      internalID: 4319569343354619757
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: blood-wallpaper-blood-png-image-6c6370220ca89de90498fd36600e161e_47
+      rect:
+        serializedVersion: 2
+        x: 769
+        y: 274
+        width: 12
+        height: 6
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: a0f05e0c4d43ab400800000000000000
+      internalID: 340642810193841930
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: blood-wallpaper-blood-png-image-6c6370220ca89de90498fd36600e161e_48
+      rect:
+        serializedVersion: 2
+        x: 105
+        y: 253
+        width: 10
+        height: 9
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 1b1a086e43eff6b50800000000000000
+      internalID: 6588764283025269169
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: blood-wallpaper-blood-png-image-6c6370220ca89de90498fd36600e161e_49
+      rect:
+        serializedVersion: 2
+        x: 887
+        y: 262
+        width: 7
+        height: 7
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 1c7d76ff0169a4090800000000000000
+      internalID: -8049456384222701631
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: blood-wallpaper-blood-png-image-6c6370220ca89de90498fd36600e161e_50
+      rect:
+        serializedVersion: 2
+        x: 20
+        y: 235
+        width: 35
+        height: 22
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 8407ac5c812a52c40800000000000000
+      internalID: 5486969948302110792
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: blood-wallpaper-blood-png-image-6c6370220ca89de90498fd36600e161e_51
+      rect:
+        serializedVersion: 2
+        x: 875
+        y: 252
+        width: 8
+        height: 7
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: cae31251e02408e00800000000000000
+      internalID: 1044907741801430700
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: blood-wallpaper-blood-png-image-6c6370220ca89de90498fd36600e161e_52
+      rect:
+        serializedVersion: 2
+        x: 110
+        y: 242
+        width: 6
+        height: 6
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: c58fcb8f7e9cf8d70800000000000000
+      internalID: 9047672174558378076
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: blood-wallpaper-blood-png-image-6c6370220ca89de90498fd36600e161e_53
+      rect:
+        serializedVersion: 2
+        x: 868
+        y: 241
+        width: 11
+        height: 7
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 2f1e296040225ea30800000000000000
+      internalID: 4243835624552063474
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: blood-wallpaper-blood-png-image-6c6370220ca89de90498fd36600e161e_54
+      rect:
+        serializedVersion: 2
+        x: 50
+        y: 174
+        width: 55
+        height: 48
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 9108787b2086c6a40800000000000000
+      internalID: 5362775617169752089
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: blood-wallpaper-blood-png-image-6c6370220ca89de90498fd36600e161e_55
+      rect:
+        serializedVersion: 2
+        x: 107
+        y: 219
+        width: 12
+        height: 12
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 002778d20183b07c0800000000000000
+      internalID: -4104124993283591680
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: blood-wallpaper-blood-png-image-6c6370220ca89de90498fd36600e161e_56
+      rect:
+        serializedVersion: 2
+        x: 803
+        y: 218
+        width: 6
+        height: 7
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 455b272c56674df10800000000000000
+      internalID: 2293588289664496980
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: blood-wallpaper-blood-png-image-6c6370220ca89de90498fd36600e161e_57
+      rect:
+        serializedVersion: 2
+        x: 840
+        y: 221
+        width: 8
+        height: 9
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: e78b5f9cb4cb6af00800000000000000
+      internalID: 1127795790399780990
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: blood-wallpaper-blood-png-image-6c6370220ca89de90498fd36600e161e_58
+      rect:
+        serializedVersion: 2
+        x: 118
+        y: 210
+        width: 6
+        height: 6
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: ae870f97c75954320800000000000000
+      internalID: 2541601926574799082
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: blood-wallpaper-blood-png-image-6c6370220ca89de90498fd36600e161e_59
+      rect:
+        serializedVersion: 2
+        x: 811
+        y: 205
+        width: 19
+        height: 9
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 7681208c26238df10800000000000000
+      internalID: 2294639409989032039
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: blood-wallpaper-blood-png-image-6c6370220ca89de90498fd36600e161e_60
+      rect:
+        serializedVersion: 2
+        x: 829
+        y: 212
+        width: 6
+        height: 6
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 1606a4ee0fd0b2bc0800000000000000
+      internalID: -3806933731570458527
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: blood-wallpaper-blood-png-image-6c6370220ca89de90498fd36600e161e_61
+      rect:
+        serializedVersion: 2
+        x: 871
+        y: 206
+        width: 15
+        height: 13
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 3c4ea0bff745ecd60800000000000000
+      internalID: 7912354503985915075
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: blood-wallpaper-blood-png-image-6c6370220ca89de90498fd36600e161e_62
+      rect:
+        serializedVersion: 2
+        x: 779
+        y: 192
+        width: 11
+        height: 10
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: d1ff09029614ea290800000000000000
+      internalID: -7877286778450673891
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: blood-wallpaper-blood-png-image-6c6370220ca89de90498fd36600e161e_63
+      rect:
+        serializedVersion: 2
+        x: 794
+        y: 201
+        width: 6
+        height: 7
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: b98d685e9a3bd5860800000000000000
+      internalID: 7520364495060261019
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: blood-wallpaper-blood-png-image-6c6370220ca89de90498fd36600e161e_64
+      rect:
+        serializedVersion: 2
+        x: 806
+        y: 198
+        width: 6
+        height: 7
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 95be091c3267b6070800000000000000
+      internalID: 8100698250699402073
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: blood-wallpaper-blood-png-image-6c6370220ca89de90498fd36600e161e_65
+      rect:
+        serializedVersion: 2
+        x: 813
+        y: 191
+        width: 12
+        height: 11
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 15f7a6a1ce9802540800000000000000
+      internalID: 4981132835020242769
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: blood-wallpaper-blood-png-image-6c6370220ca89de90498fd36600e161e_66
+      rect:
+        serializedVersion: 2
+        x: 127
+        y: 191
+        width: 6
+        height: 6
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 32c40f1abcbfc20c0800000000000000
+      internalID: -4599024267438306269
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: blood-wallpaper-blood-png-image-6c6370220ca89de90498fd36600e161e_67
+      rect:
+        serializedVersion: 2
+        x: 789
+        y: 188
+        width: 11
+        height: 10
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: f0fd4dba040d4db60800000000000000
+      internalID: 7770064233300287247
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: blood-wallpaper-blood-png-image-6c6370220ca89de90498fd36600e161e_68
+      rect:
+        serializedVersion: 2
+        x: 127
+        y: 176
+        width: 9
+        height: 7
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: fec406483f3659970800000000000000
+      internalID: 8761018547668274415
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: blood-wallpaper-blood-png-image-6c6370220ca89de90498fd36600e161e_69
+      rect:
+        serializedVersion: 2
+        x: 852
+        y: 176
+        width: 8
+        height: 7
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: af68b74df3b3871c0800000000000000
+      internalID: -4505786281850337542
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: blood-wallpaper-blood-png-image-6c6370220ca89de90498fd36600e161e_70
+      rect:
+        serializedVersion: 2
+        x: 17
+        y: 113
+        width: 79
+        height: 52
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 697480eaefeef6570800000000000000
+      internalID: 8462245002461333398
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: blood-wallpaper-blood-png-image-6c6370220ca89de90498fd36600e161e_71
+      rect:
+        serializedVersion: 2
+        x: 106
+        y: 117
+        width: 62
+        height: 47
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: b9227e4684fe6bfb0800000000000000
+      internalID: -4632252072494423397
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: blood-wallpaper-blood-png-image-6c6370220ca89de90498fd36600e161e_72
+      rect:
+        serializedVersion: 2
+        x: 783
+        y: 151
+        width: 9
+        height: 10
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 4247a6edc21c2c760800000000000000
+      internalID: 7476750729842684964
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: blood-wallpaper-blood-png-image-6c6370220ca89de90498fd36600e161e_73
+      rect:
+        serializedVersion: 2
+        x: 784
+        y: 161
+        width: 7
+        height: 8
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 5d15b265e564e6900800000000000000
+      internalID: 679557964766073301
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: blood-wallpaper-blood-png-image-6c6370220ca89de90498fd36600e161e_74
+      rect:
+        serializedVersion: 2
+        x: 799
+        y: 158
+        width: 15
+        height: 10
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 820d6e4e5b66e4870800000000000000
+      internalID: 8668979264150229032
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: blood-wallpaper-blood-png-image-6c6370220ca89de90498fd36600e161e_75
+      rect:
+        serializedVersion: 2
+        x: 829
+        y: 153
+        width: 7
+        height: 8
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: d71c30cc882b800b0800000000000000
+      internalID: -5762159422612455043
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: blood-wallpaper-blood-png-image-6c6370220ca89de90498fd36600e161e_76
+      rect:
+        serializedVersion: 2
+        x: 795
+        y: 131
+        width: 15
+        height: 13
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 3dd2a368bf8aff8a0800000000000000
+      internalID: -6269106358034223661
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: blood-wallpaper-blood-png-image-6c6370220ca89de90498fd36600e161e_77
+      rect:
+        serializedVersion: 2
+        x: 812
+        y: 140
+        width: 8
+        height: 7
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 5bc2879065c5ffc70800000000000000
+      internalID: 9007019304360094901
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: blood-wallpaper-blood-png-image-6c6370220ca89de90498fd36600e161e_78
+      rect:
+        serializedVersion: 2
+        x: 824
+        y: 132
+        width: 10
+        height: 9
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 30d46b0f641a7f710800000000000000
+      internalID: 1727026308178136323
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: blood-wallpaper-blood-png-image-6c6370220ca89de90498fd36600e161e_79
+      rect:
+        serializedVersion: 2
+        x: 122
+        y: 114
+        width: 11
+        height: 11
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 20c4d8dc7bce83d90800000000000000
+      internalID: -7117678936887309310
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: blood-wallpaper-blood-png-image-6c6370220ca89de90498fd36600e161e_80
+      rect:
+        serializedVersion: 2
+        x: 795
+        y: 125
+        width: 6
+        height: 6
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: a049aeffff77c10d0800000000000000
+      internalID: -3450751273078713334
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: blood-wallpaper-blood-png-image-6c6370220ca89de90498fd36600e161e_81
+      rect:
+        serializedVersion: 2
+        x: 784
+        y: 117
+        width: 7
+        height: 7
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: da0a684d350515dc0800000000000000
+      internalID: -3652049501842661203
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: blood-wallpaper-blood-png-image-6c6370220ca89de90498fd36600e161e_82
+      rect:
+        serializedVersion: 2
+        x: 67
+        y: 70
+        width: 28
+        height: 20
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 6a32a921250377fa0800000000000000
+      internalID: -5803116465786051674
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: blood-wallpaper-blood-png-image-6c6370220ca89de90498fd36600e161e_83
+      rect:
+        serializedVersion: 2
+        x: 103
+        y: 85
+        width: 16
+        height: 18
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: ba24355f70ef0af90800000000000000
+      internalID: -6944271315271204181
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: blood-wallpaper-blood-png-image-6c6370220ca89de90498fd36600e161e_84
+      rect:
+        serializedVersion: 2
+        x: 756
+        y: 75
+        width: 22
+        height: 15
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 8bed8b2f1327d49d0800000000000000
+      internalID: -2788447035421303112
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: blood-wallpaper-blood-png-image-6c6370220ca89de90498fd36600e161e_85
+      rect:
+        serializedVersion: 2
+        x: 793
+        y: 89
+        width: 8
+        height: 8
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 276d76098243da810800000000000000
+      internalID: 1778134776707274354
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: blood-wallpaper-blood-png-image-6c6370220ca89de90498fd36600e161e_86
+      rect:
+        serializedVersion: 2
+        x: 103
+        y: 71
+        width: 8
+        height: 9
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: f2f53e27284376640800000000000000
+      internalID: 5073081240134049583
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: blood-wallpaper-blood-png-image-6c6370220ca89de90498fd36600e161e_87
+      rect:
+        serializedVersion: 2
+        x: 50
+        y: 0
+        width: 56
+        height: 63
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 0c6812d975fdd5db0800000000000000
+      internalID: -4801436060315711808
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: blood-wallpaper-blood-png-image-6c6370220ca89de90498fd36600e161e_88
+      rect:
+        serializedVersion: 2
+        x: 71
+        y: 55
+        width: 12
+        height: 6
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: f557ffbd07d441450800000000000000
+      internalID: 6058552545842787679
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: blood-wallpaper-blood-png-image-6c6370220ca89de90498fd36600e161e_89
+      rect:
+        serializedVersion: 2
+        x: 785
+        y: 61
+        width: 7
+        height: 6
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: bf03ff96484bd6720800000000000000
+      internalID: 2841125420747665659
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: blood-wallpaper-blood-png-image-6c6370220ca89de90498fd36600e161e_90
+      rect:
+        serializedVersion: 2
+        x: 792
+        y: 59
+        width: 11
+        height: 10
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: cfb4ad9cc71d18160800000000000000
+      internalID: 7026127227567361020
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: blood-wallpaper-blood-png-image-6c6370220ca89de90498fd36600e161e_91
+      rect:
+        serializedVersion: 2
+        x: 821
+        y: 58
+        width: 12
+        height: 12
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: afea8391a6628c360800000000000000
+      internalID: 7190039042228530938
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: blood-wallpaper-blood-png-image-6c6370220ca89de90498fd36600e161e_92
+      rect:
+        serializedVersion: 2
+        x: 103
+        y: 30
+        width: 18
+        height: 18
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: c08a3f0d4db4eb9b0800000000000000
+      internalID: -5062525553707079668
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: blood-wallpaper-blood-png-image-6c6370220ca89de90498fd36600e161e_93
+      rect:
+        serializedVersion: 2
+        x: 803
+        y: 46
+        width: 12
+        height: 10
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 148b590717b84dc60800000000000000
+      internalID: 7842046170495301697
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: blood-wallpaper-blood-png-image-6c6370220ca89de90498fd36600e161e_94
+      rect:
+        serializedVersion: 2
+        x: 792
+        y: 35
+        width: 6
+        height: 6
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: f278427f411cf0350800000000000000
+      internalID: 5985214725588551471
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: blood-wallpaper-blood-png-image-6c6370220ca89de90498fd36600e161e_95
+      rect:
+        serializedVersion: 2
+        x: 804
+        y: 24
+        width: 6
+        height: 7
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 5b5e5449b6a0e5b60800000000000000
+      internalID: 7736632667034478005
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: blood-wallpaper-blood-png-image-6c6370220ca89de90498fd36600e161e_96
+      rect:
+        serializedVersion: 2
+        x: 818
+        y: 13
+        width: 6
+        height: 6
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 86fec814fdcc833c0800000000000000
+      internalID: -4379525378368278680
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: blood-wallpaper-blood-png-image-6c6370220ca89de90498fd36600e161e_97
+      rect:
+        serializedVersion: 2
+        x: 832
+        y: 2
+        width: 6
+        height: 6
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: c45eae5cc9d42a0b0800000000000000
+      internalID: -5718923241076366004
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    outline: []
+    physicsShape: []
+    bones: []
+    spriteID: 5e97eb03825dee720800000000000000
+    internalID: 0
+    vertices: []
+    indices: 
+    edges: []
+    weights: []
+    secondaryTextures: []
+    nameFileIdTable:
+      seeker2.0_0: 1607874546082755456
+  mipmapLimitGroupName: 
+  pSDRemoveMatte: 0
+  userData: 
+  assetBundleName: 
+  assetBundleVariant: 

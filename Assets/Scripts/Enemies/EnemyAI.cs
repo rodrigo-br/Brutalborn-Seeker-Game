@@ -10,6 +10,7 @@ public class EnemyAI : MonoBehaviour
     private int _currentWaypoint = 0;
     private bool _reachedEndOfPath = false;
     private Seeker _seeker;
+    public int PathDistance => _path.vectorPath.Count;
 
     private void Awake()
     {
