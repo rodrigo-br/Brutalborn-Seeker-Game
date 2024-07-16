@@ -9,14 +9,24 @@ public class SplatRayCaster : MonoBehaviour
     [SerializeField] private GameObject _splatPrefab;
     [SerializeField] private Transform _splatHolder;
 
-    [Button]
-    private void CastRay()
+    private void OnEnable()
     {
-        GameObject splat = Instantiate(_splatPrefab, this.transform.position, Quaternion.identity) as GameObject;
+        Health.OnDeath += CastRay;
+    }
+
+    private void OnDisable()
+    {
+        Health.OnDeath -= CastRay;
+    }
+
+    [Button]
+    private void CastRay(Health sender)
+    {
+        GameObject splat = Instantiate(_splatPrefab, sender.transform.position, Quaternion.identity) as GameObject;
         splat.transform.SetParent(_splatHolder, true);
         Splat _splatScript = splat.GetComponent<Splat>();
 
-        _splatParticles.transform.position = this.transform.position;
+        _splatParticles.transform.position = sender.transform.position;
         _splatParticles.Play();
 
         _splatScript.Init(Splat.SplatLocation.Foreground);

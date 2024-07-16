@@ -10,7 +10,6 @@ public class EnemyAI : MonoBehaviour
     private int _currentWaypoint = 0;
     private bool _reachedEndOfPath = false;
     private Seeker _seeker;
-    public int PathDistance => _path.vectorPath.Count;
 
     private void Awake()
     {
@@ -68,5 +67,9 @@ public class EnemyAI : MonoBehaviour
         }
     }
 
-
+    public int PathDistance()
+    {
+        if (_path == null) return int.MaxValue;
+        return _path.vectorPath.Count;
+    }
 }

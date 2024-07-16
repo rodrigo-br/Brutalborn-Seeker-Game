@@ -20,6 +20,10 @@ public class EnemyStateMachine : StateMachine
         _enemyAI = GetComponent<EnemyAI>();
         _gun = GetComponentInChildren<Gun>();
         _health = gameObject.GetComponentInChildren<Health>();
+    }
+
+    private void Start()
+    {
         SwitchState(new EnemyPatrolState(this, _enemyInput, _enemyController, _enemyAI, _leftRightPatrol, _health));
     }
 

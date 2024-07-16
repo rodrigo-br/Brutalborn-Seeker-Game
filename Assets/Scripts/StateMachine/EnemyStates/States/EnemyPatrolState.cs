@@ -7,6 +7,8 @@ public class EnemyPatrolState : EnemyBaseState
     private float _currentFlipCooldown = 0;
     private Health _health;
     private float _currentHealth;
+    private float _lastFlip = 0;
+    private readonly float _maxFlipTime = 3f;
 
     public EnemyPatrolState(
         EnemyStateMachine stateMachine,
@@ -30,18 +32,20 @@ public class EnemyPatrolState : EnemyBaseState
 
     public override void Tick(float deltaTime)
     {
-        if (enemyAI.PathDistance <= 20f || _currentHealth != _health.CurrentHealth)
+        if (enemyAI.PathDistance() <= 20f || _currentHealth != _health.CurrentHealth)
         {
             stateMachine.EnterSeekingState();
         }
         _currentFlipCooldown += deltaTime;
+        _lastFlip += deltaTime;
         if (_currentFlipCooldown < _flipCooldown) { return; }
-        if (_leftRightPatrol.FoundEdge)
+        if (_leftRightPatrol.FoundEdge || _lastFlip > _maxFlipTime)
         {
             Vector2 currentMovementDirection = enemyInput.GatherInput().Move;
             enemyInput.SetNewInputFrame(move: new Vector2(currentMovementDirection.x * -1, currentMovementDirection.y));
             _leftRightPatrol.ClearFoundEdge();
             _currentFlipCooldown = 0;
+            _lastFlip = 0;
         }
     }
 
