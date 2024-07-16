@@ -8,6 +8,7 @@ public class PlayerInput : MonoBehaviour, IInput
 
     private void Awake()
     {
+        Debug.Log("Player Input");
         _inputActions = new PlayerInputActions();
         _move = _inputActions.Player.Move;
         _jump = _inputActions.Player.Jump;

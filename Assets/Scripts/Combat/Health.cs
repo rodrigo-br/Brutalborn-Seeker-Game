@@ -21,6 +21,11 @@ public class Health : MonoBehaviour, IDamageable, IHealable
         _flash = GetComponent<Flash>();
     }
 
+    private void Start()
+    {
+        OnHealthChange?.Invoke(this);
+    }
+
     public void ResetHealth()
     {
         ChangeHealthByAmount(MaxHealth);

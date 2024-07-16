@@ -113,15 +113,15 @@ public class PlayerAnimator : MonoBehaviour
 
     private void HandleFreeLookSpeed(float xInput)
     {
-        float target = 0;
+        bool target = false;
         if (_grounded)
         {
             if (xInput != 0)
             {
-                target = 1;
+                target = true;
             }
         }
-        _anim.SetFloat(FreeLookSpeedKey, target, 0.1f, Time.deltaTime);
+        _anim.SetBool(RunKey, target);
     }
 
     private void LateUpdate()
@@ -272,7 +272,7 @@ public class PlayerAnimator : MonoBehaviour
     private void HandleIdleSpeed(float xInput)
     {
         var inputStrength = Mathf.Abs(xInput);
-        _anim.SetFloat(IdleSpeedKey, Mathf.Lerp(1, _maxIdleSpeed, inputStrength));
+        //_anim.SetFloat(IdleSpeedKey, Mathf.Lerp(1, _maxIdleSpeed, inputStrength));
         _moveParticles.transform.localScale = Vector3.MoveTowards(_moveParticles.transform.localScale,
             Vector3.one * inputStrength, 2 * Time.deltaTime);
     }
@@ -309,7 +309,7 @@ public class PlayerAnimator : MonoBehaviour
         var targetRot = _grounded && _player.GroundNormal != _player.Up ? runningTilt * _player.GroundNormal : runningTilt * _player.Up;
 
         // Calculate the smooth damp effect
-        var smoothRot = Vector3.SmoothDamp(_anim.transform.up, targetRot, ref _currentTiltVelocity, _tiltSmoothTime);
+        var smoothRot = Vector3.SmoothDamp(_anim.gameObject.transform.up, targetRot, ref _currentTiltVelocity, _tiltSmoothTime);
 
         if (Vector3.Angle(_player.Up, smoothRot) > _maxTilt)
         {
@@ -317,7 +317,7 @@ public class PlayerAnimator : MonoBehaviour
         }
 
         // Rotate towards the smoothed target
-        _anim.transform.up = smoothRot;
+        _anim.gameObject.transform.up = smoothRot;
     }
 
     #endregion
@@ -356,7 +356,7 @@ public class PlayerAnimator : MonoBehaviour
         if (type is JumpType.Jump or JumpType.Coyote or JumpType.WallJump)
         {
             _anim.SetTrigger(JumpKey);
-            _anim.ResetTrigger(GroundedKey);
+            _anim.SetBool(GroundedKey, false);
             OnJump1?.Invoke();
 
             // Only play particles when grounded (avoid coyote)
@@ -492,7 +492,7 @@ public class PlayerAnimator : MonoBehaviour
     private static readonly int GroundedKey = Animator.StringToHash("Grounded");
     private static readonly int IdleSpeedKey = Animator.StringToHash("IdleSpeed");
     private static readonly int JumpKey = Animator.StringToHash("Jump");
-    private static readonly int FreeLookSpeedKey = Animator.StringToHash("FreeLookSpeed");
+    private static readonly int RunKey = Animator.StringToHash("Run");
 
     #endregion
 }
