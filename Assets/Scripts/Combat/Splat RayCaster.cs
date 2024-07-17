@@ -8,6 +8,7 @@ public class SplatRayCaster : MonoBehaviour
     [SerializeField] private ParticleSystem _splatParticles;
     [SerializeField] private GameObject _splatPrefab;
     [SerializeField] private Transform _splatHolder;
+    private Vector3 _offset = Vector2.up * 1.5f;
 
     private void OnEnable()
     {
@@ -26,7 +27,7 @@ public class SplatRayCaster : MonoBehaviour
         splat.transform.SetParent(_splatHolder, true);
         Splat _splatScript = splat.GetComponent<Splat>();
 
-        _splatParticles.transform.position = sender.transform.position;
+        _splatParticles.transform.position = sender.transform.position + _offset;
         _splatParticles.Play();
 
         _splatScript.Init(Splat.SplatLocation.Foreground);
