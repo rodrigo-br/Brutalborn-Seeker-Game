@@ -221,13 +221,20 @@ public class PlayerAnimator : MonoBehaviour
         var point = requiredAudio ? Mathf.InverseLerp(0, -_player.Stats.LadderSlideSpeed, _player.Velocity.y) : 0;
         _wallSlideSource.volume = Mathf.SmoothDamp(_wallSlideSource.volume, Mathf.Lerp(0, _maxWallSlideVolume, point), ref _slideAudioVel, 0.2f);
 
+        bool isClimbingWall = false;
+        bool isWallSlide = false;
+
         if ((_player.ClimbingLadder || _isOnWall) && _player.Velocity.y > 0)
         {
-            if (!_ascendingLadder)
+            if (!_ascendingLadder && _player.ClimbingLadder)
             {
                 _ascendingLadder = true;
                 _lastClimbSoundY = transform.position.y;
                 Play();
+            }
+            else if (!_ascendingLadder && _isOnWall)
+            {
+                isClimbingWall = true;
             }
 
             if (transform.position.y >= _lastClimbSoundY + _distancePerClimbSound)
@@ -235,11 +242,34 @@ public class PlayerAnimator : MonoBehaviour
                 _lastClimbSoundY = transform.position.y;
                 Play();
             }
+            _anim.speed = 1;
+        }
+        else if ((_player.ClimbingLadder || _isOnWall) && _player.Velocity.y < 0)
+        {
+            if (!_ascendingLadder && !_isOnWall)
+            {
+                _ascendingLadder = true;
+            }
+            else if (!_ascendingLadder && _isOnWall)
+            {
+                isWallSlide = true;
+            }
+            _anim.speed = 1;
+        }
+        else if (_player.ClimbingLadder && _player.Velocity.y == 0)
+        {
+            _ascendingLadder = true;
+            _anim.speed = 0;
         }
         else
         {
             _ascendingLadder = false;
+            isClimbingWall = false;
+            _anim.speed = 1;
         }
+        _anim.SetBool(LadderClimbKey, _ascendingLadder);
+        _anim.SetBool(WallClimbKey, isClimbingWall);
+        _anim.SetBool(WallSlideKey, isWallSlide);
 
         void Play()
         {
@@ -345,14 +375,19 @@ public class PlayerAnimator : MonoBehaviour
             var percentage = _character.CrouchingHeight / _character.Height;
             _sprite.size = Vector2.SmoothDamp(_sprite.size, new Vector2(1, _crouching ? _character.Height * percentage : _character.Height), ref _currentCrouchSizeVelocity, 0.03f);
         }
+
+        _anim.SetBool(CrouchKey, _crouching);
     }
 
     #endregion
 
     #region Event Callbacks
 
+    private bool _jumped = false;
+
     private void OnJumped(JumpType type)
     {
+        _jumped = true;
         if (type is JumpType.Jump or JumpType.Coyote or JumpType.WallJump)
         {
             _anim.SetTrigger(JumpKey);
@@ -369,6 +404,7 @@ public class PlayerAnimator : MonoBehaviour
         }
         else if (type is JumpType.AirJump)
         {
+            _anim.SetTrigger(AirJumpKey);
             OnJump2?.Invoke();
             _doubleJumpParticles.Play();
         }
@@ -383,6 +419,7 @@ public class PlayerAnimator : MonoBehaviour
 
         if (grounded)
         {
+            _jumped = false;
             _anim.SetBool(GroundedKey, true);
             CancelSquish();
             _squishRoutine = StartCoroutine(SquishPlayer(Mathf.Abs(impact)));
@@ -396,12 +433,18 @@ public class PlayerAnimator : MonoBehaviour
                 _impulseSource.GenerateImpulse();
                 OnFallingGround?.Invoke();
                 _landParticles.Play();
+                _anim.SetTrigger(GroundSlamKey);
+                _player.SetClearInputs(0.5f);
             }
         }
         else
         {
             _anim.SetBool(GroundedKey, false);
             _moveParticles.Stop();
+            if (!_jumped)
+            {
+                _anim.SetTrigger(FallKey);
+            }
         }
     }
 
@@ -424,6 +467,7 @@ public class PlayerAnimator : MonoBehaviour
             _dashParticles.Play();
             _dashRingTransform.up = dir;
             _dashRingParticles.Play();
+            _anim.SetTrigger(DashKey);
             OnDash?.Invoke();
         }
         else
@@ -493,6 +537,14 @@ public class PlayerAnimator : MonoBehaviour
     private static readonly int IdleSpeedKey = Animator.StringToHash("IdleSpeed");
     private static readonly int JumpKey = Animator.StringToHash("Jump");
     private static readonly int RunKey = Animator.StringToHash("Run");
+    private static readonly int DashKey = Animator.StringToHash("Dash");
+    private static readonly int AirJumpKey = Animator.StringToHash("AirJump");
+    private static readonly int FallKey = Animator.StringToHash("Fall");
+    private static readonly int CrouchKey = Animator.StringToHash("Crouch");
+    private static readonly int GroundSlamKey = Animator.StringToHash("GroundSlam");
+    private static readonly int LadderClimbKey = Animator.StringToHash("LadderClimb");
+    private static readonly int WallClimbKey = Animator.StringToHash("WallClimb");
+    private static readonly int WallSlideKey = Animator.StringToHash("WallSlide");
 
     #endregion
 }

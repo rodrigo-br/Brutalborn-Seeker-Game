@@ -166,9 +166,35 @@ public class PlayerController : MonoBehaviour, IPlayerController, IPhysicsObject
     #region Input
 
     private FrameInput _frameInput;
+    private float _clearInputTime;
+
+    public void SetClearInputs(float timeCleared)
+    {
+        _clearInputTime = timeCleared;
+    }
 
     private void GatherInput()
     {
+        _clearInputTime -= Time.deltaTime;
+        if (_clearInputTime > 0)
+        {
+            _frameInput = new FrameInput
+            {
+                Move = Vector2.zero,
+                JumpDown = false,
+                JumpHeld = false,
+                AttackDown = false,
+                AttackHeld = false,
+                DashDown = false,
+                InteractDown = false,
+                InteractHeld = false,
+                JetpackDown = false,
+                GrenadeRelease = false,
+                GrenadeHeld = false,
+            };
+            return;
+        }
+
         _frameInput = _playerInput.GatherInput();
 
 
@@ -1017,6 +1043,7 @@ public interface IPlayerController
 
     public void RepositionImmediately(Vector2 position, bool resetVelocity = false);
     public void TogglePlayer(bool on);
+    public void SetClearInputs(float timeCleared);
 }
 
 public interface ISpeedModifier
