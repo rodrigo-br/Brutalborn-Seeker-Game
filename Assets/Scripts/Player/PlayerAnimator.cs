@@ -436,6 +436,10 @@ public class PlayerAnimator : MonoBehaviour
                 _anim.SetTrigger(GroundSlamKey);
                 _player.SetClearInputs(0.5f);
             }
+            else
+            {
+                _anim.SetTrigger(LandKey);
+            }
         }
         else
         {
@@ -545,6 +549,7 @@ public class PlayerAnimator : MonoBehaviour
     private static readonly int LadderClimbKey = Animator.StringToHash("LadderClimb");
     private static readonly int WallClimbKey = Animator.StringToHash("WallClimb");
     private static readonly int WallSlideKey = Animator.StringToHash("WallSlide");
+    private static readonly int LandKey = Animator.StringToHash("Land");
 
     #endregion
 }
