@@ -11,7 +11,8 @@ public class Gun : MonoBehaviour
     {
         Bullet,
         PlayerBullet,
-        EnemyBullet
+        EnemyBullet,
+        TurrentBullet
     }
     [field: SerializeField] public Transform BulletSpawnPosition { get; private set; }
     [SerializeField] private PrefabPath _bulletPrefab;
