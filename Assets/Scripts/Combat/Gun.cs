@@ -26,6 +26,7 @@ public class Gun : MonoBehaviour
     [SerializeField] private float _lobGranadeCooldown = 1.5f;
     [SerializeField] private float _grenadeArcVelocity = 0.05f;
     [SerializeField] private LaunchArcRenderer _launchArcRenderer;
+    [SerializeField] private bool _autoSetDirection = false;
     private CinemachineImpulseSource _impulseSource;
     private ObjectPooling<Bullet> _bulletPool;
     private PlayerController _player;
@@ -47,6 +48,7 @@ public class Gun : MonoBehaviour
     {
         _currentShootCooldown -= Time.deltaTime;
         LastLobGrenadeTime -= Time.deltaTime;
+        if (_player == null) { return; }
         if (_player.Input != Vector2.zero)
         {
             SetDirection(_player.Input);
@@ -75,8 +77,11 @@ public class Gun : MonoBehaviour
 
     private void OnEnable()
     {
-        _player.Attack += Shoot;
-        _player.AttackHeld += Shoot;
+        if (_player != null)
+        {
+            _player.Attack += Shoot;
+            _player.AttackHeld += Shoot;
+        }
         OnShoot += BulletRent;
         OnShoot += FireAnimation;
         OnShoot += GunScreenShake;
@@ -87,8 +92,11 @@ public class Gun : MonoBehaviour
 
     private void OnDisable()
     {
-        _player.Attack -= Shoot;
-        _player.AttackHeld -= Shoot;
+        if (_player != null)
+        {
+            _player.Attack -= Shoot;
+            _player.AttackHeld -= Shoot;
+        }
         OnShoot -= BulletRent;
         OnShoot -= FireAnimation;
         OnShoot -= GunScreenShake;
@@ -126,6 +134,11 @@ public class Gun : MonoBehaviour
     private void BulletRent()
     {
         _currentShootCooldown = _shootCooldown;
+        if (_autoSetDirection)
+        {
+            _direction = BulletSpawnPosition.right;
+            _direction.x *= BulletSpawnPosition.localScale.x;
+        }
         Bullet bullet = _bulletPool.Rent();
         bullet.Init(BulletSpawnPosition.position, BulletSpawnPosition.rotation, _direction);
     }
@@ -156,6 +169,7 @@ public class Gun : MonoBehaviour
 
     private void FireAnimation()
     {
+        if (_animator == null) { return; }
         _animator.Play(FIRE_HASH, 0, 0f);
     }
 

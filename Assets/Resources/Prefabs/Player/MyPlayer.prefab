@@ -14972,6 +14972,7 @@ MonoBehaviour:
   _lobGranadeCooldown: 1.5
   _grenadeArcVelocity: 0.3
   _launchArcRenderer: {fileID: 5051185718152186170}
+  _autoSetDirection: 0
 --- !u!114 &6157325055456789886
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -15088,6 +15089,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   _knockbackTime: 0.2
+  _knockbackResistence: 0
 --- !u!70 &4578817555007220948
 CapsuleCollider2D:
   m_ObjectHideFlags: 0

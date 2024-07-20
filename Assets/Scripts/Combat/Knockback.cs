@@ -8,6 +8,7 @@ public class Knockback : MonoBehaviour
     public Action OnKnockbackEnd;
 
     [SerializeField] private float _knockbackTime = 0.2f;
+    [SerializeField] private float _knockbackResistence = 0f;
 
     private Vector3 _hitDirection;
     private float _knockbackThrust;
@@ -32,6 +33,11 @@ public class Knockback : MonoBehaviour
 
     public void GetKnockedBack(Vector3 hitDirection, float knockbackThrust)
     {
+        knockbackThrust -= _knockbackResistence;
+        if (knockbackThrust <= 0f)
+        {
+            return;
+        }
         _hitDirection = hitDirection;
         _knockbackThrust = knockbackThrust;
 

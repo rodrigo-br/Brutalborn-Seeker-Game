@@ -41,7 +41,6 @@ public class Grenade : MonoBehaviour
 
     private void OnTriggerEnter2D(Collider2D other)
     {
-        Debug.Log(other.gameObject);
         if (_enemyLayerCollider == other.gameObject.layer)
         {
             ExplodeGranade();
