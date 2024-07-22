@@ -14963,7 +14963,7 @@ MonoBehaviour:
   <BulletSpawnPosition>k__BackingField: {fileID: 7610761541198662054}
   _bulletPrefab: 1
   _initialPoolSize: 10
-  _shootCooldown: 0.3
+  <ShootCooldown>k__BackingField: 0.3
   _animator: {fileID: 6703444541255035459}
   _impulseVelocity: {x: 0.1, y: 0.05}
   _muzzleFlash: {fileID: 5940084938114008478}

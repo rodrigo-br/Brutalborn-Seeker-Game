@@ -17,7 +17,7 @@ public class Gun : MonoBehaviour
     [field: SerializeField] public Transform BulletSpawnPosition { get; private set; }
     [SerializeField] private PrefabPath _bulletPrefab;
     [SerializeField] private int _initialPoolSize = 10;
-    [SerializeField] private float _shootCooldown = 0.3f;
+    [field: SerializeField] public float ShootCooldown { get; private set; } = 0.3f;
     [SerializeField] private Animator _animator;
     [SerializeField] private Vector2 _impulseVelocity;
     [SerializeField] private GameObject _muzzleFlash;
@@ -27,6 +27,8 @@ public class Gun : MonoBehaviour
     [SerializeField] private float _grenadeArcVelocity = 0.05f;
     [SerializeField] private LaunchArcRenderer _launchArcRenderer;
     [SerializeField] private bool _autoSetDirection = false;
+    private IShootStrategy _shootStrategy;
+    private IShootStrategy[] _shootStrategies;
     private CinemachineImpulseSource _impulseSource;
     private ObjectPooling<Bullet> _bulletPool;
     private PlayerController _player;
@@ -42,6 +44,11 @@ public class Gun : MonoBehaviour
         _bulletPool = new("Prefabs/Combat/" + _bulletPrefab.ToString(), _initialPoolSize);
         _player = GetComponentInParent<PlayerController>();
         _impulseSource = GetComponent<CinemachineImpulseSource>();
+        _shootStrategies = new IShootStrategy[]
+        {
+            new SingleConeShoot(this)
+        };
+        _shootStrategy = _shootStrategies[0];
     }
 
     private void Update()
@@ -79,8 +86,8 @@ public class Gun : MonoBehaviour
     {
         if (_player != null)
         {
-            _player.Attack += Shoot;
-            _player.AttackHeld += Shoot;
+            _player.Attack += _shootStrategy.Use;
+            _player.AttackHeld += _shootStrategy.Use;
         }
         OnShoot += BulletRent;
         OnShoot += FireAnimation;
@@ -94,8 +101,8 @@ public class Gun : MonoBehaviour
     {
         if (_player != null)
         {
-            _player.Attack -= Shoot;
-            _player.AttackHeld -= Shoot;
+            _player.Attack -= _shootStrategy.Use;
+            _player.AttackHeld -= _shootStrategy.Use;
         }
         OnShoot -= BulletRent;
         OnShoot -= FireAnimation;
@@ -133,7 +140,7 @@ public class Gun : MonoBehaviour
 
     private void BulletRent()
     {
-        _currentShootCooldown = _shootCooldown;
+        _currentShootCooldown = ShootCooldown;
         if (_autoSetDirection)
         {
             _direction = BulletSpawnPosition.right;
@@ -212,5 +219,10 @@ public class Gun : MonoBehaviour
     {
         _direction = direction;
         HandleSpriteFlip();
+    }
+
+    public void SetShootCooldown(float shootCooldown)
+    {
+        ShootCooldown = shootCooldown;
     }
 }
